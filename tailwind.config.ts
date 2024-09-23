@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        myFont: ["var(--font-ppneuemontreal)"], // Ensure this matches your localFont
+      },
     },
   },
   plugins: [],
