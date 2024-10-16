@@ -8,7 +8,7 @@ import bgimage from "../Assets/curology3.jpg";
 function AboutPage() {
   return (
     <div className="bg-[#121212] pb-40">
-      <NavBar navColor="#DCD8C0" backgroundNavColor="#121212" />
+      <NavBar />
       <div className="pt-[150px] w-full h-full px-56">
         <h1
           className={`${compacta.className} text-[#DCD8C0] text-7xl tracking-wider uppercase`}

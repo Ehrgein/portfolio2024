@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import curology from "../Assets/curology.jpg";
 import atelier from "../Assets/atellier.jpg";
 import restaurant from "../Assets/restaurant.jpg";
-import { compacta, ppneuemontreal } from "../helpers/fonts";
-import { motion } from "framer-motion";
+
+import { motion, useInView } from "framer-motion";
 
 const Projects = () => {
   const projects = [
@@ -35,20 +35,43 @@ const Projects = () => {
     },
   ];
 
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  // const isinView = useInView(imageRef, { margin: "60px 0px 0px 0px" });
+
+  // React.useEffect(() => {
+  //   console.log(isinView);
+  // }, [isinView]);
+
   return (
     <div className="bg-[#161616]  text-zinc-100 h-dvh w-full flex flex-col px-32 pb-4">
       <div className="flex gap-4 pt-20">
-        {projects.map((project) => {
+        {projects.map((project, index) => {
+          console.log(index, "index");
+          const artificialDelay = index * 0.05;
+
           return (
             <motion.div
               key={project.id}
               className="w-[400px] h-[600px] object-cover lg:flex"
-              initial={{ filter: "grayscale(100%)" }}
+              initial={{
+                filter: "grayscale(100%)",
+                clipPath: "inset(100% 0% 0% 0%)",
+              }}
               whileHover={{ filter: "none" }}
-              animate={{ filter: "grayscale(100%)" }}
-              transition={{ duration: 1 }}
+              animate={{
+                filter: "grayscale(100%)",
+              }}
+              whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                delay: artificialDelay,
+              }}
+              viewport={{ once: true }}
             >
               <Image
+                ref={imageRef}
                 src={project.src}
                 alt="curology logo"
                 className="w-full h-auto object-cover "
@@ -56,11 +79,6 @@ const Projects = () => {
             </motion.div>
           );
         })}
-      </div>
-      <div
-        className={`${compacta.className} text-[84px] text-[#DCD8C0] text-center tracking-[0.12em] px-12 leading-tight`}
-      >
-        CUROLOGY
       </div>
     </div>
   );
