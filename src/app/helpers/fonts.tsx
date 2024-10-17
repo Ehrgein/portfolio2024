@@ -1,4 +1,10 @@
 import localFont from "next/font/local";
+import { Lato } from "next/font/google";
+
+export const lato = Lato({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+});1
 
 export const compacta = localFont({
   src: [

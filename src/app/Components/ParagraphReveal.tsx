@@ -2,10 +2,42 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ppneuemontreal } from "../helpers/fonts";
 
-function ParagraphReveal({ children }: { children: React.ReactNode }) {
+type TailwindTextSize = "text-sm" | "text-base" | "text-lg" | "text-xl";
+
+type TailwindLeading =
+  | "leading-none"
+  | "leading-tight"
+  | "leading-normal"
+  | "leading-loose";
+
+type ParagraphRevealProps = {
+  children: React.ReactNode;
+  textSize?: TailwindTextSize | number;
+  textColor?: string;
+  textUnit?: string;
+  leading?: TailwindLeading | number;
+  leadingUnit: number;
+};
+
+function ParagraphReveal({
+  children,
+  textSize,
+  textColor,
+  textUnit,
+  leading,
+  leadingUnit,
+}: ParagraphRevealProps) {
   const paraRef = useRef<HTMLDivElement>(null);
 
-  const isInView = useInView(paraRef, { margin: "-60px 0px 0px 0px" });
+  const isInView = useInView(paraRef, { margin: "-20px 0px 0px 0px" });
+
+  const textSizeClass =
+    typeof textSize === "string" ? textSize : `text-[${textSize}${textUnit}]`;
+
+  const leadingClass =
+    typeof leading === "string"
+      ? leading
+      : `leading-[${leading}${leadingUnit}]`;
 
   return (
     <motion.p
@@ -19,9 +51,9 @@ function ParagraphReveal({ children }: { children: React.ReactNode }) {
         y: "15%",
       }}
       transition={{
-        delay: 1,
+        delay: 0.1,
       }}
-      className={`${ppneuemontreal.className} font-normal text-[#DFDADA] text-[70px] leading-[1.15] tracking-normal`}
+      className={`${ppneuemontreal.className} font-normal ${textSizeClass} ${leadingClass} leading-8 tracking-normal`}
     >
       {children}
     </motion.p>
