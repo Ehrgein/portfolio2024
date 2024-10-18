@@ -3,16 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { compacta, ppneuemontreal } from "../helpers/fonts";
 import { TransitionLink } from "../helpers/TransitionLink";
 import FullScreenPanel from "./EnterAnimation";
+import ExitTransition from "./ExitTransition";
 
 const NavBar = () => {
   const [isExiting, setIsExiting] = React.useState(false);
 
-  console.log(isExiting);
 
   return (
     <>
       <motion.nav
-        className={`w-full flex justify-between px-10 pt-9 pb-4 text-lg  gap-6 text fixed top-0 right-0 z-30  bg-[#161616] `}
+        className={`w-full flex justify-between px-10 pt-9 pb-4 text-lg  gap-6 text fixed top-0 right-0 z-30  `}
       >
         <header
           className={`${compacta.className} text-3xl  tracking-[-0.04em] text-[#9CB0A3]`}
@@ -33,7 +33,7 @@ const NavBar = () => {
           </li>
         </ul>
       </motion.nav>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {isExiting && (
           <motion.div
             initial={{ y: "100%" }}
@@ -47,7 +47,8 @@ const NavBar = () => {
             className="fixed bottom-0 left-0 w-full h-full bg-[#121212] z-50"
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+      {isExiting && <ExitTransition />}
     </>
   );
 };

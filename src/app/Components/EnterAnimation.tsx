@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { compacta } from "../helpers/fonts";
 import Image from "next/image";
-import TitleText from "./TitleText";
+
 import keepmoving from "../Assets/svgs/keepmoving.svg";
 
 const EnterAnimation = () => {
@@ -9,7 +9,7 @@ const EnterAnimation = () => {
     <motion.div
       initial={{ y: 0 }} // Starting position above the viewport
       animate={{ y: "-100vh" }} // Ending position at the top of the viewport
-      transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 1 }}
+      transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 0.6 }}
       className="inset-0 absolute bg-[#121212]"
     >
       {/* <p

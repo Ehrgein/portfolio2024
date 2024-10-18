@@ -24,7 +24,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   ) => {
     e.preventDefault();
 
-    await sleep(1000);
+    await sleep(600);
 
     router.push(href);
   };

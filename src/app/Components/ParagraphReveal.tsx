@@ -16,7 +16,7 @@ type ParagraphRevealProps = {
   textColor?: string;
   textUnit?: string;
   leading?: TailwindLeading | number;
-  leadingUnit: number;
+  leadingUnit?: number;
 };
 
 function ParagraphReveal({
