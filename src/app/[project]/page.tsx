@@ -4,16 +4,32 @@ import Lenis from "lenis";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import restaurant from "../Assets/restaurant.jpg";
-import EnterAnimation from "../Components/EnterAnimation";
+import EnterAnimation from "../Components/Transitions/EnterAnimation";
 import { ppneuemontreal, compacta } from "../helpers/fonts";
 import red from "../Assets/redimage.jpg";
 import orange from "../Assets/orangebtl.jpg";
 import Technologies from "../Components/Technologies";
-
+import { lato } from "../helpers/fonts";
 import Typography from "../Components/Typography";
 import ColorPalette from "../Components/ColorPalette";
 import ImageReveal from "../Components/ImageReveal";
 import ParagraphReveal from "../Components/ParagraphReveal";
+import { fontData } from "../Types/Types";
+
+const TypographyLato: fontData[] = [
+  {
+    weight: "",
+    fontName: "Lato Regular",
+  },
+  {
+    weight: "font-medium",
+    fontName: "Lato Medium",
+  },
+  {
+    weight: "font-bold",
+    fontName: "Lato Bold",
+  },
+];
 
 function Project() {
   const lenis = new Lenis();
@@ -112,7 +128,16 @@ function Project() {
             <ImageReveal src={orange} alt="orange" />
             <ImageReveal src={red} alt="orange" />
           </div>
-          <Typography />
+          <Typography
+            mainParagraph="Lato was selected for this project due to its clean, modern feel,
+          which aligns well with the streetwear focus of the e-commerce site.
+          Its sleek design enhances the visual appeal while resonating with the
+          target audience, offering a polished yet contemporary look that
+          complements the brand’s identity."
+            // fontText={["Lato Regular", "Lato Medium", "Lato Bold"]}
+            fontClassname={lato.className}
+            fontText={TypographyLato}
+          />
           <ColorPalette />
         </div>
       </div>

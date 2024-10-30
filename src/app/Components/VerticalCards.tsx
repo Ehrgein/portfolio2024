@@ -45,7 +45,7 @@ function VerticalCards() {
         {projects.map((project) => {
           return (
             <div className="overflow-hidden">
-              <motion.div className="group relative h-[650px] w-[875px] overflow-hidden pb-6">
+              <motion.div className="group relative h-[650px] w-full overflow-hidden pb-6">
                 <Image
                   src={project.src}
                   alt=""

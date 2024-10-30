@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { compacta } from "../helpers/fonts";
+import { compacta } from "../../helpers/fonts";
 import Image from "next/image";
 
-import keepmoving from "../Assets/svgs/keepmoving.svg";
+import keepmoving from "../../Assets/svgs/keepmoving.svg";
 
 const EnterAnimation = () => {
   return (

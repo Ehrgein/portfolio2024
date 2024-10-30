@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import ParagraphReveal from "./ParagraphReveal";
 import { ppneuemontreal } from "../helpers/fonts";
 import { TransitionLink } from "../helpers/TransitionLink";
-import ExitTransition from "./ExitTransition";
+import ExitTransition from "./Transitions/ExitTransition";
 
 type cardProps = {
   id: number;
@@ -20,7 +20,7 @@ type cardProps = {
 
 const Card = ({ id, name, src, key, isExiting, setIsExiting }: cardProps) => {
   return (
-    <div className="w-full h-full relative pt-32">
+    <div className="w-full h-full relative pt-4 ">
       <motion.div
         key={id}
         onClick={() => setIsExiting(true)}
@@ -81,8 +81,13 @@ function HorizontalScroll({ isExiting, setIsExiting }) {
 
   return (
     <>
-      <section ref={targetRef} className="relative h-[300vh] bg-[#161616]">
-        <div className="sticky top-0 flex h-[90vh] items-center overflow-hidden">
+      <div
+        className={`${ppneuemontreal.className} bg-[#161616] text-white text-8xl px-20 w-full pt-72`}
+      >
+        <p className="">SELECTED WORKS.</p>
+      </div>
+      <section ref={targetRef} className="relative h-[250vh] bg-[#161616]">
+        <div className="sticky top-0 flex h-[100vh] items-start overflow-hidden">
           <motion.div style={{ x }} className="flex gap-12">
             {projects.map(({ id, name, src }) => {
               return (
