@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import WhiteNavbar from "../Components/layout/WhiteNavbar";
+// import WhiteNavbar from "../Components/layout/WhiteNavbar";
 import PresentationParagraph from "../Components/animations/PresentationParagraph";
 import FooterWhite from "../Components/layout/FooterWhite";
 
