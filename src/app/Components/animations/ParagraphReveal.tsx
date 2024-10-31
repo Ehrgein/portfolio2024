@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { isBoldWord } from "@/app/helpers/isBoldWord";
 import { ppneuemontreal } from "../../helpers/fonts";
 
@@ -31,20 +31,18 @@ function ParagraphReveal({
   textSize,
   textColor,
   textUnit,
-  leading,
-  leadingUnit,
 }: ParagraphRevealProps) {
-  const paraRef = useRef<HTMLDivElement>(null);
+  // const paraRef = useRef<HTMLDivElement>(null);
 
-  const isInView = useInView(paraRef, { margin: "-20px 0px 0px 0px" });
+  // const isInView = useInView(paraRef, { margin: "-20px 0px 0px 0px" });
 
   const textSizeClass =
     typeof textSize === "string" ? textSize : `text-[${textSize}${textUnit}]`;
 
-  const leadingClass =
-    typeof leading === "string"
-      ? leading
-      : `leading-[${leading}${leadingUnit}]`;
+  // const leadingClass =
+  //   typeof leading === "string"
+  //     ? leading
+  //     : `leading-[${leading}${leadingUnit}]`;
 
   return (
     <>

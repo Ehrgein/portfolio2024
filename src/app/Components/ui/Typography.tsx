@@ -17,7 +17,7 @@ function Typography({
           className={`grid grid-cols-3 place-content-center gap-12 lg:gap-40 ${fontClassname}`}
         >
           {fontText.map(({ weight, fontName }) => (
-            <div className={`flex flex-col`}>
+            <div key={fontName} className={`flex flex-col`}>
               <span className={`text-4xl ${weight}`}>Aa</span>
               <span className="text-2xl text-[#575757]">{fontName}</span>
             </div>

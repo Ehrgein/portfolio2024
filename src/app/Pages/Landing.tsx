@@ -1,16 +1,10 @@
 "use client";
 import React, { useRef } from "react";
-import { compacta, ppneuemontreal } from "../helpers/fonts";
-import { motion, useAnimation } from "framer-motion";
-
 import NavBar from "../Components/layout/NavBar";
-import Presentation from "../Components/animations/Presentation";
 import PresentationParagraph from "../Components/animations/PresentationParagraph";
 
 const Landing = () => {
   const mainRef = useRef<HTMLDivElement>(null);
-
-  const headercontrols = useAnimation();
 
   return (
     <div className="bg-[#161616] p-7 min-h-screen flex ">

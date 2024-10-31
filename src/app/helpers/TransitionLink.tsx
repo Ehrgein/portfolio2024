@@ -1,6 +1,5 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
-import { Transition } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 interface TransitionLinkProps extends LinkProps {

@@ -13,7 +13,6 @@ import { lato } from "../helpers/fonts";
 import Typography from "../Components/ui/Typography";
 import ColorPalette from "../Components/ui/ColorPalette";
 import ImageReveal from "../Components/animations/ImageReveal";
-import ParagraphReveal from "../Components/animations/ParagraphReveal";
 import { fontData } from "../Types/Types";
 import Challenge from "../Components/ui/Challenge";
 

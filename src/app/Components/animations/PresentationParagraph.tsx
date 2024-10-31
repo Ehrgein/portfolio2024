@@ -1,7 +1,5 @@
 import React from "react";
 import ParagraphReveal from "./ParagraphReveal";
-import { compacta } from "../../helpers/fonts";
-import ParagraphRevealTwo from "./ParagraphRevealTwo";
 
 function PresentationParagraph() {
   return (

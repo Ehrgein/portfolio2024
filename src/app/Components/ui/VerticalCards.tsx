@@ -1,5 +1,5 @@
 import React from "react";
-import { ppneuemontreal, compacta } from "../../helpers/fonts";
+import { ppneuemontreal } from "../../helpers/fonts";
 import { motion } from "framer-motion";
 import curology from "../../Assets/curology.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
@@ -44,7 +44,7 @@ function VerticalCards() {
       <div className="grid grid-cols-2 gap-6 pt-24">
         {projects.map((project) => {
           return (
-            <div className="overflow-hidden">
+            <div key={project.id} className="overflow-hidden">
               <motion.div className="group relative h-[650px] w-full overflow-hidden pb-6">
                 <Image
                   src={project.src}

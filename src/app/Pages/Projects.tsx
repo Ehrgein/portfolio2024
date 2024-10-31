@@ -4,7 +4,7 @@ import curology from "../Assets/curology.jpg";
 import atelier from "../Assets/atellier.jpg";
 import restaurant from "../Assets/restaurant.jpg";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [

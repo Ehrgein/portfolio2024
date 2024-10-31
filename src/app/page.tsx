@@ -1,30 +1,33 @@
 "use client";
-import Landing from "./Pages/Landing";
 import WhiteLanding from "./Pages/WhiteLanding";
 import Link from "next/link";
 import Image from "next/image";
 import github from "./Assets/svgs/github-90.svg";
 import linkedin from "./Assets/svgs/linkedin-100.svg";
-import Projects from "./Pages/Projects";
-
 import React from "react";
 import Lenis from "lenis";
 import VerticalCards from "./Components/ui/VerticalCards";
-import IntroAnimation from "./Components/Transitions/IntroAnimation";
+import IntroAnimation from "./Components/transitions/IntroAnimation";
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(false);
-  const [isExiting, setIsExiting] = React.useState(false);
 
-  const lenis = new Lenis();
+  React.useEffect(() => {
+    // Make sure this code only runs on the client
+    if (typeof window !== "undefined") {
+      const lenis = new Lenis({
+        // Your configuration for Lenis
+      });
 
-  function raf(time: number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+      // Start Lenis animation
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
 
-  requestAnimationFrame(raf);
-
+      requestAnimationFrame(raf);
+    }
+  }, []);
   // React.useEffect(() => {
   //   // Simulate a delay of 3 seconds
   //   const timer = setTimeout(() => {

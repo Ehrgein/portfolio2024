@@ -12,11 +12,6 @@ const EnterAnimation = () => {
       transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 0.6 }}
       className="inset-0 absolute bg-[#121212]"
     >
-      {/* <p
-        className={`${compacta.className} text-white text-8xl flex h-[100vh] justify-center items-center`}
-      >
-        KEEP MOVING
-      </p> */}
       <div className="w-full flex h-[100vh] justify-center items-center">
         <Image
           src={keepmoving}

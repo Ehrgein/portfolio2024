@@ -1,6 +1,5 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
-import { ppneuemontreal } from "@/app/helpers/fonts";
 
 type loadingType = {
   isLoading: boolean;

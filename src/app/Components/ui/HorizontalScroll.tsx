@@ -4,25 +4,27 @@ import restaurant from "../Assets/restaurant.jpg";
 import atelier from "../Assets/atellier.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import ParagraphReveal from "../animations/ParagraphReveal";
 import { ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
-import ExitTransition from "../Transitions/ExitTransition";
+import ExitTransition from "../transitions/ExitTransition";
 
-type cardProps = {
+interface ExitType {
+  isExiting: boolean;
+  setIsExiting: (value: boolean) => void;
+}
+
+interface CardProps extends ExitType {
   id: number;
   src: StaticImageData;
   name: string;
   key: number;
-  isExiting: boolean;
-  setIsExiting: (value: boolean) => void;
-};
+}
 
-const Card = ({ id, name, src, key, isExiting, setIsExiting }: cardProps) => {
+const Card = ({ id, name, src, key, setIsExiting }: CardProps) => {
   return (
     <div className="w-full h-full relative pt-4 ">
       <motion.div
-        key={id}
+        key={key}
         onClick={() => setIsExiting(true)}
         className="group relative h-[595px] w-[950px] overflow-hidden"
       >
@@ -48,7 +50,7 @@ const Card = ({ id, name, src, key, isExiting, setIsExiting }: cardProps) => {
   );
 };
 
-function HorizontalScroll({ isExiting, setIsExiting }) {
+function HorizontalScroll({ isExiting, setIsExiting }: ExitType) {
   const projects = [
     {
       id: 1,

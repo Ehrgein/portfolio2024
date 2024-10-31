@@ -1,8 +1,7 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
-import FullScreenPanel from "../transitions/EnterAnimation";
 import ExitTransition from "../transitions/ExitTransition";
 
 const WhiteNavbar = () => {

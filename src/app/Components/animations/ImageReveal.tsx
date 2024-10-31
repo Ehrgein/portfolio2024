@@ -1,5 +1,5 @@
 import React from "react";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
@@ -25,7 +25,7 @@ function ImageReveal({ src, alt }: ImageRevealProps) {
       <Image
         fill
         src={src.src}
-        alt="curology logo"
+        alt={alt}
         className="w-full h-full object-cover absolute top-0"
       />
     </motion.div>
