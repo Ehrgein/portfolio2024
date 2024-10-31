@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-// import WhiteNavbar from "../Components/layout/WhiteNavbar";
+import WhiteNavbar from "../Components/layout/WhiteNavbar";
 import PresentationParagraph from "../Components/animations/PresentationParagraph";
 import FooterWhite from "../Components/layout/FooterWhite";
 
@@ -10,7 +10,7 @@ const WhiteLanding = () => {
   return (
     <div className="bg-[#E1DFDF] min-h-screen flex px-4 py-2">
       <div className="w-full flex flex-col ">
-        {/* <WhiteNavbar /> */}
+        <WhiteNavbar />
         <main
           ref={mainRef}
           className={` justify-center flex flex-col flex-grow`}

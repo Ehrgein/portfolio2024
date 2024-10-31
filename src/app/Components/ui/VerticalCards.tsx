@@ -31,6 +31,9 @@ const projects = [
 ];
 
 function VerticalCards() {
+
+  //h2 causing responsive issues, doesnt matter.
+
   return (
     <section
       className="bg-[#161616] h-auto px-24 pb-40
