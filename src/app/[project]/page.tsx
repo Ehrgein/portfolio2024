@@ -4,17 +4,18 @@ import Lenis from "lenis";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import restaurant from "../Assets/restaurant.jpg";
-import EnterAnimation from "../Components/Transitions/EnterAnimation";
+import EnterAnimation from "../Components/transitions/EnterAnimation";
 import { ppneuemontreal, compacta } from "../helpers/fonts";
 import red from "../Assets/redimage.jpg";
 import orange from "../Assets/orangebtl.jpg";
-import Technologies from "../Components/Technologies";
+import Technologies from "../Components/ui/Technologies";
 import { lato } from "../helpers/fonts";
-import Typography from "../Components/Typography";
-import ColorPalette from "../Components/ColorPalette";
-import ImageReveal from "../Components/ImageReveal";
-import ParagraphReveal from "../Components/ParagraphReveal";
+import Typography from "../Components/ui/Typography";
+import ColorPalette from "../Components/ui/ColorPalette";
+import ImageReveal from "../Components/animations/ImageReveal";
+import ParagraphReveal from "../Components/animations/ParagraphReveal";
 import { fontData } from "../Types/Types";
+import Challenge from "../Components/ui/Challenge";
 
 const TypographyLato: fontData[] = [
   {
@@ -84,46 +85,11 @@ function Project() {
           <div className="opacity-90 grid grid-cols-3 gap-12 ">
             <Technologies />
           </div>
-          {/* <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p> */}
           <div className="grid grid-cols-2 gap-5 pt-12">
             <ImageReveal src={red} alt="s" />
             <ImageReveal src={orange} alt="s" />
           </div>
-          <div className="space-y-12">
-            <div className="flex flex-col gap-2 pt-8">
-              <h3 className="font-medium text-2xl">Challenge</h3>
-              <div className="space-y-4 pt-6">
-                <ParagraphReveal textSize={"text-lg"} leading={"leading-loose"}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum
-                </ParagraphReveal>
-                <ParagraphReveal textSize={"text-lg"} leading={"leading-loose"}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum
-                </ParagraphReveal>
-              </div>
-            </div>
-          </div>
+          <Challenge />
           <div className="grid grid-cols-2 gap-5 pt-16">
             <ImageReveal src={orange} alt="orange" />
             <ImageReveal src={red} alt="orange" />

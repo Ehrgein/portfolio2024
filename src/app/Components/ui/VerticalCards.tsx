@@ -1,9 +1,9 @@
 import React from "react";
-import { ppneuemontreal, compacta } from "../helpers/fonts";
+import { ppneuemontreal, compacta } from "../../helpers/fonts";
 import { motion } from "framer-motion";
-import curology from "../Assets/curology.jpg";
-import restaurant from "../Assets/restaurant.jpg";
-import atelier from "../Assets/atellier.jpg";
+import curology from "../../Assets/curology.jpg";
+import restaurant from "../../Assets/restaurant.jpg";
+import atelier from "../../Assets/atellier.jpg";
 import Image from "next/image";
 
 const projects = [

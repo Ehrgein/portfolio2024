@@ -1,5 +1,5 @@
 import React from "react";
-import { Typographyprops } from "../Types/Types";
+import { Typographyprops } from "../../Types/Types";
 
 function Typography({
   mainParagraph,

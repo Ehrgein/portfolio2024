@@ -2,20 +2,22 @@
 import React, { useRef } from "react";
 import { compacta, ppneuemontreal } from "../helpers/fonts";
 import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 
-import NavBar from "../Components/layout/NavBar";
-import Presentation from "../Components/animations/Presentation";
+import WhiteNavbar from "../Components/layout/WhiteNavbar";
+
 import PresentationParagraph from "../Components/animations/PresentationParagraph";
+import FooterWhite from "../Components/layout/FooterWhite";
 
-const Landing = () => {
+const WhiteLanding = () => {
   const mainRef = useRef<HTMLDivElement>(null);
 
   const headercontrols = useAnimation();
 
   return (
-    <div className="bg-[#161616] p-7 min-h-screen flex ">
-      <div className="w-full flex flex-col">
-        <NavBar />
+    <div className="bg-[#E1DFDF] min-h-screen flex px-4 py-2">
+      <div className="w-full flex flex-col ">
+        <WhiteNavbar />
         <main
           ref={mainRef}
           className={` justify-center flex flex-col flex-grow`}
@@ -23,9 +25,10 @@ const Landing = () => {
           {/* <Presentation /> */}
           <PresentationParagraph />
         </main>
+        <FooterWhite />
       </div>
     </div>
   );
 };
 
-export default Landing;
+export default WhiteLanding;

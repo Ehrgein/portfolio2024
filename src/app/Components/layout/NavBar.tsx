@@ -1,9 +1,8 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { compacta, ppneuemontreal } from "../helpers/fonts";
-import { TransitionLink } from "../helpers/TransitionLink";
-import FullScreenPanel from "./Transitions/EnterAnimation";
-import ExitTransition from "./Transitions/ExitTransition";
+import { compacta, ppneuemontreal } from "../../helpers/fonts";
+import { TransitionLink } from "../../helpers/TransitionLink";
+import ExitTransition from "../transitions/ExitTransition";
 
 const NavBar = () => {
   const [isExiting, setIsExiting] = React.useState(false);

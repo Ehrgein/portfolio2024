@@ -34,6 +34,19 @@ html.lenis body {
   pointer-events: none;
 }
 
+/* .noise-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 120vh;
+  background: url("../app/Assets/svgs/noise.png");
+  opacity: 0.25;
+  animation: noise 0.09s infinite;
+  pointer-events: none;
+  z-index: 100;
+  transform: translateZ(0);
+} */
+
 .noise-bg {
   position: fixed;
   inset: 0;

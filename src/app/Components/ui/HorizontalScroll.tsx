@@ -4,10 +4,10 @@ import restaurant from "../Assets/restaurant.jpg";
 import atelier from "../Assets/atellier.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import ParagraphReveal from "./ParagraphReveal";
-import { ppneuemontreal } from "../helpers/fonts";
-import { TransitionLink } from "../helpers/TransitionLink";
-import ExitTransition from "./Transitions/ExitTransition";
+import ParagraphReveal from "../animations/ParagraphReveal";
+import { ppneuemontreal } from "../../helpers/fonts";
+import { TransitionLink } from "../../helpers/TransitionLink";
+import ExitTransition from "../Transitions/ExitTransition";
 
 type cardProps = {
   id: number;

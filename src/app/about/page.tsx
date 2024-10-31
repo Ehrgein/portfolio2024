@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import NavBar from "../Components/NavBar";
+import NavBar from "../Components/layout/NavBar";
 import Image from "next/image";
 import { compacta, ppneuemontreal } from "../helpers/fonts";
 import bgimage from "../Assets/curology3.jpg";

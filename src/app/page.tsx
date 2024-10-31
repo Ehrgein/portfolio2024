@@ -1,17 +1,19 @@
 "use client";
 import Landing from "./Pages/Landing";
+import WhiteLanding from "./Pages/WhiteLanding";
 import Link from "next/link";
 import Image from "next/image";
 import github from "./Assets/svgs/github-90.svg";
 import linkedin from "./Assets/svgs/linkedin-100.svg";
 import Projects from "./Pages/Projects";
+
 import React from "react";
 import Lenis from "lenis";
-import VerticalCards from "./Components/VerticalCards";
+import VerticalCards from "./Components/ui/VerticalCards";
 import IntroAnimation from "./Components/Transitions/IntroAnimation";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [isExiting, setIsExiting] = React.useState(false);
 
   const lenis = new Lenis();
@@ -22,7 +24,6 @@ export default function Home() {
   }
 
   requestAnimationFrame(raf);
-  
 
   // React.useEffect(() => {
   //   // Simulate a delay of 3 seconds
@@ -44,7 +45,8 @@ export default function Home() {
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <>
-          <Landing />
+          {/* <Landing /> */}
+          <WhiteLanding />
           {/* <section className="px-52 h-[80svh] bg-[#161616] space-y-10">
               <ParagraphReveal>
                 Hey there! I’m a frontend developer based in Buenos Aires,
