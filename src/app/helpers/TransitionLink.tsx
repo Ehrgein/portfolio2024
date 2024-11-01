@@ -1,6 +1,7 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
@@ -30,6 +31,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
 
   return (
     <Link {...props} href={"1"} onClick={handleTransition}>
+      <motion.span></motion.span>
       {children}
     </Link>
   );

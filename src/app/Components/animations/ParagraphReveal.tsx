@@ -47,28 +47,30 @@ function ParagraphReveal({
   return (
     <>
       <span className="sr-only">{textContent}</span>
-      <div className="overflow-hidden">
+      <div>
         {textContent.split(" ").map((word, index) => (
-          <motion.span
-            key={index}
-            animate={{
-              opacity: 1,
-              y: "0%",
-            }}
-            initial={{
-              opacity: 0,
-              y: "35%",
-            }}
-            transition={{
-              delay: 0.01 * index,
-              duration: 1,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
-            className={`${ppneuemontreal.className} ${textColor} ${
-              isBoldWord(word) ? "font-bold" : "font-normal"
-            } ${textSizeClass}  leading-[1.25] tracking-normal inline-block`}
-          >
-            {word}&nbsp;
+          <motion.span className="overflow-hidden inline-block">
+            <motion.span
+              key={index}
+              animate={{
+                opacity: 1,
+                y: "0%",
+              }}
+              initial={{
+                opacity: 0,
+                y: "55%",
+              }}
+              transition={{
+                delay: 0.005 * index,
+                duration: 1.15,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className={`${ppneuemontreal.className} ${textColor} ${
+                isBoldWord(word) ? "font-bold" : "font-normal"
+              } ${textSizeClass}  leading-[1.25] tracking-normal inline-block overflow-hidden`}
+            >
+              {word}&nbsp;
+            </motion.span>
           </motion.span>
         ))}
       </div>

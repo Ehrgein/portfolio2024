@@ -9,25 +9,56 @@ const WhiteNavbar = () => {
 
   return (
     <>
-      <motion.nav
-        className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-30  `}
-      >
-        <header
-          className={`${compacta.className} text-3xl  tracking-[-0.04em] text-[#161616]`}
+      <div className="overflow-hidden">
+        <nav
+          className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed mix-blend-difference top-0 right-0 z-30 text-[#f0f0f0]  `}
         >
-          ALEXIS
-        </header>
-        <ul
-          className={`${ppneuemontreal.className} tracking-wide font-medium flex justify-center items-center gap-12 text-lg text-[#161616]`}
-        >
-          <li
-            onClick={() => setIsExiting(true)}
-            className={`uppercase text-xl`}
+          <header
+            className={`${compacta.className} font-normal text-3xl tracking-[-0.04em] overflow-hidden`}
           >
-            <TransitionLink href="/1">Works</TransitionLink>
-          </li>
-        </ul>
-      </motion.nav>
+            <motion.h3
+              animate={{
+                opacity: 1,
+                y: "0%",
+              }}
+              initial={{
+                opacity: 0,
+                y: "60%",
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+            >
+              ALEXIS
+            </motion.h3>
+          </header>
+          <ul
+            className={`${ppneuemontreal.className} tracking-wide flex justify-center items-center gap-12 text-lg`}
+          >
+            <motion.li
+              animate={{
+                opacity: 1,
+                y: "0%",
+              }}
+              initial={{
+                opacity: 0,
+                y: "20%",
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              onClick={() => setIsExiting(true)}
+              className={`uppercase text-xl`}
+            >
+              <TransitionLink href="/1">Works</TransitionLink>
+            </motion.li>
+          </ul>
+        </nav>
+      </div>
       {/* <AnimatePresence>
         {isExiting && (
           <motion.div

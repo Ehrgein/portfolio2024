@@ -10,7 +10,7 @@ import VerticalCards from "./Components/ui/VerticalCards";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     // Make sure this code only runs on the client

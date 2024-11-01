@@ -8,7 +8,7 @@ const WhiteLanding = () => {
   const mainRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="bg-[#E1DFDF] min-h-screen flex px-4 py-2">
+    <div className="bg-[#E1DFDF] min-h-screen flex px-4 py-2 blend">
       <div className="w-full flex flex-col ">
         <WhiteNavbar />
         <main

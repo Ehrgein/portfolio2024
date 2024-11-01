@@ -11,7 +11,7 @@ type ImageRevealProps = {
 function ImageReveal({ src, alt }: ImageRevealProps) {
   return (
     <motion.div
-      className="h-[60svh] relative"
+      className="h-[500px] relative overflow-hidden"
       initial={{
         clipPath: "inset(100% 0% 0% 0%)",
       }}
@@ -20,7 +20,6 @@ function ImageReveal({ src, alt }: ImageRevealProps) {
         duration: 0.7,
         ease: [0.19, 1, 0.22, 1],
       }}
-      viewport={{ once: true, margin: "-300px" }}
     >
       <Image
         fill

@@ -1,9 +1,10 @@
 import React from "react";
 import ParagraphReveal from "./ParagraphReveal";
+import { compacta } from "@/app/helpers/fonts";
 
 function PresentationParagraph() {
   return (
-    <section className="px-40 pt-12 flex flex-col flex-grow items-center justify-center gap-1 w-full h-full">
+    <section className="px-40 pt-8 flex flex-col flex-grow items-center justify-center gap-1 w-full h-full">
       <div className="overflow-hidden">
         {/* <ParagraphReveal
           textSize={"text-[85px]"}
