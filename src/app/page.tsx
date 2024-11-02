@@ -6,7 +6,6 @@ import github from "./Assets/svgs/github-90.svg";
 import linkedin from "./Assets/svgs/linkedin-100.svg";
 import React from "react";
 import Lenis from "lenis";
-import VerticalCards from "./Components/ui/VerticalCards";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
 import HorizontalScroll from "./Components/ui/HorizontalScroll";
 

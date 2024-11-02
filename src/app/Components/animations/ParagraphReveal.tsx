@@ -49,7 +49,7 @@ function ParagraphReveal({
       <span className="sr-only">{textContent}</span>
       <div>
         {textContent.split(" ").map((word, index) => (
-          <motion.span className="overflow-hidden inline-block">
+          <motion.span key={index} className="overflow-hidden inline-block">
             <motion.span
               key={index}
               animate={{
