@@ -22,7 +22,7 @@ const barVariants = {
 
 const transitionVariants = {
   initial: { y: "100%" },
-  fill: { y: "0%" },
+  fill: { y: "0%", transition: { duration: 1, ease: [0.32, 0, 0.2, 1] } },
 };
 
 const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
@@ -74,7 +74,6 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
           initial="initial"
           animate="fill"
           variants={transitionVariants}
-          transition={{ duration: 1, ease: [0.32, 0, 0.2, 1] }}
           className="fixed bottom-0 left-0 w-full h-screen bg-[#E1DFDF]"
           onAnimationComplete={() => setIsLoading(!isLoading)}
         ></motion.div>
