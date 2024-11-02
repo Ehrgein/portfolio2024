@@ -3,6 +3,7 @@ import React from "react";
 import Lenis from "lenis";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import coccoil from "../Assets/cocooil.jpg";
 import restaurant from "../Assets/restaurant.jpg";
 import EnterAnimation from "../Components/transitions/EnterAnimation";
 import { ppneuemontreal, compacta } from "../helpers/fonts";
@@ -15,6 +16,7 @@ import ColorPalette from "../Components/ui/ColorPalette";
 import ImageReveal from "../Components/animations/ImageReveal";
 import { fontData } from "../Types/Types";
 import Challenge from "../Components/ui/Challenge";
+import FixedProject from "../Components/ui/FixedProject";
 
 const TypographyLato: fontData[] = [
   {
@@ -51,8 +53,8 @@ function Project() {
 
   return (
     <div className={`$${ppneuemontreal.className}`}>
-      <EnterAnimation />
-      <motion.div
+      {/* <EnterAnimation /> */}
+      {/* <motion.div
         className="w-full h-[100vh]" // Full height for initial mount
         animate={{ height: "80vh" }} // Move upwards by 100px
         transition={{
@@ -105,7 +107,9 @@ function Project() {
           />
           <ColorPalette />
         </div>
-      </div>
+      </div> */}
+      {/* here goes the fixedd left */}
+      <FixedProject />
     </div>
     // stop here
   );

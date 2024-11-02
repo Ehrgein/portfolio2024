@@ -60,12 +60,6 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
             </motion.p>
           </motion.div>
           <motion.div
-            style={{
-              width: "0%", // Start width at 0
-              height: "12px",
-              background: "#E1DFDF",
-              maxWidth: "488px",
-            }}
             className="w-[0%] h-3 bg-[#E1DFDF] max-w-[488px]"
             animate={barControls}
             onAnimationComplete={() => handleEndTransition()}
@@ -81,7 +75,7 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
         }}
         transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 2.9 }}
         className="fixed bottom-0 left-0 w-full h-screen bg-[#E1DFDF]"
-        onAnimationComplete={() => TransitionTopage()}
+        onAnimationComplete={() => setIsLoading(!isLoading)}
       ></motion.div>
     </div>
   );
