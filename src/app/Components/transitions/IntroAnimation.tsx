@@ -6,25 +6,33 @@ type loadingType = {
   setIsLoading: (value: boolean) => void;
 };
 
-const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
-  // Control for the bottom bar's linear progress
-  const barControls = useAnimation();
+const barVariants = {
+  initial: {
+    width: "0%",
+  },
+  fill: {
+    width: "100%",
+    transition: { duration: 1.5, ease: "easeInOut" },
+  },
+  slideOut: {
+    x: "100%",
+    transition: { duration: 0.8, delay: 0.6 },
+  },
+};
 
+const transitionVariants = {
+  initial: { y: "100%" },
+  fill: { y: "0%" },
+};
+
+const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
+  const barControls = useAnimation();
   const paragraphControls = useAnimation();
 
-  const hideControls = useAnimation();
-
-  React.useEffect(() => {
-    barControls.start({
-      width: "100%",
-      transition: { duration: 1.5, ease: "easeInOut" },
-    });
-  }, [barControls, hideControls]);
-
   const handleEndTransition = () => {
-    barControls.start({
-      x: "100%",
-      transition: { duration: 0.8, delay: 0.6 },
+    barControls.start("slideOut").then(() => {
+      setIsTransitioning(true);
     });
 
     paragraphControls.start({
@@ -32,19 +40,12 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
       opacity: 0,
       transition: { duration: 0.8, delay: 0.6 },
     });
-
-    {
-      /*     setTimeout(() => {
-      setIsLoading(!isLoading);
-    }, 2500); */
-    }
   };
 
-  const TransitionTopage = () => {
-    setTimeout(() => {
-      setIsLoading(!isLoading);
-    });
-  };
+  React.useEffect(() => {
+    barControls.set("initial");
+    barControls.start("fill");
+  }, [barControls]);
 
   return (
     <div className="bg-[#121212] flex flex-col items-center justify-center w-screen h-screen">
@@ -61,22 +62,23 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
           </motion.div>
           <motion.div
             className="w-[0%] h-3 bg-[#E1DFDF] max-w-[488px]"
+            initial="initial"
             animate={barControls}
+            variants={barVariants}
             onAnimationComplete={() => handleEndTransition()}
           />
         </div>
       </div>
-      <motion.div
-        initial={{
-          y: "100%",
-        }}
-        animate={{
-          y: "0%",
-        }}
-        transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 2.9 }}
-        className="fixed bottom-0 left-0 w-full h-screen bg-[#E1DFDF]"
-        onAnimationComplete={() => setIsLoading(!isLoading)}
-      ></motion.div>
+      {isTransitioning && (
+        <motion.div
+          initial="initial"
+          animate="fill"
+          variants={transitionVariants}
+          transition={{ duration: 1, ease: [0.32, 0, 0.2, 1] }}
+          className="fixed bottom-0 left-0 w-full h-screen bg-[#E1DFDF]"
+          onAnimationComplete={() => setIsLoading(!isLoading)}
+        ></motion.div>
+      )}
     </div>
   );
 };
