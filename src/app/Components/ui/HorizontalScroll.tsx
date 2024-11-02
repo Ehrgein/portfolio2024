@@ -1,10 +1,9 @@
 import React from "react";
-import curology from "../Assets/curology.jpg";
-import restaurant from "../Assets/restaurant.jpg";
-import atelier from "../Assets/atellier.jpg";
+import curology from "../../Assets/curology.jpg";
+import restaurant from "../../Assets/restaurant.jpg";
+import atelier from "../../Assets/atellier.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
 
@@ -25,6 +24,8 @@ const Card = ({ id, name, src, key, setIsExiting }: CardProps) => {
     <div className="w-full h-full relative pt-4 ">
       <motion.div
         key={key}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         onClick={() => setIsExiting(true)}
         className="group relative h-[595px] w-[950px] overflow-hidden"
       >
@@ -83,14 +84,30 @@ function HorizontalScroll({ isExiting, setIsExiting }: ExitType) {
 
   return (
     <>
-      <div
+      {/* <div
         className={`${ppneuemontreal.className} bg-[#161616] text-white text-8xl px-20 w-full pt-72`}
       >
         <p className="">SELECTED WORKS.</p>
-      </div>
-      <section ref={targetRef} className="relative h-[250vh] bg-[#161616]">
-        <div className="sticky top-0 flex h-[100vh] items-start overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-12">
+      </div> */}
+      <motion.section
+        initial={{
+          backgroundColor: "#E1DFDF",
+        }}
+        transition={{ ease: [0.32, 0, 0.2, 1], duration: 0.7 }}
+        whileInView={{ backgroundColor: "#161616" }}
+        viewport={{ margin: "-450px" }}
+        ref={targetRef}
+        className="relative h-[350vh] bg-[#161616]"
+      >
+        <div className="sticky top-0 flex h-[100vh] items-center overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: [0.32, 0, 0.2, 1], duration: 0.7 }}
+            style={{ x }}
+            viewport={{ margin: "-350px" }}
+            className="flex justify-center items-center gap-12"
+          >
             {projects.map(({ id, name, src }) => {
               return (
                 <Card
@@ -105,7 +122,7 @@ function HorizontalScroll({ isExiting, setIsExiting }: ExitType) {
             })}
           </motion.div>
         </div>
-      </section>
+      </motion.section>
       {isExiting && <ExitTransition />}
     </>
   );

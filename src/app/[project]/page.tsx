@@ -3,7 +3,6 @@ import React from "react";
 import Lenis from "lenis";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import coccoil from "../Assets/cocooil.jpg";
 import restaurant from "../Assets/restaurant.jpg";
 import EnterAnimation from "../Components/transitions/EnterAnimation";
 import { ppneuemontreal, compacta } from "../helpers/fonts";
@@ -16,7 +15,6 @@ import ColorPalette from "../Components/ui/ColorPalette";
 import ImageReveal from "../Components/animations/ImageReveal";
 import { fontData } from "../Types/Types";
 import Challenge from "../Components/ui/Challenge";
-import FixedProject from "../Components/ui/FixedProject";
 
 const TypographyLato: fontData[] = [
   {
@@ -53,8 +51,8 @@ function Project() {
 
   return (
     <div className={`$${ppneuemontreal.className}`}>
-      {/* <EnterAnimation /> */}
-      {/* <motion.div
+      <EnterAnimation />
+      <motion.div
         className="w-full h-[100vh]" // Full height for initial mount
         animate={{ height: "80vh" }} // Move upwards by 100px
         transition={{
@@ -87,13 +85,13 @@ function Project() {
             <Technologies />
           </div>
           <div className="grid grid-cols-2 gap-5 pt-12">
-            <ImageReveal src={red} alt="s" />
-            <ImageReveal src={orange} alt="s" />
+            <ImageReveal height="550px" src={red} alt="s" />
+            <ImageReveal height="550px" src={orange} alt="s" />
           </div>
           <Challenge />
           <div className="grid grid-cols-2 gap-5 pt-16">
-            <ImageReveal src={orange} alt="orange" />
-            <ImageReveal src={red} alt="orange" />
+            <ImageReveal height="550px" src={orange} alt="orange" />
+            <ImageReveal height="550px" src={red} alt="orange" />
           </div>
           <Typography
             mainParagraph="Lato was selected for this project due to its clean, modern feel,
@@ -107,9 +105,9 @@ function Project() {
           />
           <ColorPalette />
         </div>
-      </div> */}
+      </div>
       {/* here goes the fixedd left */}
-      <FixedProject />
+      {/* <FixedProject /> */}
     </div>
     // stop here
   );

@@ -8,9 +8,11 @@ import React from "react";
 import Lenis from "lenis";
 import VerticalCards from "./Components/ui/VerticalCards";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
+import HorizontalScroll from "./Components/ui/HorizontalScroll";
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
+  const [isExiting, setIsExiting] = React.useState(false);
 
   React.useEffect(() => {
     // Make sure this code only runs on the client
@@ -67,8 +69,8 @@ export default function Home() {
             >
               <p className="">SELECTED WORKS.</p>
             </div> */}
-          {/* <HorizontalScroll isExiting={isExiting} setIsExiting={setIsExiting} /> */}
-          <VerticalCards />
+          <HorizontalScroll isExiting={isExiting} setIsExiting={setIsExiting} />
+          {/* <VerticalCards /> */}
           <section className="h-screen bg-teal-300"></section>
           <footer className="bg-[#161616] text-white w-full justify-between px-12 pb-6 ">
             <div className="flex gap-2">
