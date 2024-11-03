@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useAnimate } from "framer-motion";
 
 type loadingType = {
   isLoading: boolean;
@@ -27,6 +27,8 @@ const transitionVariants = {
 
 const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
   const [isTransitioning, setIsTransitioning] = React.useState(false);
+  const [scope, animate] = useAnimate();
+
   const barControls = useAnimation();
   const paragraphControls = useAnimation();
 

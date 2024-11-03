@@ -7,10 +7,10 @@ import keepmoving from "../../Assets/svgs/keepmoving.svg";
 const EnterAnimation = () => {
   return (
     <motion.div
-      initial={{ y: 0 }} // Starting position above the viewport
-      animate={{ y: "-100vh" }} // Ending position at the top of the viewport
+      initial={{ y: 0 }}
+      animate={{ y: "-100vh" }}
       transition={{ duration: 1, ease: [0.32, 0, 0.2, 1], delay: 0.6 }}
-      className="inset-0 absolute bg-[#121212] z-9999999"
+      className="inset-0 absolute bg-[#121212] z-50"
     >
       <div className="w-full flex h-[100vh] justify-center items-center">
         <Image

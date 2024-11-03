@@ -94,7 +94,7 @@ export default function Home() {
         </>
       )}
 
-      <div className="noise-bg"></div>
+      {/* <div className="noise-bg"></div> */}
     </>
   );
 }
