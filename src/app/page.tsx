@@ -6,19 +6,13 @@ import IntroAnimation from "./Components/transitions/IntroAnimation";
 import WhiteNavbar from "./Components/layout/WhiteNavbar";
 import PresentationParagraph from "./Components/animations/PresentationParagraph";
 
-import {
-  useInView,
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValue,
-} from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 
 import SectionTwo from "./Components/ui/SectionTwo";
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [isExiting, setIsExiting] = React.useState(false);
+  // const [isExiting, setIsExiting] = React.useState(false);
   const [navBarColor, setNavBarColor] = React.useState("text-[#202020]");
 
   const opacity = useMotionValue(1);
