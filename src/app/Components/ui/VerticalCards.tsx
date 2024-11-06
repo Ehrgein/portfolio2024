@@ -31,24 +31,33 @@ const projects = [
 ];
 
 function VerticalCards() {
-
   //h2 causing responsive issues, doesnt matter.
 
+  const targetRef = React.useRef<HTMLDivElement>(null);
+
   return (
-    <section
-      className="bg-[#161616] h-auto px-24 pb-40
+    <motion.section
+      initial={{
+        backgroundColor: "#E1DFDF",
+      }}
+      transition={{ ease: [0.32, 0, 0.2, 1], duration: 0.7 }}
+      whileInView={{ backgroundColor: "#161616" }}
+      viewport={{ margin: "-300px" }}
+      ref={targetRef}
+      className="h-auto px-24 pb-40
     "
     >
-      <h2
-        className={`${ppneuemontreal.className} text-7xl font-medium text-white tracking-wider`}
-      >
+      <p className="pt-12 text-7xl text-center text-[#d9dfdf]">
         SELECTED WORKS.
-      </h2>
-      <div className="grid grid-cols-2 gap-6 pt-24">
+      </p>
+      <p className="text-lg text-center pt-2 text-[#d9dfdf]">
+        A list of projects I've made
+      </p>
+      <div className="grid grid-cols-2 gap-6 px-6 pt-12">
         {projects.map((project) => {
           return (
             <div key={project.id} className="overflow-hidden">
-              <motion.div className="group relative h-[650px] w-full overflow-hidden pb-6">
+              <motion.div className="group relative h-[650px] w-full overflow-hidden">
                 <Image
                   src={project.src}
                   alt=""
@@ -56,18 +65,18 @@ function VerticalCards() {
                 />
               </motion.div>
               <div
-                className={`text-white font-medium text-xl uppercase ${ppneuemontreal.className} tracking-wider flex items-center justify-between`}
+                className={`text-[#d9dfdf] font-medium text-xl uppercase ${ppneuemontreal.className} tracking-wider flex items-center justify-between pt-2`}
               >
                 <p> {project.name}</p>
                 <div>
-                  <span className="text-sm font-base text-[#adacac]">2023</span>
+                  <span className="text-sm font-base text-[#838383]">2023</span>
                 </div>
               </div>
             </div>
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

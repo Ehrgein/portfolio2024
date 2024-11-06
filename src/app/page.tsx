@@ -1,24 +1,56 @@
 "use client";
-import WhiteLanding from "./Pages/WhiteLanding";
-import Link from "next/link";
-import Image from "next/image";
-import github from "./Assets/svgs/github-90.svg";
-import linkedin from "./Assets/svgs/linkedin-100.svg";
+
 import React from "react";
 import Lenis from "lenis";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
-import HorizontalScroll from "./Components/ui/HorizontalScroll";
+import WhiteNavbar from "./Components/layout/WhiteNavbar";
+import PresentationParagraph from "./Components/animations/PresentationParagraph";
+
+import {
+  useInView,
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+} from "framer-motion";
+
+import SectionTwo from "./Components/ui/SectionTwo";
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [isExiting, setIsExiting] = React.useState(false);
+  const [navBarColor, setNavBarColor] = React.useState("text-[#202020]");
+
+  const opacity = useMotionValue(1);
+
+  const mainRef = React.useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const projectsectionRef = React.useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["start start", "end end"],
+  });
+
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   React.useEffect(() => {
-    // Make sure this code only runs on the client
+    if (!isLoading) {
+      const unsubscribeOpacityChange = opacityTransform.on(
+        "change",
+        (latestOpacity) => {
+          opacity.set(latestOpacity);
+        }
+      );
+
+      return () => unsubscribeOpacityChange();
+    }
+  }, [isLoading, opacityTransform]);
+
+  React.useEffect(() => {
+    // Run this line to avoid window not defined from the server
     if (typeof window !== "undefined") {
-      const lenis = new Lenis({
-        // Your configuration for Lenis
-      });
+      const lenis = new Lenis();
 
       // Start Lenis animation
       const raf = (time: number) => {
@@ -29,72 +61,87 @@ export default function Home() {
       requestAnimationFrame(raf);
     }
   }, []);
-  // React.useEffect(() => {
-  //   // Simulate a delay of 3 seconds
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 100);
 
-  //   console.log(timer);
+  React.useEffect(() => {
+    const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
+      console.log(progress);
+      if (progress > 0.44) {
+        // Adjust the threshold as needed
+        setNavBarColor("text-[#DFD9D9]"); // Black when past threshold
+      } else {
+        setNavBarColor("text-[#202020]"); // White otherwise
+      }
+    });
 
-  //   // Clear timeout if component is unmounted
-  //   return () => clearTimeout(timer);
-  // }, []);
-
-  // console.log(isLoading);
+    return () => unsubscribeScrollProg();
+  }, [scrollYProgress]);
 
   return (
     <>
       {isLoading ? (
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
-        <>
-          {/* <Landing /> */}
-          <WhiteLanding />
-          {/* <section className="px-52 h-[80svh] bg-[#161616] space-y-10">
-              <ParagraphReveal>
-                Hey there! I’m a frontend developer based in Buenos Aires,
-                passionate about bringing ideas into engaging, interactive
-                experiences.
-              </ParagraphReveal>
-              <ParagraphReveal>
-                I draw inspiration from various media, including videogames, film,
-                music, and art, to shape my creative process.
-              </ParagraphReveal>
-            </section> */}
-          {/* <Projects /> */}
-          {/* <div
-              className={`${ppneuemontreal.className} bg-[#161616] text-white bottom-0 text-8xl px-20`}
+        <main className="">
+          <div>
+            <motion.main
+              key="main-content"
+              ref={containerRef}
+              className={`h-[200vh] py-2 relative`}
             >
-              <p className="">SELECTED WORKS.</p>
-            </div> */}
-          <HorizontalScroll isExiting={isExiting} setIsExiting={setIsExiting} />
-          {/* <VerticalCards /> */}
-          <section className="h-screen bg-teal-300"></section>
-          <footer className="bg-[#161616] text-white w-full justify-between px-12 pb-6 ">
-            <div className="flex gap-2">
-              <Link
-                href="https://github.com/Ehrgein"
-                className={`flex gap-12  text-xl text-[#9CB0A3]`}
+              <WhiteNavbar navBarColor={navBarColor} />
+              <motion.div
+                style={{ opacity }}
+                ref={mainRef}
+                className={`sticky top-0 justify-center w-full flex flex-col flex-grow`}
               >
-                <Image alt="Github icon" src={github} className="h-auto w-8" />
-              </Link>
-              <span className={`flex gap-12  text-xl text-[#9CB0A3]`}>
-                <Image
-                  alt="LinkedIn Logo"
-                  src={linkedin}
-                  className="h-auto w-8"
-                />
-              </span>
-            </div>
-            <div className="flex justify-end items-end">
-              <p className={`flex gap-12 pr-4 text-xl text-[#9CB0A3]`}>ABOUT</p>
-            </div>
-          </footer>
-        </>
+                <section className="h-screen w-full flex flex-col px-4">
+                  <PresentationParagraph />
+                </section>
+              </motion.div>
+              <section
+                ref={projectsectionRef}
+                className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
+              >
+                <SectionTwo />
+              </section>
+              <section className="py-20 h-screen">
+                <p>hello!</p>
+              </section>
+            </motion.main>
+          </div>
+        </main>
       )}
-
-      {/* <div className="noise-bg"></div> */}
+      <div className="noise-bg"></div>
     </>
   );
 }
+
+//backup
+
+// <div>
+//   <motion.div
+//     animate={{ backgroundColor: isProjectSectionInView ? "#161616" : "#E1DFDF" }}
+//     transition={{ duration: 0.5, ease: "easeIn" }}
+//     className={` min-h-screen flex flex-col py-2 hello pb-64`}
+//   >
+//     <WhiteNavbar navBarColor={navBarColor} />
+//     <main
+//       ref={mainRef}
+//       className={` justify-center w-full flex flex-col flex-grow `}
+//     >
+//       <section className="min-h-screen w-full flex flex-col px-4 pb-60 pt-60">
+//         <PresentationParagraph />
+//       </section>
+//       <motion.section
+//         animate={{ backgroundColor: isProjectSectionInView ? "#161616" : "#E1DFDF" }}
+//         transition={{ duration: 0.5, ease: "easeIn" }}
+//         ref={projectsectionRef}
+//       >
+//         <HorizontalScroll
+//           isExiting={isExiting}
+//           setIsExiting={setIsExiting}
+//         />
+//       </motion.section>
+//     </main>
+//   </motion.div>
+// </div>

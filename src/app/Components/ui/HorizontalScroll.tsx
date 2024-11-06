@@ -84,28 +84,13 @@ function HorizontalScroll({ isExiting, setIsExiting }: ExitType) {
 
   return (
     <>
-      {/* <div
-        className={`${ppneuemontreal.className} bg-[#161616] text-white text-8xl px-20 w-full pt-72`}
-      >
-        <p className="">SELECTED WORKS.</p>
-      </div> */}
-      <motion.section
-        initial={{
-          backgroundColor: "#E1DFDF",
-        }}
-        transition={{ ease: [0.32, 0, 0.2, 1], duration: 0.7 }}
-        whileInView={{ backgroundColor: "#161616" }}
-        viewport={{ margin: "-450px" }}
-        ref={targetRef}
-        className="relative h-[350vh] bg-[#161616]"
-      >
+      <motion.section ref={targetRef} className="relative h-[350vh]  px-4">
         <div className="sticky top-0 flex h-[100vh] items-center overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: [0.32, 0, 0.2, 1], duration: 0.7 }}
             style={{ x }}
-            viewport={{ margin: "-350px" }}
             className="flex justify-center items-center gap-12"
           >
             {projects.map(({ id, name, src }) => {

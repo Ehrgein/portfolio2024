@@ -108,6 +108,7 @@ function Project() {
       </div>
       {/* here goes the fixedd left */}
       {/* <FixedProject /> */}
+      <div className="noise-bg"></div>
     </div>
     // stop here
   );

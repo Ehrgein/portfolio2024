@@ -14,7 +14,6 @@ const Landing = () => {
           ref={mainRef}
           className={` justify-center flex flex-col flex-grow`}
         >
-          {/* <Presentation /> */}
           <PresentationParagraph />
         </main>
       </div>

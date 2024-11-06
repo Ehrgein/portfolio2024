@@ -1,23 +1,10 @@
 import React from "react";
-import { motion, useAnimation, useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
+import { transform } from "next/dist/build/swc";
 
 type loadingType = {
   isLoading: boolean;
   setIsLoading: (value: boolean) => void;
-};
-
-const barVariants = {
-  initial: {
-    width: "0%",
-  },
-  fill: {
-    width: "100%",
-    transition: { duration: 1.5, ease: "easeInOut" },
-  },
-  slideOut: {
-    x: "100%",
-    transition: { duration: 0.8, delay: 0.6 },
-  },
 };
 
 const transitionVariants = {
@@ -29,46 +16,80 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
   const [isTransitioning, setIsTransitioning] = React.useState(false);
   const [scope, animate] = useAnimate();
 
-  const barControls = useAnimation();
-  const paragraphControls = useAnimation();
+  const exitParagraphAnim = async () => {
+    await animate(
+      ".load-para",
+      {
+        y: "-100%",
+        opacity: 0,
+      },
+      { duration: 0.8, delay: 0.6, ease: [0.32, 0, 0.2, 1] }
+    );
+  };
 
-  const handleEndTransition = () => {
-    barControls.start("slideOut").then(() => {
-      setIsTransitioning(true);
-    });
+  const startAnimation = async () => {
+    await animate(
+      ".loading-bar",
+      {
+        width: "100%",
+      },
+      {
+        duration: 2,
+        ease: [0.32, 0, 0.2, 1],
+        onComplete: () => exitParagraphAnim(),
+      }
+    );
 
-    paragraphControls.start({
-      y: "100%",
-      opacity: 0,
-      transition: { duration: 0.8, delay: 0.6 },
-    });
+    await animate(
+      ".loading-bar",
+      {
+        x: "100%",
+      },
+      {
+        duration: 0.8,
+        delay: 0.6,
+        ease: "easeOut",
+        onComplete: () => enterHomePagePanel(),
+      }
+    );
+  };
+
+  const finishtransitionforreal = async () => {
+    await animate(
+      ".transition-panel",
+      {
+        y: "0%",
+      },
+      {
+        duration: 4,
+      }
+    );
+  };
+
+  const enterHomePagePanel = async () => {
+    setIsTransitioning(true);
   };
 
   React.useEffect(() => {
-    barControls.set("initial");
-    barControls.start("fill");
-  }, [barControls]);
+    startAnimation();
+  }, [animate]);
 
   return (
-    <div className="bg-[#121212] flex flex-col items-center justify-center w-screen h-screen">
+    <div
+      ref={scope}
+      className="bg-[#161616] flex flex-col items-center justify-center w-screen h-screen"
+    >
       <div className={` flex flex-col max-w-96 w-full gap-1`}>
         <div className="overflow-hidden flex flex-col gap-[2px]">
-          <motion.div className="overflow-hidden">
-            <motion.p
-              animate={paragraphControls}
-              className="text-[#DCD8C0] tracking-[0.15em] text-base w-fit uppercase
+          <div className="overflow-hidden">
+            <p
+              className="text-[#DCD8C0] tracking-[0.15em] text-base w-fit uppercase load-para
         "
             >
               Loading
-            </motion.p>
-          </motion.div>
-          <motion.div
-            className="w-[0%] h-3 bg-[#E1DFDF] max-w-[488px]"
-            initial="initial"
-            animate={barControls}
-            variants={barVariants}
-            onAnimationComplete={() => handleEndTransition()}
-          />
+            </p>
+          </div>
+          <div className="loading-bar w-[0%] h-3 bg-[#E1DFDF] max-w-[488px]" />
         </div>
       </div>
       {isTransitioning && (
@@ -76,8 +97,8 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
           initial="initial"
           animate="fill"
           variants={transitionVariants}
-          className="fixed bottom-0 left-0 w-full h-screen bg-[#E1DFDF]"
           onAnimationComplete={() => setIsLoading(!isLoading)}
+          className="transition-panel fixed w-full h-screen bottom-0 left-0  bg-[#E1DFDF]"
         ></motion.div>
       )}
     </div>

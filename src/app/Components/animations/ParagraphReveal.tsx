@@ -18,7 +18,7 @@ type TailwindLeading =
   | "leading-loose";
 
 type ParagraphRevealProps = {
-  textSize?: TailwindTextSize | number;
+  textSize?: TailwindTextSize | number | string;
   textColor?: string;
   textContent: string;
   textUnit?: string;
