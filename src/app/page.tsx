@@ -58,7 +58,6 @@ export default function Home() {
 
   React.useEffect(() => {
     const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
-      console.log(progress);
       if (progress > 0.44) {
         // Adjust the threshold as needed
         setNavBarColor("text-[#DFD9D9]"); // Black when past threshold

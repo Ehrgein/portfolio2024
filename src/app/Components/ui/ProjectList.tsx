@@ -1,5 +1,4 @@
 import React from "react";
-import ParagraphReveal from "../animations/ParagraphReveal";
 import { motion, useInView } from "framer-motion";
 import SmallTextReveal from "../animations/SmallTextReveal";
 

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import WhiteNavbar from "../Components/layout/WhiteNavbar";
+
 import pinkcrlg from "../Assets/pinkcrlg.jpg";
 import Image from "next/image";
 import { TransitionLink } from "../helpers/TransitionLink";

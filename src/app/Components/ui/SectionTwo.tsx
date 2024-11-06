@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import pinkcrlg from "../../Assets/pinkcrlg.jpg";
-import { compacta } from "@/app/helpers/fonts";
-import { motion } from "framer-motion";
+// import Image from "next/image";
+// import pinkcrlg from "../../Assets/pinkcrlg.jpg";
+// import { compacta } from "@/app/helpers/fonts";
+// import { motion } from "framer-motion";
 import ProjectList from "./ProjectList";
 
 function SectionTwo() {

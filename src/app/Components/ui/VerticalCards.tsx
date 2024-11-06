@@ -51,7 +51,7 @@ function VerticalCards() {
         SELECTED WORKS.
       </p>
       <p className="text-lg text-center pt-2 text-[#d9dfdf]">
-        A list of projects I've made
+        A list of projects I have made
       </p>
       <div className="grid grid-cols-2 gap-6 px-6 pt-12">
         {projects.map((project) => {
