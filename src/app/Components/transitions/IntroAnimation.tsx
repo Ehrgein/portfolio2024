@@ -54,17 +54,17 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
     );
   };
 
-  const finishtransitionforreal = async () => {
-    await animate(
-      ".transition-panel",
-      {
-        y: "0%",
-      },
-      {
-        duration: 4,
-      }
-    );
-  };
+  // const finishtransitionforreal = async () => {
+  //   await animate(
+  //     ".transition-panel",
+  //     {
+  //       y: "0%",
+  //     },
+  //     {
+  //       duration: 4,
+  //     }
+  //   );
+  // };
 
   const enterHomePagePanel = async () => {
     setIsTransitioning(true);

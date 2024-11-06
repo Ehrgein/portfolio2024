@@ -1,6 +1,5 @@
 import React from "react";
 import ParagraphReveal from "./ParagraphReveal";
-import FooterWhite from "../layout/FooterWhite";
 
 function PresentationParagraph() {
   return (
