@@ -7,7 +7,7 @@ import { TransitionLink } from "../helpers/TransitionLink";
 
 import { motion } from "framer-motion";
 
-function page() {
+function Page() {
   const mainRef = React.useRef<HTMLDivElement>(null);
   const [showDescription, setShowDescription] = React.useState<boolean>();
 
