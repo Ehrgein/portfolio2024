@@ -79,36 +79,8 @@ const WhiteNavbar = ({ navBarColor }: { navBarColor: string }) => {
               <rect x="16" y="17" width="48" height="2" fill="currentColor" />
             </svg>
           </TransitionLink>
-          {/* <TransitionLink
-            href="/1
-          "
-          >
-            ABOUT
-          </TransitionLink>
-          <TransitionLink
-            href="/1
-          "
-          >
-            CONTACT
-          </TransitionLink> */}
         </motion.div>
       </nav>
-
-      {/* <AnimatePresence>
-        {isExiting && (
-          <motion.div
-            initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
-            exit={{ y: "-100%" }}
-            transition={{
-              duration: 1.0, // Reduce the duration further for quicker movement
-              ease: [0.5, 0, 0.3, 1], // Faster start and more acceleration
-              delay: 0.3,
-            }}
-            className="fixed bottom-0 left-0 w-full h-full bg-[#121212] z-50"
-          />
-        )}
-      </AnimatePresence> */}
       {isExiting && <ExitTransition />}
     </>
   );

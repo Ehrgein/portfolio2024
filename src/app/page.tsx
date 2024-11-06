@@ -74,7 +74,7 @@ export default function Home() {
       {isLoading ? (
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
-        <main className="">
+        <main className="hidden md:block">
           <div>
             <motion.main
               key="main-content"
@@ -105,36 +105,74 @@ export default function Home() {
         </main>
       )}
       <div className="noise-bg"></div>
+      <div className="md:hidden">
+        <main className="mb-[-100svh] overflow-x-clip">
+          <div>
+            <motion.main
+              key="main-content"
+              ref={containerRef}
+              className={`h-[200vh] py-2 relative`}
+            >
+              <WhiteNavbar navBarColor={navBarColor} />
+              <motion.div
+                style={{ opacity }}
+                ref={mainRef}
+                className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
+              >
+                <section className="w-full flex flex-col px-4">
+                  <PresentationParagraph />
+                </section>
+              </motion.div>
+              <section
+                ref={projectsectionRef}
+                className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
+              >
+                <SectionTwo />
+              </section>
+              <section className="py-20 h-screen">
+                <p>hello!</p>
+              </section>
+            </motion.main>
+          </div>
+        </main>
+      </div>
     </>
   );
 }
 
 //backup
 
-// <div>
-//   <motion.div
-//     animate={{ backgroundColor: isProjectSectionInView ? "#161616" : "#E1DFDF" }}
-//     transition={{ duration: 0.5, ease: "easeIn" }}
-//     className={` min-h-screen flex flex-col py-2 hello pb-64`}
-//   >
-//     <WhiteNavbar navBarColor={navBarColor} />
-//     <main
-//       ref={mainRef}
-//       className={` justify-center w-full flex flex-col flex-grow `}
-//     >
-//       <section className="min-h-screen w-full flex flex-col px-4 pb-60 pt-60">
-//         <PresentationParagraph />
-//       </section>
-//       <motion.section
-//         animate={{ backgroundColor: isProjectSectionInView ? "#161616" : "#E1DFDF" }}
-//         transition={{ duration: 0.5, ease: "easeIn" }}
-//         ref={projectsectionRef}
-//       >
-//         <HorizontalScroll
-//           isExiting={isExiting}
-//           setIsExiting={setIsExiting}
-//         />
-//       </motion.section>
-//     </main>
-//   </motion.div>
-// </div>
+{
+  /* mobile: 
+        <main className="mb-[-100svh] overflow-x-clip">
+          <div>
+            <motion.main
+              key="main-content"
+              ref={containerRef}
+              className={`h-[200vh] py-2 relative`}
+            >
+              <WhiteNavbar navBarColor={navBarColor} />
+              <motion.div
+              
+                style={{ opacity }}
+                ref={mainRef}
+                className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
+              >
+                <section className="w-full flex flex-col px-4">
+                  <PresentationParagraph />
+                </section>
+              </motion.div>
+              <section
+                ref={projectsectionRef}
+                className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
+              >
+                <SectionTwo />
+              </section>
+              <section className="py-20 h-screen">
+                <p>hello!</p>
+              </section>
+            </motion.main>
+          </div>
+        </main>
+*/
+}
