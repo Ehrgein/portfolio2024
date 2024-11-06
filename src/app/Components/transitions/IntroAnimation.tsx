@@ -1,6 +1,5 @@
 import React from "react";
 import { motion, useAnimate } from "framer-motion";
-import { transform } from "next/dist/build/swc";
 
 type loadingType = {
   isLoading: boolean;
