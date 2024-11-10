@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectsLayout from "./ProjectsLayout";
-import { useMotionValueEvent, useScroll } from "framer-motion";
 
 function ProjectsSection({
   projectSectionRef,

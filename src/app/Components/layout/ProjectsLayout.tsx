@@ -6,8 +6,6 @@ import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
 
 function ProjectsLayout() {
-  const arraytest = [1, 2, 3, 4];
-
   const projects = [
     {
       name: "Keep Moving",
@@ -70,7 +68,7 @@ function ProjectsLayout() {
               deployLink,
               caseStudy,
             }) => (
-              <article className="flex gap-12">
+              <article key={name} className="flex gap-12">
                 <figure className="w-[800px] h-[700px]">
                   <Image
                     className="w-full h-full object-cover"
@@ -98,12 +96,12 @@ function ProjectsLayout() {
                     <div className="flex gap-12">
                       <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
                         <button className="text-[#D1CEC6] text-lg">
-                          VIEW WEBSITE
+                          <a href={deployLink}>VIEW WEBSITE</a>
                         </button>
                       </div>
                       <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
                         <button className="text-[#D1CEC6] text-lg ">
-                          CASE STUDY
+                          <a href={caseStudy}> CASE STUDY</a>
                         </button>
                       </div>
                     </div>

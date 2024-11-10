@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  motion,
-  MotionValue,
-  useMotionTemplate,
-  useScroll,
-} from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";

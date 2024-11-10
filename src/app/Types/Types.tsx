@@ -1,5 +1,3 @@
-import CustomTagTextReveal from "../Components/animations/CustomTagTextReveal";
-
 export type NavColor = "#121212" | "#DCD8C0";
 
 export type fontData = {

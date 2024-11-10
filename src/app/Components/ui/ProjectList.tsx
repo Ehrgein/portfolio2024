@@ -50,7 +50,6 @@ function ProjectList() {
 
   const mobileProjectsRef = React.useRef<HTMLDivElement>(null);
   const isInView = useInView(projectsRef, { amount: 1 });
-  const isMobileInView = useInView(mobileProjectsRef, { amount: 1 });
 
   const [isWitnessed, setIsWitnessed] = React.useState<boolean>(false);
 
@@ -128,7 +127,10 @@ function MappedProjects({ isWitnessed }: { isWitnessed: boolean }) {
       <div className="hidden md:flex flex-col space-y-4">
         {projectList.map(({ title, tech, role, year }) => {
           return (
-            <div className="text-sm relative grid grid-cols-[1.5fr_1fr_1fr_0.5fr] w-full pt-6 text-[#C9C4C4] pb-10 items-center">
+            <div
+              key={title}
+              className="text-sm relative grid grid-cols-[1.5fr_1fr_1fr_0.5fr] w-full pt-6 text-[#C9C4C4] pb-10 items-center"
+            >
               <div className="text-7xl pl-6">{title}</div>
               <div className="text-lg">{tech}</div>
               <div className="text-lg">{role}</div>

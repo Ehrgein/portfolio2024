@@ -3,8 +3,6 @@
 import React from "react";
 import Lenis from "lenis";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
-
-import ProjectsSection from "./Components/layout/ProjectsSection";
 import HomePageContent from "./Pages/HomePageContent";
 
 export default function Home() {

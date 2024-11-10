@@ -1,7 +1,5 @@
 import React from "react";
-import ProjectListWithImages from "../ui/ProjectListWithImages";
 import AboutMe from "./AboutMe";
-import ProjectsLayout from "./ProjectsLayout";
 
 function AboutSection({
   aboutSectionRef,

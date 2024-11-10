@@ -1,9 +1,6 @@
 import React from "react";
-import { animate, delay, motion, useInView } from "framer-motion";
-import { CustomTagTextRevealType } from "@/app/Types/Types";
-
+import { motion } from "framer-motion";
 import { ppneuemontreal } from "@/app/helpers/fonts";
-import { element } from "three/webgpu";
 
 function CustomTagTextReveal({
   textContent,
@@ -20,26 +17,26 @@ function CustomTagTextReveal({
 }) {
   const elementRef = React.useRef<HTMLHeadingElement>(null);
 
-  const headerParentVariants = {
-    animate: {
-      transition: {
-        staggerChildren: 0.03,
-      },
-    },
-  };
+  // const headerParentVariants = {
+  //   animate: {
+  //     transition: {
+  //       staggerChildren: 0.03,
+  //     },
+  //   },
+  // };
 
-  const charVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 5,
-        ease: [0.25, 0.1, 0.25, 1],
-        staggerChildren: 4,
-        delay: 9,
-      },
-    },
-  };
+  // const charVariants = {
+  //   initial: { opacity: 0 },
+  //   animate: {
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 5,
+  //       ease: [0.25, 0.1, 0.25, 1],
+  //       staggerChildren: 4,
+  //       delay: 9,
+  //     },
+  //   },
+  // };
 
   return (
     <>

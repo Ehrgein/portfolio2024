@@ -3,13 +3,7 @@ import WhiteNavbar from "../Components/layout/WhiteNavbar";
 import IntroSection from "../Components/layout/IntroSection";
 import ProjectsSection from "../Components/layout/ProjectsSection";
 import AboutSection from "../Components/layout/AboutSection";
-import {
-  motion,
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
 function HomePageContent() {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -25,7 +19,7 @@ function HomePageContent() {
 
   const opacity = useTransform(scrollYProgress, [1, 0.4], [1, 0]);
 
-  const isMobile = window.innerWidth < 768; // Example, adjust as needed or use a library like react-responsive
+  // const isMobile = window.innerWidth < 768; // Example, adjust as needed or use a library like react-responsive
 
   return (
     <>

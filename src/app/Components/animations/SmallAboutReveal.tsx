@@ -1,5 +1,5 @@
 import React from "react";
-import { animate, motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { ppneuemontreal } from "@/app/helpers/fonts";
 
 function SmallAboutReveal({
@@ -7,17 +7,17 @@ function SmallAboutReveal({
   textSize,
 }: {
   textContent: string;
-  textSize: string;
+  textSize?: string;
 }) {
   const elementRef = React.useRef<HTMLHeadingElement>(null);
 
-  const headerParentVariants = {
-    animate: {
-      transition: {
-        staggerChildren: 2,
-      },
-    },
-  };
+  // const headerParentVariants = {
+  //   animate: {
+  //     transition: {
+  //       staggerChildren: 2,
+  //     },
+  //   },
+  // };
 
   return (
     <>

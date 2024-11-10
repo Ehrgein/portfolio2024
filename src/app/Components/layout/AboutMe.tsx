@@ -4,11 +4,6 @@ import SmallAboutReveal from "../animations/SmallAboutReveal";
 import { motion } from "framer-motion";
 
 function AboutMe() {
-  const textContent =
-    "Hey there! I’m a Frontend Developer passionate about developing intuitive, engaging experiences for the web.";
-
-  const elementRef = React.useRef<HTMLHeadingElement>(null);
-
   return (
     <>
       <motion.div className="pt-32 pb-12">
