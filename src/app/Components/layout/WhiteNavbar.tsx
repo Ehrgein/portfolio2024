@@ -1,18 +1,40 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, MotionValue, useMotionTemplate } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
 
-const WhiteNavbar = ({ navBarColor }: { navBarColor: string }) => {
+const WhiteNavbar = ({
+  navBarColor,
+  scrollYProgress,
+  isLoading,
+}: {
+  navBarColor: MotionValue<string>;
+  scrollYProgress: MotionValue<number>;
+  isLoading: boolean;
+}) => {
   const [isExiting, setIsExiting] = React.useState(false);
 
-  // COLOR FOR BLEND MODE
+  React.useEffect(() => {
+    if (!isLoading) {
+      const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
+        if (progress > 0.85 / 2) {
+          // Adjust the threshold as needed
+          navBarColor.set("#DFD9D9");
+        } else {
+          navBarColor.set("#202020");
+        }
+      });
+
+      return () => unsubscribeScrollProg();
+    }
+  }, [scrollYProgress, isLoading]);
 
   return (
     <>
-      <nav
-        className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-30 ${navBarColor}  `}
+      <motion.nav
+        style={{ color: navBarColor }}
+        className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-30`}
       >
         <header
           className={`${compacta.className} font-normal text-3xl tracking-[-0.04em] overflow-hidden`}
@@ -80,7 +102,7 @@ const WhiteNavbar = ({ navBarColor }: { navBarColor: string }) => {
             </svg>
           </TransitionLink>
         </motion.div>
-      </nav>
+      </motion.nav>
       {isExiting && <ExitTransition />}
     </>
   );

@@ -51,19 +51,18 @@ function CustomTagTextReveal({
             className="overflow-hidden  inline-block align-bottom"
           >
             <motion.span
-              ref={elementRef}
               key={index}
-              whileInView="animate"
-              viewport={{ root: elementRef, margin: "-500px 0px", once: true }}
               initial={{
-                y: "150%",
+                y: "100%",
               }}
-              animate={{
-                y: "0%",
-              }}
+              whileInView={{ y: "0" }}
+              viewport={{ root: elementRef, margin: "-100px 0px", once: true }}
+              // animate={{
+              //   y: "0%",
+              // }}
               transition={{
                 delay: delayIndex,
-                duration: 1.15,
+                duration: 1.2,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
               className={`${ppneuemontreal.className} ${textColor} "font-normal"

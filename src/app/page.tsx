@@ -8,16 +8,17 @@ import PresentationParagraph from "./Components/animations/PresentationParagraph
 
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 
-import SectionTwo from "./Components/ui/SectionTwo";
+import SectionTwo from "./Components/layout/SectionTwo";
+import SectionOne from "./Components/layout/SectionOne";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   // const [isExiting, setIsExiting] = React.useState(false);
-  const [navBarColor, setNavBarColor] = React.useState("text-[#202020]");
 
   const opacity = useMotionValue(1);
+  const navBarColor = useMotionValue("#202020");
 
-  const mainRef = React.useRef<HTMLDivElement>(null);
+  // const mainRef = React.useRef<HTMLDivElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const projectsectionRef = React.useRef<HTMLDivElement>(null);
 
@@ -42,11 +43,10 @@ export default function Home() {
   }, [isLoading, opacityTransform]);
 
   React.useEffect(() => {
-    // Run this line to avoid window not defined from the server
+    // Not rendering on the server
     if (typeof window !== "undefined") {
       const lenis = new Lenis();
 
-      // Start Lenis animation
       const raf = (time: number) => {
         lenis.raf(time);
         requestAnimationFrame(raf);
@@ -56,43 +56,34 @@ export default function Home() {
     }
   }, []);
 
-  React.useEffect(() => {
-    const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
-      console.log(progress);
-      if (progress > 0.8 / 2) {
-        // Adjust the threshold as needed
-        setNavBarColor("text-[#DFD9D9]"); // Black when past threshold
-      } else {
-        setNavBarColor("text-[#202020]"); // White otherwise
-      }
-    });
-
-    return () => unsubscribeScrollProg();
-  }, [scrollYProgress]);
-
   return (
     <>
       {isLoading ? (
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <>
-          <main className="hidden md:block">
+          <div className="hidden md:block">
             <div>
               <motion.main
                 key="main-content"
                 ref={containerRef}
                 className={`h-[200vh] py-2 relative`}
               >
-                <WhiteNavbar navBarColor={navBarColor} />
-                <motion.div
+                <WhiteNavbar
+                  isLoading={isLoading}
+                  scrollYProgress={scrollYProgress}
+                  navBarColor={navBarColor}
+                />
+                {/* <motion.div
                   style={{ opacity }}
-                  ref={mainRef}
+                  //   ref={mainRef}
                   className={`sticky top-0 justify-center w-full flex flex-col flex-grow`}
                 >
                   <section className="h-screen w-full flex flex-col px-4">
                     <PresentationParagraph />
                   </section>
-                </motion.div>
+                </motion.div> */}
+                <SectionOne opacity={opacity} />
                 <section
                   ref={projectsectionRef}
                   className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
@@ -104,7 +95,7 @@ export default function Home() {
                 </section>
               </motion.main>
             </div>
-          </main>
+          </div>
           <div className="noise-bg"></div>
           {/* mobile layout */}
           <div className="md:hidden">
@@ -115,16 +106,12 @@ export default function Home() {
                   ref={containerRef}
                   className={`h-[200vh] py-2 relative`}
                 >
-                  <WhiteNavbar navBarColor={navBarColor} />
-                  <motion.div
-                    style={{ opacity }}
-                    ref={mainRef}
-                    className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
-                  >
-                    <section className="w-full flex flex-col px-4">
-                      <PresentationParagraph />
-                    </section>
-                  </motion.div>
+                  <WhiteNavbar
+                    isLoading={isLoading}
+                    scrollYProgress={scrollYProgress}
+                    navBarColor={navBarColor}
+                  />
+                  <SectionOne opacity={opacity} />
                   <section
                     ref={projectsectionRef}
                     className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
@@ -147,36 +134,28 @@ export default function Home() {
 //backup
 
 {
-  /* mobile: 
-        <main className="mb-[-100svh] overflow-x-clip">
-          <div>
-            <motion.main
-              key="main-content"
-              ref={containerRef}
-              className={`h-[200vh] py-2 relative`}
-            >
-              <WhiteNavbar navBarColor={navBarColor} />
-              <motion.div
-              
-                style={{ opacity }}
-                ref={mainRef}
-                className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
-              >
-                <section className="w-full flex flex-col px-4">
-                  <PresentationParagraph />
-                </section>
-              </motion.div>
-              <section
-                ref={projectsectionRef}
-                className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
-              >
-                <SectionTwo />
-              </section>
-              <section className="py-20 h-screen">
-                <p>hello!</p>
-              </section>
-            </motion.main>
-          </div>
-        </main>
-*/
+  /* <motion.div
+                  style={{ opacity }}
+                  // ref={mainRef}
+                  className={`sticky top-0 justify-center w-full flex flex-col flex-grow`}
+                >
+                  <section className="h-screen w-full flex flex-col px-4">
+                    <PresentationParagraph />
+                  </section>
+                </motion.div> */
+}
+
+// old section one code
+
+// mobile
+{
+  /* <motion.div
+                    style={{ opacity }}
+                    // ref={mainRef}
+                    className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
+                  >
+                    <section className="w-full flex flex-col px-4">
+                      <PresentationParagraph />
+                    </section>
+                  </motion.div> */
 }
