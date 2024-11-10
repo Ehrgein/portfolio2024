@@ -11,7 +11,7 @@ import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import SectionTwo from "./Components/ui/SectionTwo";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
   // const [isExiting, setIsExiting] = React.useState(false);
   const [navBarColor, setNavBarColor] = React.useState("text-[#202020]");
 
@@ -22,11 +22,11 @@ export default function Home() {
   const projectsectionRef = React.useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: mainRef,
+    target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   React.useEffect(() => {
     if (!isLoading) {
@@ -58,7 +58,8 @@ export default function Home() {
 
   React.useEffect(() => {
     const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
-      if (progress > 0.44) {
+      console.log(progress);
+      if (progress > 0.8 / 2) {
         // Adjust the threshold as needed
         setNavBarColor("text-[#DFD9D9]"); // Black when past threshold
       } else {

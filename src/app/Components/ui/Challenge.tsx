@@ -1,5 +1,5 @@
 import React from "react";
-import ParagraphReveal from "../animations/ParagraphReveal";
+import ParagraphReveal from "../animations/IntroHeaderReveal";
 
 function Challenge() {
   return (

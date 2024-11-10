@@ -1,13 +1,9 @@
 import React from "react";
-// import Image from "next/image";
-// import pinkcrlg from "../../Assets/pinkcrlg.jpg";
-// import { compacta } from "@/app/helpers/fonts";
-// import { motion } from "framer-motion";
-import ProjectList from "./ProjectList";
+import ProjectListWithImages from "./ProjectListWithImages";
 
 function SectionTwo() {
   return (
-    <div className="text-[#DFD9D9]">
+    <div>
       {/* <h3 className="text-[2vw]">SELECTED WORKS.</h3>
       <div className="w-full relative h-full flex gap-[3vw] justify-center pt-20">
         <div className="absolute left-[-10%] top-[45%] h-[585px] w-[450px]">
@@ -35,7 +31,8 @@ function SectionTwo() {
           />
         </div>
       </div> */}
-      <ProjectList />
+      {/* <ProjectList /> */}
+      <ProjectListWithImages />
     </div>
   );
 }

@@ -17,7 +17,7 @@ type TailwindLeading =
   | "leading-normal"
   | "leading-loose";
 
-type ParagraphRevealProps = {
+type IntroHeaderRevealProps = {
   textSize?: TailwindTextSize | number | string;
   textColor?: string;
   textContent: string;
@@ -26,39 +26,28 @@ type ParagraphRevealProps = {
   leadingUnit?: number;
 };
 
-function ParagraphReveal({
+function IntroHeaderReveal({
   textContent,
   textSize,
   textColor,
   textUnit,
-}: ParagraphRevealProps) {
-  // const paraRef = useRef<HTMLDivElement>(null);
-
-  // const isInView = useInView(paraRef, { margin: "-20px 0px 0px 0px" });
-
+}: IntroHeaderRevealProps) {
   const textSizeClass =
     typeof textSize === "string" ? textSize : `text-[${textSize}${textUnit}]`;
-
-  // const leadingClass =
-  //   typeof leading === "string"
-  //     ? leading
-  //     : `leading-[${leading}${leadingUnit}]`;
 
   return (
     <>
       <span className="sr-only">{textContent}</span>
       <div>
         {textContent.split(" ").map((word, index) => (
-          <motion.span key={index} className="overflow-hidden inline-block">
+          <motion.span key={index} className="overflow-hidden  inline-block">
             <motion.span
               key={index}
               animate={{
-                opacity: 1,
                 y: "0%",
               }}
               initial={{
-                opacity: 0,
-                y: "55%",
+                y: "95%",
               }}
               transition={{
                 delay: 0.005 * index,
@@ -67,34 +56,15 @@ function ParagraphReveal({
               }}
               className={`${ppneuemontreal.className} ${textColor} ${
                 isBoldWord(word) ? "font-bold" : "font-normal"
-              } ${textSizeClass}  leading-[1.25] tracking-normal inline-block overflow-hidden`}
+              } ${textSizeClass} tracking-normal  leading-[1.25]   inline-block overflow-hidden`}
             >
               {word}&nbsp;
             </motion.span>
           </motion.span>
         ))}
       </div>
-      {/* <motion.p
-        ref={paraRef}
-        animate={{
-          opacity: isInView ? 1 : 0,
-          y: isInView ? 0 : "15%",
-        }}
-        initial={{
-          opacity: 0,
-          y: "10%",
-        }}
-        transition={{
-          delay: 0.1,
-          duration: 1,
-          ease: [0.25, 0.1, 0.25, 1],
-        }}
-        className={`${ppneuemontreal.className} ${textColor} font-normal ${textSizeClass}  leading-[1.25] tracking-normal`}
-      >
-        {textContent}
-      </motion.p> */}
     </>
   );
 }
 
-export default ParagraphReveal;
+export default IntroHeaderReveal;

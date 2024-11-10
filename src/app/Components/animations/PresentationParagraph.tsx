@@ -1,10 +1,10 @@
 import React from "react";
-import ParagraphReveal from "./ParagraphReveal";
+import IntroHeaderReveal from "./IntroHeaderReveal";
 
 function PresentationParagraph() {
   return (
     <section className="px-40 flex flex-col flex-grow items-center justify-center gap-1 w-full h-full pb-20">
-      <ParagraphReveal
+      <IntroHeaderReveal
         textSize={"desktop:text-[75px] 2xl:text-[60px]"}
         textColor="text-[#161616]"
         leading={"leading-loose"}
