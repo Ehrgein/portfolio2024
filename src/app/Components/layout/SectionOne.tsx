@@ -7,7 +7,6 @@ function SectionOne({ opacity }: { opacity: MotionValue<number> }) {
     <>
       <motion.div
         style={{ opacity }}
-        //   ref={mainRef}
         className={`sticky top-0 justify-center w-full flex flex-col flex-grow`}
       >
         <section className="h-screen w-full flex flex-col px-4">

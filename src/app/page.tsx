@@ -4,7 +4,6 @@ import React from "react";
 import Lenis from "lenis";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
 import WhiteNavbar from "./Components/layout/WhiteNavbar";
-import PresentationParagraph from "./Components/animations/PresentationParagraph";
 
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 
@@ -20,20 +19,21 @@ export default function Home() {
 
   // const mainRef = React.useRef<HTMLDivElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
-  const projectsectionRef = React.useRef<HTMLDivElement>(null);
+  const projectSectionRef = React.useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   React.useEffect(() => {
     if (!isLoading) {
       const unsubscribeOpacityChange = opacityTransform.on(
         "change",
         (latestOpacity) => {
+          console.log(scrollYProgress);
           opacity.set(latestOpacity);
         }
       );
@@ -84,12 +84,7 @@ export default function Home() {
                   </section>
                 </motion.div> */}
                 <SectionOne opacity={opacity} />
-                <section
-                  ref={projectsectionRef}
-                  className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
-                >
-                  <SectionTwo />
-                </section>
+                <SectionTwo projectSectionRef={projectSectionRef} />
                 <section className="py-20 h-screen">
                   <p>hello!</p>
                 </section>
@@ -112,12 +107,7 @@ export default function Home() {
                     navBarColor={navBarColor}
                   />
                   <SectionOne opacity={opacity} />
-                  <section
-                    ref={projectsectionRef}
-                    className="relative w-full bg-[#161616] px-32 pt-20 pb-32"
-                  >
-                    <SectionTwo />
-                  </section>
+                  <SectionTwo projectSectionRef={projectSectionRef} />
                   <section className="py-20 h-screen">
                     <p>hello!</p>
                   </section>
