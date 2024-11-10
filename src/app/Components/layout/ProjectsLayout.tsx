@@ -4,8 +4,16 @@ import restaurant from "../../Assets/restaurant.jpg";
 import redimage from "../../Assets/redimage.jpg";
 import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
+import { TransitionLink } from "@/app/helpers/TransitionLink";
+import ExitTransition from "../transitions/ExitTransition";
 
-function ProjectsLayout() {
+function ProjectsLayout({
+  isExiting,
+  setIsExiting,
+}: {
+  isExiting: boolean;
+  setIsExiting: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const projects = [
     {
       name: "Keep Moving",
@@ -71,7 +79,7 @@ function ProjectsLayout() {
               <article key={name} className="flex gap-12">
                 <figure className="w-[800px] h-[700px]">
                   <Image
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-[4px]"
                     src={projectImage}
                     alt={alt}
                   />
@@ -95,13 +103,23 @@ function ProjectsLayout() {
                     </aside>
                     <div className="flex gap-12">
                       <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
-                        <button className="text-[#D1CEC6] text-lg">
-                          <a href={deployLink}>VIEW WEBSITE</a>
+                        <button
+                          onClick={() => setIsExiting(true)}
+                          className="text-[#D1CEC6] text-lg"
+                        >
+                          <TransitionLink href={deployLink}>
+                            VIEW WEBSITE
+                          </TransitionLink>
                         </button>
                       </div>
                       <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
-                        <button className="text-[#D1CEC6] text-lg ">
-                          <a href={caseStudy}> CASE STUDY</a>
+                        <button
+                          onClick={() => setIsExiting(true)}
+                          className="text-[#D1CEC6] text-lg"
+                        >
+                          <TransitionLink href={caseStudy}>
+                            CASE STUDY
+                          </TransitionLink>
                         </button>
                       </div>
                     </div>
@@ -112,6 +130,7 @@ function ProjectsLayout() {
           )}
         </div>
       </div>
+      {isExiting && <ExitTransition />}
     </>
   );
 }
