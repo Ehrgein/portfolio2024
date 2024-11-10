@@ -1,8 +1,14 @@
 import React from "react";
-import { motion, MotionValue } from "framer-motion";
+import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
 import PresentationParagraph from "../animations/PresentationParagraph";
 
-function SectionOne({ opacity }: { opacity: MotionValue<number> }) {
+function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
+
+  
+  useMotionValueEvent(opacity, "change", () => {
+    console.log("hi,this is my opacity", opacity);
+  });
+
   return (
     <>
       <motion.div
@@ -17,4 +23,4 @@ function SectionOne({ opacity }: { opacity: MotionValue<number> }) {
   );
 }
 
-export default SectionOne;
+export default IntroSection;

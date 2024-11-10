@@ -16,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ppneuemontreal.className} antialiased`}>
         {children}
+        <div className="noise-bg"></div>
       </body>
     </html>
   );

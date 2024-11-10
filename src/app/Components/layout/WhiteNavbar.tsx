@@ -1,5 +1,10 @@
 import React from "react";
-import { motion, MotionValue, useMotionTemplate } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionTemplate,
+  useScroll,
+} from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
@@ -7,28 +12,24 @@ import ExitTransition from "../transitions/ExitTransition";
 const WhiteNavbar = ({
   navBarColor,
   scrollYProgress,
-  isLoading,
 }: {
   navBarColor: MotionValue<string>;
   scrollYProgress: MotionValue<number>;
-  isLoading: boolean;
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
 
   React.useEffect(() => {
-    if (!isLoading) {
-      const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
-        if (progress > 0.85 / 2) {
-          // Adjust the threshold as needed
-          navBarColor.set("#DFD9D9");
-        } else {
-          navBarColor.set("#202020");
-        }
-      });
+    const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
+      console.log(progress);
+      if (progress <= 0.06) {
+        navBarColor.set("#DFD9D9"); // Black when past threshold
+      } else {
+        navBarColor.set("#202020"); // White otherwise
+      }
+    });
 
-      return () => unsubscribeScrollProg();
-    }
-  }, [scrollYProgress, isLoading]);
+    return () => unsubscribeScrollProg();
+  }, [scrollYProgress]);
 
   return (
     <>
@@ -55,29 +56,6 @@ const WhiteNavbar = ({
             ALEXIS
           </motion.h3>
         </header>
-        {/* <ul
-          className={`${ppneuemontreal.className} tracking-wide flex justify-center items-center gap-12 text-lg`}
-        >
-          <motion.li
-            animate={{
-              opacity: 1,
-              y: "0%",
-            }}
-            initial={{
-              opacity: 0,
-              y: "20%",
-            }}
-            transition={{
-              delay: 0.2,
-              duration: 1.2,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
-            onClick={() => setIsExiting(true)}
-            className={`uppercase text-xl`}
-          >
-            <TransitionLink href="/1">Works</TransitionLink>
-          </motion.li>
-        </ul> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

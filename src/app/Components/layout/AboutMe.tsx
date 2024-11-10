@@ -4,6 +4,11 @@ import SmallAboutReveal from "../animations/SmallAboutReveal";
 import { motion } from "framer-motion";
 
 function AboutMe() {
+  const textContent =
+    "Hey there! I’m a Frontend Developer passionate about developing intuitive, engaging experiences for the web.";
+
+  const elementRef = React.useRef<HTMLHeadingElement>(null);
+
   return (
     <>
       <motion.div className="pt-32 pb-12">
@@ -13,7 +18,7 @@ function AboutMe() {
         <div className="w-full col-start-5 -col-end-1 tracking-wide">
           <CustomTagTextReveal
             delayIndex={0.2}
-            textSize={"desktop:text-[1.75vw]"}
+            textSize={"text-[1.75vw]"}
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}
             textContent="Hey there! I’m a Frontend Developer passionate about developing intuitive, engaging experiences for the web."
@@ -22,7 +27,7 @@ function AboutMe() {
         <div className="w-full col-start-5 -col-end-1 tracking-wide ">
           <CustomTagTextReveal
             delayIndex={0.3}
-            textSize={"desktop:text-[1.75vw]"}
+            textSize={"text-[1.75vw]"}
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}
             textContent="With an eye for detail and a passion for ux/ui, motion and 3D, I strive to create meaningful experiences that are not only accessible and easy to use, but that also captivate the user’s attention."
@@ -31,7 +36,7 @@ function AboutMe() {
         <div className="w-full col-start-5 -col-end-1 tracking-wide  ">
           <CustomTagTextReveal
             delayIndex={0.4}
-            textSize={"desktop:text-[1.75vw]"}
+            textSize={"text-[1.75vw]"}
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}
             textContent="In my free time, I enjoy different media such as video games, film, music, and art, which also shape my creativity in the process. I also love pretending that I’m good at cooking."
