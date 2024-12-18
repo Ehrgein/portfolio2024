@@ -3,14 +3,10 @@ import React from "react";
 import Lenis from "lenis";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
 import HomePageContent from "./Pages/HomePageContent";
-import dynamic from "next/dynamic";
-
-
 
 export default function Home() {
+
   const [isLoading, setIsLoading] = React.useState(true);
-
-
 
   React.useEffect(() => {
     // Not rendering on the server
