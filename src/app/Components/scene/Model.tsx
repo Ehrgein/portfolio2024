@@ -1,6 +1,5 @@
 import React from 'react'
 import {fragment, vertex} from './shader'
-import { useControls } from 'leva';
 import { ThreeEvent, useFrame} from '@react-three/fiber';
 import { Mesh } from 'three';
 import { ShaderMaterial } from 'three';
@@ -13,33 +12,21 @@ function Model() {
   const texture = useTexture("/images/restaurant.jpg");
   texture.needsUpdate = true;
   
-  
-
-  const [mouse, setMouse] = React.useState(new Vector2(0.5, 0.5));
-  const [prevMouse, setPrevMouse] = React.useState(new Vector2(0.5, 0.5));
-
   const easeFactor = React.useRef(0.02);
   const mouseRef = React.useRef(new Vector2(0.5, 0.5));
   const targetMouse = new Vector2(0.5, 0.5);
-  const mouseStopTimeout = React.useRef(null);
   const prevMouseRef = React.useRef(new Vector2(0.5, 0.5));
-  const lastMouseRef = React.useRef(new Vector2(0.5, 0.5));
 
 
-  const { amplitude, waveLength } = useControls({
-    uTime: {value: 0},
-    amplitude: { value: 0.25, min: 0, max: 5, step: 0.05},
-    waveLength: { value: 5, min: 0, max: 20, step: 1 },
-  });
+  // const { amplitude, waveLength } = useControls({
+  //   uTime: {value: 0},
+  //   amplitude: { value: 0.25, min: 0, max: 5, step: 0.05},
+  //   waveLength: { value: 5, min: 0, max: 20, step: 1 },
+  // });
 
   
 
   const uniforms = React.useRef({
-    
-    // uAmplitude: {value: amplitude},
-    // uWaveLength: {value:  waveLength},
-    // uTime: {value: 0},
-    // uTexture: {value: texture},
     u_texture: { value: texture },
     u_mouse: { value: new Vector2(0.5, 0.5) },
     u_prevMouse: { value: new Vector2(0.5, 0.5) },
