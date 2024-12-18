@@ -2,7 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-export function page() {
+export function LabImage() {
   
 const Scene = dynamic(()=> import('@/app/Components/scene/Scene'), {
   ssr:false,
@@ -16,4 +16,4 @@ const Scene = dynamic(()=> import('@/app/Components/scene/Scene'), {
   );
 }
 
-export default page;
+export default LabImage;
