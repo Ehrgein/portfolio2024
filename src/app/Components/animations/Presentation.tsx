@@ -35,8 +35,6 @@ function Presentation() {
           </p>
         </div>
       </motion.div>
-
-      {/* <ArrowBounce /> */}
     </section>
   );
 }

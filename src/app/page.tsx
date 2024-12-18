@@ -1,12 +1,19 @@
 "use client";
-
 import React from "react";
 import Lenis from "lenis";
 import IntroAnimation from "./Components/transitions/IntroAnimation";
 import HomePageContent from "./Pages/HomePageContent";
+import dynamic from "next/dynamic";
+
+
+const Scene = dynamic(()=> import('@/app/Components/scene/Scene'), {
+  ssr:false,
+})
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
+
+
 
   React.useEffect(() => {
     // Not rendering on the server
@@ -27,7 +34,9 @@ export default function Home() {
       {isLoading ? (
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
+        <>
         <HomePageContent />
+        </>
       )}
     </>
   );

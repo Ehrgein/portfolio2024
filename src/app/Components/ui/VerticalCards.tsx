@@ -31,8 +31,6 @@ const projects = [
 ];
 
 function VerticalCards() {
-  //h2 causing responsive issues, doesnt matter.
-
   const targetRef = React.useRef<HTMLDivElement>(null);
 
   return (
