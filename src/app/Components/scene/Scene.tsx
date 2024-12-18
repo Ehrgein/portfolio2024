@@ -4,8 +4,6 @@ import Model from './Model'
 
 function Scene() {
 
-
-
   return (
     
     <Canvas >
