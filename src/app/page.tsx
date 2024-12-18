@@ -6,9 +6,6 @@ import HomePageContent from "./Pages/HomePageContent";
 import dynamic from "next/dynamic";
 
 
-const Scene = dynamic(()=> import('@/app/Components/scene/Scene'), {
-  ssr:false,
-})
 
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);

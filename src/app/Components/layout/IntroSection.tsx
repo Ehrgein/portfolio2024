@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
+import { motion, MotionValue} from "framer-motion";
 import PresentationParagraph from "../animations/PresentationParagraph";
 
 function IntroSection({ opacity }: { opacity: MotionValue<number> }) {

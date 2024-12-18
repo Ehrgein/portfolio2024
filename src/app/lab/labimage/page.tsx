@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import Scene from "@/app/Components/scene/Scene";
-import { useControls } from "leva";
+import dynamic from "next/dynamic";
 
 export function page() {
   
+const Scene = dynamic(()=> import('@/app/Components/scene/Scene'), {
+  ssr:false,
+})
 
 
   return (

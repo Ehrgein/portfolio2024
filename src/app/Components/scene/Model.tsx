@@ -1,8 +1,9 @@
 import React from 'react'
 import {fragment, vertex} from './shader'
-import { ThreeEvent, useFrame, MeshProps} from '@react-three/fiber';
+import { ThreeEvent, useFrame} from '@react-three/fiber';
 import { Mesh } from 'three';
 import { useTexture } from '@react-three/drei';
+import { ShaderMaterial } from 'three';
 import { Vector2 } from 'three';
 
 function Model() {
@@ -81,7 +82,7 @@ function Model() {
 
 useFrame(() => {
   if (plane.current) {
-    const material = plane.current.material as any;
+    const material = plane.current.material as ShaderMaterial;
 
     if (material.uniforms) {
       mouseRef.current.x += (targetMouse.x - mouseRef.current.x) * easeFactor.current;
