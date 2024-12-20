@@ -38,6 +38,8 @@ function RevealBackgroundButton({
       });
   };
 
+  console.log(backgroundColor);
+
   return (
     <motion.div
       onMouseEnter={handleMouseEnter}
@@ -50,7 +52,11 @@ function RevealBackgroundButton({
       style={{ overflow: "hidden" }}
     >
       {/* Button Content */}
-      <motion.span className="relative z-10 " style={{ color: "inherit" }}>
+      <motion.span
+        onClick={handleSetIsExiting}
+        className="relative z-10 "
+        style={{ color: "inherit" }}
+      >
         {children}
       </motion.span>
       {/* Sliding Background */}

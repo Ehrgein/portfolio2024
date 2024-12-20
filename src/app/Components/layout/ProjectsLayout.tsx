@@ -6,7 +6,6 @@ import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
-import { motion } from "framer-motion";
 import RevealBackgroundButton from "../animations/RevealBackgroundButton";
 
 function ProjectsLayout({
