@@ -95,6 +95,10 @@ html.lenis body {
   }
 }
 
+.box-shadow {
+  box-shadow: inset 0px 0px 0px 1px #dfd9d9;
+}
+
 img {
   width: 100%;
   height: auto;

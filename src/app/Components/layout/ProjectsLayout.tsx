@@ -6,6 +6,8 @@ import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
+import { motion } from "framer-motion";
+import RevealBackgroundButton from "../animations/RevealBackgroundButton";
 
 function ProjectsLayout({
   isExiting,
@@ -62,6 +64,10 @@ function ProjectsLayout({
     },
   ];
 
+  const handleSetIsExiting = () => {
+    setIsExiting(true);
+  };
+
   return (
     <>
       <div className="text-[#D1CEC6] pb-12 font-medium">
@@ -112,16 +118,15 @@ function ProjectsLayout({
                           </TransitionLink>
                         </button>
                       </div>
-                      <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
-                        <button
-                          onClick={() => setIsExiting(true)}
-                          className="text-[#D1CEC6] text-lg"
-                        >
-                          <TransitionLink href={caseStudy}>
-                            CASE STUDY
-                          </TransitionLink>
-                        </button>
-                      </div>
+
+                      <RevealBackgroundButton
+                        backgroundColor="#5ffbc6"
+                        handleSetIsExiting={handleSetIsExiting}
+                      >
+                        <TransitionLink href={caseStudy}>
+                          CASE STUDY
+                        </TransitionLink>
+                      </RevealBackgroundButton>
                     </div>
                   </div>
                 </section>
