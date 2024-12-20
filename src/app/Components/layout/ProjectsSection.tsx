@@ -12,7 +12,7 @@ function ProjectsSection({
     <>
       <section
         ref={projectSectionRef}
-        className="relative  w-full bg-[#161616] px-32 pt-20 pb-32"
+        className="relative  w-full bg-[#161616] px-44 pt-20 pb-32"
       >
         <div>
           <div className="">

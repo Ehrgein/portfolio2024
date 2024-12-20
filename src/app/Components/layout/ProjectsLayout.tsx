@@ -71,7 +71,7 @@ function ProjectsLayout({
     <>
       <div className="text-[#D1CEC6] pb-12 font-medium">
         <h3 className="text-[7vw] ml-[-0.5vw] pb-20">SELECTED WORKS.</h3>
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-10">
           {projects.map(
             ({
               name,
@@ -82,23 +82,23 @@ function ProjectsLayout({
               caseStudy,
             }) => (
               <article key={name} className="flex gap-12">
-                <figure className="w-[800px] h-[700px]">
+                <figure className="w-[900px] h-[700px]">
                   <Image
                     className="w-full h-full object-cover rounded-[4px]"
                     src={projectImage}
                     alt={alt}
                   />
                 </figure>
-                <section className="text-[#fff7f7] flex flex-col gap-7">
-                  <h2 className="text-[4vw] font-medium leading-none">
+                <section className="text-[#fff7f7] flex max-w-[800px] flex-col">
+                  <h2 className="text-[4vw] font-medium leading-none pb-10">
                     {name}
                   </h2>
                   <p className="w-[55ch] text-[#A9A8A8] leading-[1.65] text-lg">
                     {description}
                   </p>
-                  <div className="w-full bg-[#FFFFFF] h-[1px]"></div>
+                  <div className="w-full bg-[#535151] h-[1px] my-9"></div>
                   <div className="flex items-center justify-between">
-                    <aside className="flex-col flex gap-1">
+                    <aside className="flex flex-col gap-1 text-sm">
                       <div>
                         <span className="uppercase">Development</span>
                       </div>
@@ -106,7 +106,7 @@ function ProjectsLayout({
                         <span className="uppercase">Design</span>
                       </div>
                     </aside>
-                    <div className="flex gap-12">
+                    <div className="flex gap-12 text-[15px]">
                       <RevealBackgroundButton
                         backgroundColor="#5ffbc6"
                         handleSetIsExiting={handleSetIsExiting}
