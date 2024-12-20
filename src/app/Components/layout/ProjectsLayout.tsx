@@ -107,17 +107,14 @@ function ProjectsLayout({
                       </div>
                     </aside>
                     <div className="flex gap-12">
-                      <div className="px-8 py-2 rounded-full border-[#85817D] border-2">
-                        <button
-                          onClick={() => setIsExiting(true)}
-                          className="text-[#D1CEC6] text-lg"
-                        >
-                          <TransitionLink href={deployLink}>
-                            VIEW WEBSITE
-                          </TransitionLink>
-                        </button>
-                      </div>
-
+                      <RevealBackgroundButton
+                        backgroundColor="#5ffbc6"
+                        handleSetIsExiting={handleSetIsExiting}
+                      >
+                        <TransitionLink href={deployLink}>
+                          VIEW WEBSITE
+                        </TransitionLink>
+                      </RevealBackgroundButton>
                       <RevealBackgroundButton
                         backgroundColor="#5ffbc6"
                         handleSetIsExiting={handleSetIsExiting}

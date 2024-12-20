@@ -19,7 +19,6 @@ function RevealBackgroundButton({
   const handleMouseEnter = () => {
     controls.start({
       y: "-100%",
-      width: "100%",
       transition: { ease: "easeInOut", duration: 0.5 },
     });
   };
@@ -62,7 +61,7 @@ function RevealBackgroundButton({
       {/* Sliding Background */}
       <motion.div
         animate={controls}
-        initial={{ y: "-15%" }}
+        initial={{ y: "100%" }}
         className="w-[150%] h-[100%] px-8 py-2 bg-[#DFD9D9] absolute rounded-full top-[100%] z-0"
       ></motion.div>
     </motion.div>
