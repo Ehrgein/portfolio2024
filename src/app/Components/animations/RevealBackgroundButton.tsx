@@ -37,8 +37,6 @@ function RevealBackgroundButton({
       });
   };
 
-  console.log(backgroundColor);
-
   return (
     <motion.div
       onMouseEnter={handleMouseEnter}
