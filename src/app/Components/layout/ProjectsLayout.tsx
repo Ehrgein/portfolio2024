@@ -2,7 +2,7 @@ import React from "react";
 import pinkcurology from "../../Assets/pinkcrlg.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
 import redimage from "../../Assets/redimage.jpg";
-// import Image from "next/image";
+import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
@@ -76,20 +76,19 @@ function ProjectsLayout({
           {projects.map(
             ({
               name,
-              // projectImage,
-              // alt,
+              projectImage,
+              alt,
               description,
               deployLink,
               caseStudy,
             }) => (
               <article key={name} className="flex gap-12">
                 <figure className="w-[900px] h-[700px]">
-                  {/* <Image
+                  <Image
                     className="w-full h-full object-cover rounded-[4px]"
                     src={projectImage}
                     alt={alt}
-                  /> */}
-                  <Scene />
+                  />
                 </figure>
                 <section className="text-[#fff7f7] flex max-w-[800px] flex-col">
                   <h2 className="text-[4vw] font-medium leading-none pb-10">
