@@ -2,7 +2,7 @@ import React from "react";
 import pinkcurology from "../../Assets/pinkcrlg.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
 import redimage from "../../Assets/redimage.jpg";
-import Image from "next/image";
+// import Image from "next/image";
 import atellier from "../../Assets/atellier.jpg";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
@@ -76,8 +76,8 @@ function ProjectsLayout({
           {projects.map(
             ({
               name,
-              projectImage,
-              alt,
+              // projectImage,
+              // alt,
               description,
               deployLink,
               caseStudy,
