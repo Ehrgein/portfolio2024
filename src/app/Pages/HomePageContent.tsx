@@ -5,6 +5,36 @@ import ProjectsSection from "../Components/layout/ProjectsSection";
 import AboutSection from "../Components/layout/AboutSection";
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
+const Nav = () => {
+  return (
+    <div className="flex shrink-0 gap-20">
+      <div className="flex flex-col gap-2">
+        <h3 className="mb-2 uppercase text-[#ffffff80]">About</h3>
+        <p>Home</p>
+        <p>Projects</p>
+        <p>Our Mission</p>
+        <p>Contact Us</p>
+      </div>
+      <div className="flex flex-col gap-2">
+        <h3 className="mb-2 uppercase text-[#ffffff80]">Education</h3>
+        <p>News</p>
+        <p>Learn</p>
+        <p>Certification</p>
+        <p>Publications</p>
+      </div>
+    </div>
+  );
+};
+
+const Section2 = () => {
+  return (
+    <div className="flex justify-between items-end">
+      <h1 className="text-[14vw] leading-[0.8] mt-10">Sticky Footer</h1>
+      <p>©copyright</p>
+    </div>
+  );
+};
+
 function HomePageContent() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
@@ -46,20 +76,31 @@ function HomePageContent() {
         </main>
       </div>
       {/*desktop */}
-      <div className="hidden md:block">
+      <div className="hidden md:block relative z-1">
         <div>
           <WhiteNavbar
             navBarColor={navBarColor}
             scrollYProgress={scrollYProgress}
           />
-          <motion.main className={`h-[200vh] py-2 relative`}>
+          {/*  main used to have a h-[200vh] h-[200vh] and a z-1 */}
+          <motion.main className={`py-2 relative  z-[99999]`}>
             <IntroSection opacity={opacity} />
             <AboutSection aboutSectionRef={aboutSectionRef} />
             <ProjectsSection projectSectionRef={projectSectionRef} />
-            <section className="py-20 h-screen">
-              <p>hello!</p>
-            </section>
           </motion.main>
+          <div
+            className="relative h-[800px]"
+            style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
+          >
+            <div className="relative h-[calc(100vh+800px)] -top-[100vh]">
+              <div className="h-[800px] sticky top-[calc(100vh-800px)]">
+                <div>
+                  <Nav />
+                </div>
+                <Section2 />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -1,22 +1,20 @@
-import React from 'react'
-import {fragment, vertex} from './shader'
-import { ThreeEvent, useFrame} from '@react-three/fiber';
-import { Mesh } from 'three';
-import { useTexture } from '@react-three/drei';
-import { ShaderMaterial } from 'three';
-import { Vector2 } from 'three';
+import React from "react";
+import { fragment, vertex } from "./shader";
+import { ThreeEvent, useFrame } from "@react-three/fiber";
+import { Mesh } from "three";
+import { useTexture } from "@react-three/drei";
+import { ShaderMaterial } from "three";
+import { Vector2 } from "three";
 
 function Model() {
-
-  const plane = React.useRef<Mesh>(null!)
+  const plane = React.useRef<Mesh>(null!);
   const texture = useTexture("/images/restaurant.jpg");
   texture.needsUpdate = true;
-  
+
   const easeFactor = React.useRef(0.02);
   const mouseRef = React.useRef(new Vector2(0.5, 0.5));
   const targetMouse = new Vector2(0.5, 0.5);
   const prevMouseRef = React.useRef(new Vector2(0.5, 0.5));
-
 
   // const { amplitude, waveLength } = useControls({
   //   uTime: {value: 0},
@@ -24,15 +22,12 @@ function Model() {
   //   waveLength: { value: 5, min: 0, max: 20, step: 1 },
   // });
 
-  
-
   const uniforms = React.useRef({
     u_texture: { value: texture },
     u_mouse: { value: new Vector2(0.5, 0.5) },
     u_prevMouse: { value: new Vector2(0.5, 0.5) },
     u_aberrationIntensity: { value: 0.0 }, // Initialize to 0.0
-  })
-
+  });
 
   // useFrame(() => {
 
@@ -46,20 +41,21 @@ function Model() {
   const isFirstMove = React.useRef(true); // Tracks the first mouse movement
 
   const handleMouseMove = (e: ThreeEvent<PointerEvent>) => {
-    console.log(e)
+    console.log(e);
     if (e.uv) {
       // On the first move, force immediate synchronization of all positions
-      if (isFirstMove.current) {``
+      if (isFirstMove.current) {
+        ``;
         mouseRef.current.set(e.uv.x, e.uv.y);
         prevMouseRef.current.set(e.uv.x, e.uv.y);
         targetMouse.set(e.uv.x, e.uv.y);
         isFirstMove.current = false; // Mark as initialized
       }
-  
+
       // Update previous and target mouse positions
       prevMouseRef.current.copy(targetMouse);
       targetMouse.set(e.uv.x, e.uv.y);
-  
+
       uniforms.current.u_aberrationIntensity.value = 0.3; // Reset distortion intensity
     }
   };
@@ -80,43 +76,45 @@ function Model() {
     uniforms.current.u_aberrationIntensity.value = 0.0; // Optional: fade effect
   };
 
-useFrame(() => {
-  if (plane.current) {
-    const material = plane.current.material as ShaderMaterial;
+  useFrame(() => {
+    if (plane.current) {
+      const material = plane.current.material as ShaderMaterial;
 
-    if (material.uniforms) {
-      mouseRef.current.x += (targetMouse.x - mouseRef.current.x) * easeFactor.current;
-      mouseRef.current.y += (targetMouse.y - mouseRef.current.y) * easeFactor.current;
+      if (material.uniforms) {
+        mouseRef.current.x +=
+          (targetMouse.x - mouseRef.current.x) * easeFactor.current;
+        mouseRef.current.y +=
+          (targetMouse.y - mouseRef.current.y) * easeFactor.current;
 
-      material.uniforms.u_mouse.value.copy(mouseRef.current);
-      material.uniforms.u_prevMouse.value.copy(prevMouseRef.current);
+        material.uniforms.u_mouse.value.copy(mouseRef.current);
+        material.uniforms.u_prevMouse.value.copy(prevMouseRef.current);
 
-      material.uniforms.u_aberrationIntensity.value = Math.max(
-        0.0,
-        material.uniforms.u_aberrationIntensity.value - 0.05
-      );
+        material.uniforms.u_aberrationIntensity.value = Math.max(
+          0.0,
+          material.uniforms.u_aberrationIntensity.value - 0.05
+        );
+      }
     }
-  }
-});
-
+  });
 
   return (
-
-    <mesh ref={plane}      
-    scale={[2, 2, 1]}
-    onPointerMove={handleMouseMove} 
-    onPointerLeave={handleMouseLeave}
-    onPointerEnter={handleMouseEnter}
+    <mesh
+      ref={plane}
+      scale={[2, 2, 1]}
+      onPointerMove={handleMouseMove}
+      onPointerLeave={handleMouseLeave}
+      onPointerEnter={handleMouseEnter}
     >
-        <planeGeometry args={[3, 3, 64, 64]}/>
-        {/* <meshBasicMaterial color={"red"} wireframe={true}/> */}
-        <shaderMaterial 
+      <planeGeometry args={[3, 3, 64, 64]} />
+      {/* <meshBasicMaterial color={"red"} wireframe={true}/> */}
+      <shaderMaterial
         // wireframe={true}
         uniforms={uniforms.current}
-        vertexShader={vertex} fragmentShader={fragment} >
-        </shaderMaterial>
-        </mesh>
-  )
+        vertexShader={vertex}
+        fragmentShader={fragment}
+      ></shaderMaterial>
+    </mesh>
+  );
 }
 
-export default Model
+export default Model;

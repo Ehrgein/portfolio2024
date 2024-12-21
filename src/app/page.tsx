@@ -5,7 +5,6 @@ import IntroAnimation from "./Components/transitions/IntroAnimation";
 import HomePageContent from "./Pages/HomePageContent";
 
 export default function Home() {
-
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -28,7 +27,7 @@ export default function Home() {
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <>
-        <HomePageContent />
+          <HomePageContent />
         </>
       )}
     </>
