@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { smootherstep } from "three/src/math/MathUtils.js";
 
 const scaleVariant = {
   enter: {
@@ -37,14 +39,19 @@ const slidingArrowVariant = {
 function BackToTopReusable() {
   const [isHovered, setIsHovered] = React.useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={scrollToTop}
       initial={{ scale: 1 }}
       variants={scaleVariant}
       animate={isHovered ? "enter" : "exit"}
-      className="absolute overflow-hidden right-0 rounded-full w-20 h-20 bg-[#323232]"
+      className="absolute cursor-pointer overflow-hidden right-0 rounded-full w-20 h-20 bg-[#323232]"
     >
       <motion.aside
         variants={arrowVariants}
