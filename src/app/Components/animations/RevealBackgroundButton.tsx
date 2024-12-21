@@ -4,14 +4,13 @@ import { useAnimation } from "framer-motion";
 
 type RevealBackgroundTypes = {
   children: React.ReactNode;
-  backgroundColor: string;
   handleSetIsExiting: () => void;
 };
 
 function RevealBackgroundButton({
   children,
   handleSetIsExiting,
-  backgroundColor = "#DFD999",
+
   ...delegated
 }: RevealBackgroundTypes) {
   const controls = useAnimation();

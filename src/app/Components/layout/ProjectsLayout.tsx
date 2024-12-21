@@ -108,7 +108,6 @@ function ProjectsLayout({
                     </aside>
                     <div className="flex gap-12 text-[15px]">
                       <RevealBackgroundButton
-                        backgroundColor="#5ffbc6"
                         handleSetIsExiting={handleSetIsExiting}
                       >
                         <TransitionLink href={deployLink}>
@@ -116,7 +115,6 @@ function ProjectsLayout({
                         </TransitionLink>
                       </RevealBackgroundButton>
                       <RevealBackgroundButton
-                        backgroundColor="#5ffbc6"
                         handleSetIsExiting={handleSetIsExiting}
                       >
                         <TransitionLink href={caseStudy}>
