@@ -63,6 +63,8 @@ const WhiteNavbar = ({
           "
           >
             <svg
+              aria-label="Opens hamburger menu"
+              role="button"
               width="64"
               height="32"
               viewBox="0 0 40 24"
