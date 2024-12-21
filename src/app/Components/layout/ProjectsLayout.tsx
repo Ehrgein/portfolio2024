@@ -7,7 +7,6 @@ import atellier from "../../Assets/atellier.jpg";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
 import RevealBackgroundButton from "../animations/RevealBackgroundButton";
-import Scene from "../scene/Scene";
 
 function ProjectsLayout({
   isExiting,
