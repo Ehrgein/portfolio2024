@@ -3,28 +3,51 @@ import { motion, MotionValue } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
+import { isBot } from "next/dist/server/web/spec-extension/user-agent";
 
 const WhiteNavbar = ({
   navBarColor,
-  scrollYProgress,
+  aboutScrollProgress,
+  isFooterInView,
+  progress,
+  setProgress,
 }: {
   navBarColor: MotionValue<string>;
-  scrollYProgress: MotionValue<number>;
+  progress: number;
+  setProgress: (value: number) => void;
+  aboutScrollProgress: MotionValue<number>;
+  isFooterInView: boolean;
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
 
   React.useEffect(() => {
-    const unsubscribeScrollProg = scrollYProgress.on("change", (progress) => {
-      console.log(progress);
-      if (progress <= 0.06) {
-        navBarColor.set("#DFD9D9"); // Black when past threshold
-      } else {
-        navBarColor.set("#202020"); // White otherwise
+    if (isFooterInView) {
+      navBarColor.set("#202020");
+      console.log("color has been changed to blak for the footer");
+      setProgress(1);
+    } else if (!isFooterInView && progress === 1) {
+      navBarColor.set("#DFD9D9");
+      console.log("color has been reverted to white FROM the footer");
+    }
+  }, [isFooterInView]);
+
+  React.useEffect(() => {
+    const unsubscribeScrollProg = aboutScrollProgress.on(
+      "change",
+      (progress) => {
+        console.log(progress);
+        if (progress > 0) {
+          console.log("changing color to green");
+          navBarColor.set("#DFD9D9"); // Green for About/Projects
+        } else {
+          console.log("changing color to black");
+          navBarColor.set("#202020"); // Black for other areas
+        }
       }
-    });
+    );
 
     return () => unsubscribeScrollProg();
-  }, [scrollYProgress]);
+  }, [aboutScrollProgress, isFooterInView]);
 
   return (
     <>

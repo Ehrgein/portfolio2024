@@ -70,7 +70,9 @@ function ProjectsLayout({
   return (
     <>
       <div className="text-[#D1CEC6] pb-12 font-medium">
-        <h3 className="text-[7vw] ml-[-0.5vw] pb-20">SELECTED WORKS.</h3>
+        <h3 className="desktop:text-[7vw] 2x xl:text-[6vw] lg:text-[5vw] ml-[-0.5vw] pb-20">
+          SELECTED WORKS.
+        </h3>
         <div className="flex flex-col gap-10">
           {projects.map(
             ({
@@ -81,24 +83,47 @@ function ProjectsLayout({
               deployLink,
               caseStudy,
             }) => (
-              <article key={name} className="flex gap-12">
-                <figure className="w-[900px] h-[700px]">
+              <article
+                key={name}
+                className="flex xl:flex-nowrap md:flex-wrap gap-12"
+              >
+                <figure
+                  className="aspect-video 
+                  desktop:w-[900px] 
+                  xl:h-[700px] xl:w-[650px] 
+                  lg:w-full md:w-[450px] relative"
+                >
                   <Image
                     className="w-full h-full object-cover rounded-[4px]"
                     src={projectImage}
                     alt={alt}
+                    fill
+                    // sizes="
+                    // (max-width: 1200px) 600px,
+                    // (max-width: 1440px) 600px,
+                    //  "
                   />
                 </figure>
-                <section className="text-[#fff7f7] flex max-w-[800px] flex-col">
-                  <h2 className="text-[4vw] font-medium leading-none pb-10">
+                <section className="text-[#fff7f7] flex flex-col">
+                  <h2
+                    className="desktop:text-[4vw] xl:text-[4.5vw] font-medium leading-none 
+                  desktop:pb-10 xl:pb-8"
+                  >
                     {name}
                   </h2>
-                  <p className="w-[55ch] text-[#A9A8A8] leading-[1.65] text-lg">
+                  <p
+                    className="w-full text-[#A9A8A8] leading-[1.65] 
+                  tracking-wide
+                  desktop:text-xl xl:text-base text-pretty"
+                  >
                     {description}
                   </p>
-                  <div className="w-full bg-[#535151] h-[1px] my-9"></div>
+                  <div
+                    className="w-full bg-[#535151] h-[1px] 
+                  desktop:my-9 xl:my-7"
+                  ></div>
                   <div className="flex items-center justify-between">
-                    <aside className="flex flex-col gap-1 text-sm">
+                    <aside className="flex flex-col gap-1 text-sm xl:hidden">
                       <div>
                         <span className="uppercase">Development</span>
                       </div>
@@ -106,7 +131,7 @@ function ProjectsLayout({
                         <span className="uppercase">Design</span>
                       </div>
                     </aside>
-                    <div className="flex gap-12 text-[15px]">
+                    <div className="flex gap-12 desktop:text-[15px] xl:text-base">
                       <RevealBackgroundButton
                         handleSetIsExiting={handleSetIsExiting}
                       >

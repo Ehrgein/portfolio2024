@@ -17,27 +17,6 @@ function CustomTagTextReveal({
 }) {
   const elementRef = React.useRef<HTMLHeadingElement>(null);
 
-  // const headerParentVariants = {
-  //   animate: {
-  //     transition: {
-  //       staggerChildren: 0.03,
-  //     },
-  //   },
-  // };
-
-  // const charVariants = {
-  //   initial: { opacity: 0 },
-  //   animate: {
-  //     opacity: 1,
-  //     transition: {
-  //       duration: 5,
-  //       ease: [0.25, 0.1, 0.25, 1],
-  //       staggerChildren: 4,
-  //       delay: 9,
-  //     },
-  //   },
-  // };
-
   return (
     <>
       <span className="sr-only">{textContent}</span>
@@ -54,9 +33,6 @@ function CustomTagTextReveal({
               }}
               whileInView={{ y: "0" }}
               viewport={{ root: elementRef, margin: "-100px 0px", once: true }}
-              // animate={{
-              //   y: "0%",
-              // }}
               transition={{
                 delay: delayIndex,
                 duration: 1.2,

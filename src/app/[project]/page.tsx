@@ -41,14 +41,6 @@ function Project() {
 
   requestAnimationFrame(raf);
 
-  // const { id } = params;
-
-  // const project = {
-  //   id: id,
-  //   name: "Curology",
-  //   src: atellier,
-  // };
-
   return (
     <div className={`$${ppneuemontreal.className}`}>
       <EnterAnimation />

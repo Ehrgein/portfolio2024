@@ -11,14 +11,6 @@ function SmallAboutReveal({
 }) {
   const elementRef = React.useRef<HTMLHeadingElement>(null);
 
-  // const headerParentVariants = {
-  //   animate: {
-  //     transition: {
-  //       staggerChildren: 2,
-  //     },
-  //   },
-  // };
-
   return (
     <>
       <p className="sr-only">{textContent}</p>
@@ -34,7 +26,8 @@ function SmallAboutReveal({
               duration: 0.4,
               ease: [0.25, 0.1, 0.25, 1],
             }}
-            className={`${ppneuemontreal.className} ${textSize} font-medium text-[#D1CEC6] leading-[1.25] tracking-[-4px] inline-block overflow-hidden`}
+            className={`${ppneuemontreal.className} ${textSize} font-medium text-[#D1CEC6] leading-[1.25] 
+            tracking-[-2px] inline-block overflow-hidden`}
           >
             {word}&nbsp;
           </motion.span>

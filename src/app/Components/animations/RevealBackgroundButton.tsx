@@ -43,7 +43,9 @@ function RevealBackgroundButton({
       initial={{ color: "#D1CEC6" }}
       whileHover={{ color: "#161616" }}
       transition={{ duration: 0.2 }}
-      className="box-shadow rounded-full bg-[#161616] z-0 cursor-pointer relative flex items-center justify-center px-8 py-3"
+      className="flex items-center justify-center relative 
+      box-shadow rounded-full bg-[#161616] z-0 cursor-pointer
+      px-8 py-3"
       {...delegated}
       style={{ overflow: "hidden" }}
     >
