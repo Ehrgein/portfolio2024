@@ -1,40 +1,11 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { smootherstep } from "three/src/math/MathUtils.js";
-
-const scaleVariant = {
-  enter: {
-    scale: 0.92,
-  },
-  exit: {
-    scale: 1,
-  },
-};
-
-const arrowVariants = {
-  enter: {
-    y: "-100%",
-
-    transition: { duration: 0.6, ease: [0.6, 0, 0, 1] },
-  },
-  leave: {
-    y: "0%",
-    transition: { duration: 0.4, ease: [0.75, 0, 0, 1] },
-  },
-};
-
-const slidingArrowVariant = {
-  enter: {
-    y: "-100%",
-
-    transition: { duration: 0.6, ease: [0.6, 0, 0, 1] },
-  },
-  leave: {
-    y: "100%",
-    transition: { duration: 0.4, ease: [0.75, 0, 0, 1] },
-  },
-};
+import {
+  scaleVariant,
+  arrowVariants,
+  slidingArrowVariant,
+} from "@/app/helpers/variants";
 
 function BackToTopReusable() {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -51,9 +22,9 @@ function BackToTopReusable() {
       initial={{ scale: 1 }}
       variants={scaleVariant}
       animate={isHovered ? "enter" : "exit"}
-      className="absolute cursor-pointer overflow-hidden right-0 rounded-full w-20 h-20 bg-[#323232]"
+      className="cursor-pointer overflow-hidden rounded-full w-20 h-20 bg-[#323232]"
     >
-      <motion.aside
+      <motion.div
         variants={arrowVariants}
         animate={isHovered ? "enter" : "leave"}
         className="relative w-full h-full grid place-content-center"
@@ -69,7 +40,7 @@ function BackToTopReusable() {
             fill="#FAFAFA"
           />
         </svg>
-      </motion.aside>
+      </motion.div>
       <motion.div
         variants={slidingArrowVariant}
         animate={isHovered ? "enter" : "leave"}

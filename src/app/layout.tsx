@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ppneuemontreal.className} antialiased`}>
+      <body className={`${ppneuemontreal.className} antialiased bg-[#fafafa]`}>
         {children}
         <div className="noise-bg"></div>
       </body>
