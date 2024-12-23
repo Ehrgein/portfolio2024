@@ -59,8 +59,10 @@ function FooterContact({
             className="relative overflow-hidden text-[#161616] border-b-[1px] border-b-[#323232] flex w-fit text-[36px]"
           >
             <a className="" id="devEmail">
-              <p className="text-[#161616] opacity-95">{children}</p>
-              <motion.div className="w-full h-[1px]  absolute bottom-0 left-0" />
+              <p className="text-[#161616] opacity-90 lg:text-[3.5vw]">
+                {children}
+              </p>
+              <motion.div className="w-full h-[1px] absolute bottom-0 left-0" />
             </a>
             <div
               onClick={handleCopyToClipboard}

@@ -10,7 +10,10 @@ function ProjectsSection({
 
   return (
     <>
-      <section className="relative w-full bg-[#161616] md:px-20 lg:px-28 xl:px-32 desktop:px-44 pt-20 pb-32">
+      <section
+        className="relative w-full bg-[#161616] pt-20
+      desktop:px-44 xl:px-32 lg:px-28 md:px-20 md:pt-12 lg:pb-32 md:pb-20"
+      >
         <div ref={projectSectionRef}>
           <div className="">
             <ProjectsLayout isExiting={isExiting} setIsExiting={setIsExiting} />

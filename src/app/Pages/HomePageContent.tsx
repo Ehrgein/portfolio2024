@@ -10,7 +10,6 @@ import {
   useMotionValue,
   useScroll,
   useTransform,
-  inView,
 } from "framer-motion";
 
 import NewFooter from "../Components/layout/NewFooter";
@@ -40,7 +39,7 @@ function HomePageContent() {
   return (
     <>
       {/* mobile */}
-      <div className="md:hidden block">
+      {/* <div className="md:hidden block">
         <main className="mb-[-100svh] overflow-x-clip">
           <div>
             <WhiteNavbar
@@ -63,9 +62,9 @@ function HomePageContent() {
             </motion.main>
           </div>
         </main>
-      </div>
+      </div> */}
       {/*desktop */}
-      <div className="hidden md:block relative z-1">
+      <div className="block relative z-1">
         <div>
           <WhiteNavbar
             isFooterInView={isFooterInView}
