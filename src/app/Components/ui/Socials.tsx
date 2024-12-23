@@ -8,19 +8,29 @@ function Socials() {
        xl:px-24 lg:px-14 md:px-8 pb-5 mt-auto"
       >
         <div className="flex justify-between w-full border-[1px] border-t-[#00000040] border-b-0 border-l-0 border-r-0 pt-2">
-          <div className="flex gap-6 items-center">
-            <p className="text-lg">LOCAL TIME:</p>
-            <span className="text-lg lg:text-base text-[#626060]">
-              11:48PM - GMT(-3)
+          <div
+            className="flex gap-6 md:gap-6 mobilesm:gap-1 
+            md:flex-row mobilesm:flex-col md:px-0 mobilesm:px-4 
+            lg:items-center mobilesm:items-start"
+          >
+            <p className="md:text-lg mobilesm:text-sm">LOCAL TIME:</p>
+            <span className="md:text-lg mobilesm:text-sm lg:text-base text-[#626060]">
+              11:48 PM - GMT(-3)
             </span>
           </div>
-          <div className="flex flex-col gap-6">
-            <a href="https://github.com/Ehrgein" className="text-lg">
+          <div
+            className="flex flex-col gap-6 mobilesm:gap-1
+          mobilesm:px-4"
+          >
+            <a
+              href="https://github.com/Ehrgein"
+              className="md:text-lg mobilesm:text-sm"
+            >
               GITHUB
             </a>
             <a
               href="https://www.linkedin.com/in/alexisfordpy/"
-              className="text-lg"
+              className="md:text-lg mobilesm:text-sm"
             >
               LINKEDIN
             </a>

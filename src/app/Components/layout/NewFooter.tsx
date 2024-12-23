@@ -20,7 +20,10 @@ function NewFooter({
             ref={footerRef}
             className="h-[100vh] sticky flex flex-col  top-0"
           >
-            <LetsTalk />
+            <LetsTalk>
+              I’m always happy to talk. Feel free to reach out if you have a
+              project in mind, or simply want to say hi!
+            </LetsTalk>
             <div className="flex px-24">
               <div className="w-full relative flex flex-col justify-center items-center flex-grow-0">
                 <FooterContact>hello@alexisford.dev</FooterContact>
@@ -33,12 +36,15 @@ function NewFooter({
       </footer>
       {/* mobile footer */}
       <footer className="md:hidden relative">
-        <div className="relative h-screen flex flex-col justify-center">
+        <div className="relative h-screen flex flex-col">
           <motion.div
             ref={footerRef}
-            className="flex flex-col top-0 h-full py-24"
+            className="flex flex-col top-0 h-full pt-28"
           >
-            <LetsTalk />
+            <LetsTalk>
+              Feel free to reach out if you have a project in mind, or want tos
+              say hi!
+            </LetsTalk>
             <div className="flex px-24">
               <div className="w-full relative flex flex-col justify-center items-center">
                 <FooterContact>hello@alexisford.dev</FooterContact>
