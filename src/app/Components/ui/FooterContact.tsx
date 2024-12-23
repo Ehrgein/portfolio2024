@@ -4,13 +4,7 @@ import { useAnimate } from "framer-motion";
 import Image from "next/image";
 import svgCopy from "@/app/Assets/svgs/SVGCopy.svg";
 
-function FooterContact({
-  children,
-  href,
-}: {
-  children: React.ReactNode;
-  href: string;
-}) {
+function FooterContact({ children }: { children: React.ReactNode }) {
   const [scope, animate] = useAnimate();
 
   const handleCopyToClipboard = async () => {

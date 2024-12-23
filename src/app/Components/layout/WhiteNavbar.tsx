@@ -3,7 +3,6 @@ import { motion, MotionValue } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
-import { isBot } from "next/dist/server/web/spec-extension/user-agent";
 
 const WhiteNavbar = ({
   navBarColor,

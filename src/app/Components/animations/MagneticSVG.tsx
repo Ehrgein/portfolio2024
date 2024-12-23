@@ -5,7 +5,7 @@ function MagneticSVG({ children }: { children: React.ReactNode }) {
   const ref = React.useRef<HTMLDivElement>(null);
   const [position, setPosition] = React.useState({ x: 0, y: 0 });
 
-  const mouseMove = (e) => {
+  const mouseMove = (e: any) => {
     const { clientX, clientY } = e;
 
     if (ref.current) {
@@ -18,7 +18,7 @@ function MagneticSVG({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const onMouseLeave = (e) => {
+  const onMouseLeave = () => {
     setPosition({ x: 0, y: 0 });
   };
 

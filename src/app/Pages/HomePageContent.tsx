@@ -15,7 +15,6 @@ import {
 import NewFooter from "../Components/layout/NewFooter";
 
 function HomePageContent() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
   const aboutSectionRef = React.useRef<HTMLDivElement>(null);
   const navBarColor = useMotionValue("#202020"); // Default color

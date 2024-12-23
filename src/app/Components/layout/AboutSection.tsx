@@ -1,6 +1,5 @@
 import React from "react";
 import AboutMe from "./AboutMe";
-import { useScroll, MotionValue } from "framer-motion";
 
 function AboutSection({
   aboutSectionRef,
