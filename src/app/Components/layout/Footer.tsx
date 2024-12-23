@@ -1,5 +1,4 @@
 import React from "react";
-import MagneticSVG from "../animations/MagneticSVG";
 import BackToTopReusable from "../animations/BackToTopReusable";
 import Socials from "../ui/Socials";
 import FooterHeader from "../ui/FooterHeader";
@@ -19,9 +18,7 @@ function Footer() {
           />
           <FooterContact href="">hello@alexisford.dev</FooterContact>
           <div className="flex flex-grow items-end justify-end px-24 pb-6">
-            <MagneticSVG>
-              <BackToTopReusable />
-            </MagneticSVG>
+            <BackToTopReusable />
           </div>
           <Socials />
         </div>
