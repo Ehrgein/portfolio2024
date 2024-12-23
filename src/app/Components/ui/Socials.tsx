@@ -5,7 +5,7 @@ function Socials() {
     <>
       <div
         className="flex items-end justify-between
-       xl:px-24 lg:px-14 md:px-8 pb-5"
+       xl:px-24 lg:px-14 md:px-8 pb-5 mt-auto"
       >
         <div className="flex justify-between w-full border-[1px] border-t-[#00000040] border-b-0 border-l-0 border-r-0 pt-2">
           <div className="flex gap-6 items-center">
@@ -14,7 +14,7 @@ function Socials() {
               11:48PM - GMT(-3)
             </span>
           </div>
-          <div className="flex flex-grow-1 gap-6">
+          <div className="flex flex-col gap-6">
             <a href="https://github.com/Ehrgein" className="text-lg">
               GITHUB
             </a>
