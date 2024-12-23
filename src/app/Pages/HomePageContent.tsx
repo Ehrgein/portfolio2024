@@ -44,10 +44,10 @@ function HomePageContent() {
       {/* mobile */}
       {/*desktop */}
       <div className="block relative z-1">
-        <div>
-          <div className="fixed left-[10%] text-4xl top-[10%]">ALEXIS</div>
-          {/* <div className="border-2 border-[#222222] opacity-90 rounded-full h-20 w-20 p-8 fixed top-6 right-14"></div> */}
-        </div>
+        {/* <div> */}
+        {/* <div className="fixed left-[10%] text-4xl top-[10%]">ALEXIS</div> */}
+        {/* <div className="border-2 border-[#222222] opacity-90 rounded-full h-20 w-20 p-8 fixed top-6 right-14"></div> */}
+        {/* </div> */}
         <div>
           <WhiteNavbar
             isFooterInView={isFooterInView}

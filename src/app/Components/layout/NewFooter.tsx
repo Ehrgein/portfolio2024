@@ -22,7 +22,10 @@ function NewFooter({
             project in mind, or simply want to say hi!
           </LetsTalk>
           <div className="flex px-24">
-            <div className="w-full relative flex flex-col justify-center items-center flex-grow-0">
+            <div
+              className="w-full relative flex flex-col justify-center items-center flex-grow-0
+            desktop:pt-10 xl:pt-3 md:pt-5"
+            >
               <FooterContact>hello@alexisford.dev</FooterContact>
             </div>
           </div>

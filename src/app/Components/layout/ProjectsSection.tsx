@@ -12,7 +12,7 @@ function ProjectsSection({
     <>
       <section
         className="w-full bg-[#161616] pt-20
-      desktop:px-44 xl:px-32 lg:px-28 md:px-20 mobilemd:px-4 
+      desktop:px-44 xl:px-26 lg:px-28 md:px-20 mobilemd:px-4 
       md:pt-12 lg:pb-32 md:pb-20"
       >
         <div ref={projectSectionRef}>

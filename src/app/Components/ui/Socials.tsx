@@ -14,7 +14,7 @@ function Socials() {
             lg:items-center mobilesm:items-start"
           >
             <p className="md:text-lg mobilesm:text-sm">LOCAL TIME:</p>
-            <span className="md:text-lg mobilesm:text-sm lg:text-base text-[#626060]">
+            <span className="md:text-lg mobilesm:text-sm text-[#626060]">
               11:48 PM - GMT(-3)
             </span>
           </div>

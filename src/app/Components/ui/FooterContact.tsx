@@ -45,7 +45,7 @@ function FooterContact({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="desktop:pt-6 md:pt-10 flex px-24 mobilemd:px-6 ">
+    <div className="flex px-24 mobilemd:px-6">
       <div className="w-full relative flex flex-col flex-grow-0">
         <div>
           <motion.div
@@ -53,7 +53,10 @@ function FooterContact({ children }: { children: React.ReactNode }) {
             className="relative overflow-hidden text-[#161616] border-b-[1px] border-b-[#323232] flex w-fit text-[36px]"
           >
             <a className="" id="devEmail">
-              <p className="text-[#161616] opacity-90 lg:text-[3.5vw]">
+              <p
+                className="text-[#161616] opacity-90 mobilemd:pt-3
+              xl:text-[3.5vw] lg:text-[2.8rem] md:text-[2.5rem] mobilemd:text-[2.25rem]"
+              >
                 {children}
               </p>
               <motion.div className="w-full h-[1px] absolute bottom-0 left-0" />

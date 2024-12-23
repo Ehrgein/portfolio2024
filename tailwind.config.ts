@@ -19,7 +19,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        myFont: ["var(--font-ppneuemontreal)"], // Ensure this matches your localFont
+        myFont: ["var(--font-ppneuemontreal)"],
       },
     },
   },

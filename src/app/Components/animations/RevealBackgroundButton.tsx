@@ -52,7 +52,9 @@ function RevealBackgroundButton({
       {/* Button Content */}
       <motion.span
         onClick={handleSetIsExiting}
-        className="relative z-10 mobilemd:text-base"
+        className="relative z-10 
+        
+       desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm"
         style={{ color: "inherit" }}
       >
         {children}

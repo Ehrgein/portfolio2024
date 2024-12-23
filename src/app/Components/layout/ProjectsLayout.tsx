@@ -71,8 +71,10 @@ function ProjectsLayout({
     <>
       <div className="text-[#D1CEC6] pb-12 font-medium">
         <h3
-          className="desktop:text-[7vw] 2x xl:text-[6vw] lg:text-[8vw] md:text-[7vw] mobilemd:text-[4rem] mobilemd:leading-[1.1]
-        ml-[-0.5vw] pb-20 lg:pb-12 md:pb-8"
+          className="desktop:text-[8rem] 2x xl:text-[6rem] lg:text-[8vw] md:text-[4rem] mobilemd:text-[4rem] 
+        mobilemd:leading-[1.1]
+        ml-[-0.5vw] 
+        desktop:pb-24 xl:pb-24 pb-20 lg:pb-12 md:pb-8 mobilemd:pb-10"
         >
           SELECTED WORKS.
         </h3>
@@ -110,33 +112,36 @@ function ProjectsLayout({
                 </figure>
                 <section className="text-[#fff7f7] flex flex-col">
                   <h2
-                    className="desktop:text-[4vw] xl:text-[4.5vw] lg:text-[4.5vw] md:text-[6vw] mobilemd:text-[2.2rem]
-                  font-medium leading-none  mobilemd:leading-loose
-                  desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-4 mobilemd:pb-3"
+                    className="desktop:text-[5.5rem] xl:text-[4.5vw] lg:text-[4.5vw] md:text-[3.4rem] mobilemd:text-[3rem]
+                  font-medium 
+                  md:leading-none xl:ml-[-4px] md:ml-[-2px]
+                  desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-6 mobilemd:pb-3"
                   >
                     {name}
                   </h2>
                   <p
-                    className="w-full text-[#A9A8A8] leading-[1.65] 
-                  tracking-wide
-                  desktop:text-xl xl:text-base mobilemd:text-xl text-pretty"
+                    className="w-full text-[#a09e9e] desktop:leading-[1.65] xl:leading-[1.6] 
+                  tracking-wide font-light
+                  desktop:text-xl xl:text-lg md:text-base mobilemd:text-lg text-pretty"
                   >
                     {description}
                   </p>
                   <div
-                    className="w-full bg-[#535151] h-[1px] 
-                  desktop:my-9 xl:my-7 lg:my-5 md:my-5 mobilemd:my-6"
+                    className="w-full bg-[#535151] h-[1px]
+                    desktop:mt-8 desktop:mb-4 xl:mt-6 xl:mb-2 lg:mt-8 lg:mb-2 md:mt-5 md:mb-5
+                    mobilemd:mb-4 mobilemd:mt-5
+                  "
                   ></div>
                   <div className="flex items-center justify-between">
-                    <aside className="flex-col gap-1 text-sm desktop:flex mobilemd:hidden">
+                    {/* <aside className="flex-col gap-1 text-sm desktop:flex mobilemd:hidden">
                       <div>
                         <span className="uppercase">Development</span>
                       </div>
                       <div>
                         <span className="uppercase">Design</span>
                       </div>
-                    </aside>
-                    <div className="flex gap-12 desktop:text-[15px] xl:text-base lg:pt-4 lg:pb-8">
+                    </aside> */}
+                    <div className="flex gap-12 desktop:text-2xl xl:text-base lg:pt-4 lg:pb-8">
                       <RevealBackgroundButton
                         handleSetIsExiting={handleSetIsExiting}
                       >
