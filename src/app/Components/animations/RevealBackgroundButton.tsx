@@ -54,7 +54,7 @@ function RevealBackgroundButton({
         onClick={handleSetIsExiting}
         className="relative z-10 
         
-       desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm"
+       desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm mobilesm:text-[.6rem]"
         style={{ color: "inherit" }}
       >
         {children}

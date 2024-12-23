@@ -54,8 +54,8 @@ function FooterContact({ children }: { children: React.ReactNode }) {
           >
             <a className="" id="devEmail">
               <p
-                className="text-[#161616] opacity-90 mobilemd:pt-6
-              xl:text-[3.3rem] lg:text-[2.8rem] md:text-[2.5rem] mobilemd:text-[2.5rem]"
+                className="text-[#161616] opacity-90 mobilemd:pt-6 mobilesm:pt-2
+              xl:text-[3.3rem] lg:text-[2.8rem] md:text-[2.5rem] mobilemd:text-[2.5rem] mobilesm:text-[1.8rem]"
               >
                 {children}
               </p>

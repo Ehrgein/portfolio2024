@@ -6,22 +6,26 @@ import { motion } from "framer-motion";
 function AboutMe() {
   return (
     <>
-      <motion.div className="xl:pt-32 lg:pt-20 pb-12 lg:pl-12">
+      <motion.div className="xl:pt-32 lg:pt-20 mobilemd:pb-12 mobilesm:pb-10 lg:pl-12 mobilemd:pl-0 mobilesm:pl-2">
         <SmallAboutReveal
-          textSize="desktop:text-[2.1rem] 2xl:text-[2vw] xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.6rem] mobilemd:text-[1.8rem]"
+          textSize="desktop:text-[2.1rem] 2xl:text-[2vw] xl:text-[1.75rem] lg:text-[1.5rem] md:text-[1.6rem] mobilemd:text-[1.8rem] mobilesm:text-[1.5rem]"
           textContent="About me."
         />
       </motion.div>
-      <aside className="grid grid-cols-10 desktop:gap-12 gap-9">
+      <aside
+        className="mobilemd:grid mobilesm:flex mobilesm:flex-col grid-cols-10
+       desktop:gap-12 mobilesm:gap-7"
+      >
         <div
           className="w-full
         xl:col-start-5 xl:-col-end-1 lg:col-start-4 lg:-col-end-1 md:col-start-4 md:-col-end-1 mobilemd:col-start-1 mobilemd:-col-end-1
-        tracking-wide"
+        
+        tracking-wide mobilemd:px-0 mobilesm:px-[.5rem]"
         >
           <CustomTagTextReveal
             delayIndex={0.2}
             textSize={
-              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.45rem]"
+              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.25rem] mobilesm:text-[1.1rem]"
             }
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}
@@ -31,13 +35,13 @@ function AboutMe() {
         <div
           className="w-full 
           xl:col-start-5 xl:-col-end-1 lg:col-start-4 lg:-col-end-1 md:col-start-4 md:-col-end-1
-          mobilemd:col-start-1 mobilemd:-col-end-1
-        tracking-wide "
+          mobilemd:col-start-1 mobilemd:-col-end-1 
+        tracking-wide mobilemd:px-0 mobilesm:px-[.5rem]"
         >
           <CustomTagTextReveal
             delayIndex={0.3}
             textSize={
-              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.45rem]"
+              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.25rem] mobilesm:text-[1.1rem]"
             }
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}
@@ -47,12 +51,13 @@ function AboutMe() {
         <div
           className="w-full 
         xl:col-start-5 xl:-col-end-1 lg:col-start-4 lg:-col-end-1 md:col-start-4 md:-col-end-1 mobilemd:col-start-1 mobilemd:-col-end-1
-        tracking-wide"
+        
+        tracking-wide mobilemd:px-0 mobilesm:px-[.5rem]"
         >
           <CustomTagTextReveal
             delayIndex={0.4}
             textSize={
-              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.45rem]"
+              "desktop:text-[2.1rem] xl:text-[1.7rem] lg:text-[1.55rem] md:text-[1.45rem] mobilemd:text-[1.25rem] mobilesm:text-[1.1rem]"
             }
             textColor="text-[#D1CEC6]"
             leading={"leading-[1.5]"}

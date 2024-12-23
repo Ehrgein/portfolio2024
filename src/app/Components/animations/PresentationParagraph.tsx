@@ -23,7 +23,7 @@ function PresentationParagraph() {
       <div className="md:hidden block text-center">
         <IntroHeaderReveal
           textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem]"
+            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
           }
           textColor="text-[#161616]"
           leading={"leading-loose"}
@@ -31,7 +31,7 @@ function PresentationParagraph() {
         />
         <IntroHeaderReveal
           textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem]"
+            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
           }
           textColor="text-[#161616]"
           leading={"leading-loose"}
@@ -39,7 +39,7 @@ function PresentationParagraph() {
         />
         <IntroHeaderReveal
           textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem]"
+            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
           }
           textColor="text-[#161616]"
           leading={"leading-loose"}
