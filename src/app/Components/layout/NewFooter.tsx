@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import FooterContact from "../ui/FooterContact";
 import LetsTalk from "../ui/LetsTalk";
 
-function NewFooter({ footerRef }: any) {
+function NewFooter({
+  footerRef,
+}: {
+  footerRef: React.RefObject<HTMLDivElement>;
+}) {
   return (
     <footer
       className="relative h-[100vh]"
