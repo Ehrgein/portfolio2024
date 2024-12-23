@@ -16,7 +16,7 @@ function Footer() {
             header="Want to reach out?"
             paragraph="I’m always happy to talk. Feel free to reach out if you have a project in mind, or simply want to say hi!"
           />
-          <FooterContact href="">hello@alexisford.dev</FooterContact>
+          <FooterContact>hello@alexisford.dev</FooterContact>
           <div className="flex flex-grow items-end justify-end px-24 pb-6">
             <BackToTopReusable />
           </div>
