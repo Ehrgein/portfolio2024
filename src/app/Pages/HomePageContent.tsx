@@ -38,32 +38,12 @@ function HomePageContent() {
   return (
     <>
       {/* mobile */}
-      {/* <div className="md:hidden block">
-        <main className="mb-[-100svh] overflow-x-clip">
-          <div>
-            <WhiteNavbar
-              isFooterInView={isFooterInView}
-              aboutScrollProgress={aboutScrollProgress}
-              navBarColor={navBarColor}
-              progress={progress}
-              setProgress={setProgress}
-            />
-            <motion.main
-              key="main-content"
-              ref={containerRef}
-              className={`h-[200vh] py-2 relative`}
-            >
-              <IntroSection opacity={opacity} />
-              <AboutSection aboutSectionRef={aboutSectionRef} />
-              <section className="py-20 h-screen">
-                <p>hello!</p>
-              </section>
-            </motion.main>
-          </div>
-        </main>
-      </div> */}
       {/*desktop */}
       <div className="block relative z-1">
+        <div className="fixed">
+          <div className="fixed left-[10%] text-4xl top-[10%]">ALEXIS</div>
+          <div className="border-2 border-[#222222] opacity-90 rounded-full h-20 w-20 p-8 fixed top-6 right-14"></div>
+        </div>
         <div>
           <WhiteNavbar
             isFooterInView={isFooterInView}
