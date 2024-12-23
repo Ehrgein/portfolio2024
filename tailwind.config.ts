@@ -10,6 +10,9 @@ const config: Config = {
     extend: {
       screens: {
         desktop: "1920px",
+        mobilexl: "425px",
+        mobilemd: "375px",
+        mobilesm: "320px",
       },
       colors: {
         background: "var(--background)",

@@ -50,57 +50,59 @@ const WhiteNavbar = ({
 
   return (
     <>
-      <motion.nav
-        style={{ color: navBarColor }}
-        className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-30`}
-      >
-        <header
-          className={`${compacta.className} font-normal text-3xl tracking-[-0.04em] overflow-hidden`}
+      <div className="w-full">
+        <motion.nav
+          style={{ color: navBarColor }}
+          className={`w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-30`}
         >
-          <motion.h3
-            animate={{
-              y: "0%",
-            }}
-            initial={{
-              y: "100%",
-            }}
-            transition={{
-              delay: 0.2,
-              duration: 1.2,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
+          <header
+            className={`${compacta.className} font-normal md:text-3xl mobilemd:text-5xl tracking-[-0.04em] overflow-hidden`}
           >
-            ALEXIS
-          </motion.h3>
-        </header>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9 }}
-          onClick={() => setIsExiting(true)}
-          className={`text-base items-center ${navBarColor} flex gap-9 tracking-wide font-medium ${ppneuemontreal.className}`}
-        >
-          <TransitionLink
-            href="/1
-          "
-          >
-            <svg
-              aria-label="Opens hamburger menu"
-              role="button"
-              width="64"
-              height="32"
-              viewBox="0 0 40 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <motion.h3
+              animate={{
+                y: "0%",
+              }}
+              initial={{
+                y: "100%",
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
-              <rect x="32" y="5" width="48" height="2" fill="currentColor" />
-              <rect x="24" y="11" width="40" height="2" fill="currentColor" />
-              <rect x="16" y="17" width="48" height="2" fill="currentColor" />
-            </svg>
-          </TransitionLink>
-        </motion.div>
-      </motion.nav>
-      {isExiting && <ExitTransition />}
+              ALEXIS
+            </motion.h3>
+          </header>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9 }}
+            onClick={() => setIsExiting(true)}
+            className={`text-base mobilemd:text-5xl items-center ${navBarColor} flex gap-9 tracking-wide font-medium ${ppneuemontreal.className}`}
+          >
+            <TransitionLink
+              href="/1
+          "
+            >
+              <svg
+                aria-label="Opens hamburger menu"
+                role="button"
+                width="64"
+                height="32"
+                viewBox="0 0 40 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="32" y="5" width="48" height="2" fill="currentColor" />
+                <rect x="24" y="11" width="40" height="2" fill="currentColor" />
+                <rect x="16" y="17" width="48" height="2" fill="currentColor" />
+              </svg>
+            </TransitionLink>
+          </motion.div>
+        </motion.nav>
+        {isExiting && <ExitTransition />}
+      </div>
     </>
   );
 };

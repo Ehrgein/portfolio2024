@@ -2,7 +2,7 @@ import React from "react";
 
 function LetsTalk() {
   return (
-    <div className="pt-48 px-24 space-y-4">
+    <div className="lg:pt-48 md:pt-52 px-24 space-y-4">
       <h3 className="text-[#161616] font-medium text-[12vw] ml-[-8px] text-center leading-none">
         LET&apos;S TALK!
       </h3>

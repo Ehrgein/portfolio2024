@@ -40,7 +40,7 @@ function IntroHeaderReveal({
       <span className="sr-only">{textContent}</span>
       <div>
         {textContent.split(" ").map((word, index) => (
-          <motion.span key={index} className="overflow-hidden  inline-block">
+          <motion.span key={index} className="overflow-hidden inline-block">
             <motion.span
               key={index}
               animate={{
@@ -56,7 +56,7 @@ function IntroHeaderReveal({
               }}
               className={`${ppneuemontreal.className} ${textColor} ${
                 isBoldWord(word) ? "font-bold" : "font-normal"
-              } ${textSizeClass} tracking-normal  leading-[1.25]   inline-block overflow-hidden`}
+              } ${textSizeClass} tracking-normal  leading-[1.25] text-left mobilemd:text-center inline-block overflow-hidden`}
             >
               {word}&nbsp;
             </motion.span>

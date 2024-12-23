@@ -71,7 +71,7 @@ function ProjectsLayout({
     <>
       <div className="text-[#D1CEC6] pb-12 font-medium">
         <h3
-          className="desktop:text-[7vw] 2x xl:text-[6vw] lg:text-[8vw] md:text-[7vw]
+          className="desktop:text-[7vw] 2x xl:text-[6vw] lg:text-[8vw] md:text-[7vw] mobilemd:text-[4rem] mobilemd:leading-[1.1]
         ml-[-0.5vw] pb-20 lg:pb-12 md:pb-8"
         >
           SELECTED WORKS.
@@ -88,13 +88,13 @@ function ProjectsLayout({
             }) => (
               <article
                 key={name}
-                className="flex xl:flex-nowrap md:flex-wrap xl:gap-12 lg:gap-8 md:gap-8"
+                className="flex xl:flex-nowrap mobilemd:flex-wrap xl:gap-12 lg:gap-8 md:gap-8 mobilemd:gap-6"
               >
                 <figure
                   className="aspect-video 
                   desktop:w-[900px] 
                   xl:h-[700px] xl:w-[650px] 
-                  lg:w-full md:w-full 
+                  lg:w-full md:w-full mobilemd:w-full mobilemd:h-[400px]
                   relative"
                 >
                   <Image
@@ -110,25 +110,25 @@ function ProjectsLayout({
                 </figure>
                 <section className="text-[#fff7f7] flex flex-col">
                   <h2
-                    className="desktop:text-[4vw] xl:text-[4.5vw] lg:text-[4.5vw] md:text-[6vw]
-                  font-medium leading-none 
-                  desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-4"
+                    className="desktop:text-[4vw] xl:text-[4.5vw] lg:text-[4.5vw] md:text-[6vw] mobilemd:text-[2.2rem]
+                  font-medium leading-none  mobilemd:leading-loose
+                  desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-4 mobilemd:pb-3"
                   >
                     {name}
                   </h2>
                   <p
                     className="w-full text-[#A9A8A8] leading-[1.65] 
                   tracking-wide
-                  desktop:text-xl xl:text-base text-pretty"
+                  desktop:text-xl xl:text-base mobilemd:text-xl text-pretty"
                   >
                     {description}
                   </p>
                   <div
                     className="w-full bg-[#535151] h-[1px] 
-                  desktop:my-9 xl:my-7 lg:my-5 md:my-5"
+                  desktop:my-9 xl:my-7 lg:my-5 md:my-5 mobilemd:my-6"
                   ></div>
                   <div className="flex items-center justify-between">
-                    <aside className="flex flex-col gap-1 text-sm xl:hidden lg:hidden md:hidden">
+                    <aside className="flex-col gap-1 text-sm desktop:flex mobilemd:hidden">
                       <div>
                         <span className="uppercase">Development</span>
                       </div>
