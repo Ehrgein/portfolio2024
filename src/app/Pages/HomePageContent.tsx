@@ -13,7 +13,6 @@ import {
 } from "framer-motion";
 
 import NewFooter from "../Components/layout/NewFooter";
-import { footer } from "framer-motion/client";
 
 function HomePageContent() {
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
