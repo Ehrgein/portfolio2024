@@ -132,7 +132,7 @@ function ProjectsLayout({
                   <div
                     className="w-full mobile bg-[#535151] h-[1px]
                     desktop:mt-8 desktop:mb-4 xl:mt-6 xl:mb-2 lg:mt-8 lg:mb-2 md:mt-5 md:mb-5
-                    mobilemd:mb-4 mobilemd:mt-5 mobilesm:mb-4 mobilesm:mt-5
+                    mobilemd:mb-4 mobilemd:mt-5 mobilesm:mb-4 mobilesm:mt-5 
                   "
                   ></div>
                   <div className="flex items-center justify-between">
