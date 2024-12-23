@@ -4,7 +4,7 @@ function LetsTalk({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="desktop:pt-52 xl:pt-44 
-    lg:pt-48 md:pt-52 px-24 mobilemd:px-4 
+    lg:pt-48 md:pt-52 mobilemd:pt-16 px-24 mobilemd:px-4 
     xl:space-y-7 lg:space-y-4 md:space-y-3"
     >
       <h3
