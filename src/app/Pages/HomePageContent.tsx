@@ -31,9 +31,13 @@ function HomePageContent() {
     offset: ["-12% 0%", "end start"],
   });
 
-  const isFooterInView = useInView(footerRef, { amount: 0.96 });
+  const isFooterInView = useInView(footerRef, { amount: 0.9 });
 
   const opacity = useTransform(aboutScrollOpacity, [1, 0.4], [1, 0]);
+
+  React.useEffect(() => {
+    console.log(isFooterInView, "hi!");
+  }, [isFooterInView]);
 
   return (
     <>
@@ -61,8 +65,8 @@ function HomePageContent() {
             </div>
           </motion.main>
           {/* <Footer /> */}
-          <motion.div id="footerRef">
-            <NewFooter footerRef={footerRef} />
+          <motion.div ref={footerRef} id="footerRef">
+            <NewFooter />
           </motion.div>
         </div>
       </div>

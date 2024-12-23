@@ -9,7 +9,7 @@ function Socials() {
       >
         <div className="flex justify-between w-full border-[1px] border-t-[#00000040] border-b-0 border-l-0 border-r-0 pt-2">
           <div
-            className="flex gap-6 md:gap-6 mobilesm:gap-1 
+            className="flex md:gap-6 mobilesm:gap-1 
             md:flex-row mobilesm:flex-col md:px-0 mobilesm:px-4 
             lg:items-center mobilesm:items-start"
           >
@@ -19,7 +19,7 @@ function Socials() {
             </span>
           </div>
           <div
-            className="flex flex-col gap-6 mobilesm:gap-1
+            className="flex md:flex-row mobilesm:flex-col md:gap-6 mobilesm:gap-1
           mobilesm:px-4"
           >
             <a

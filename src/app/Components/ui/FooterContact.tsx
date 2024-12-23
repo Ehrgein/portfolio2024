@@ -45,7 +45,7 @@ function FooterContact({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="md:pt-10 flex px-24 mobilemd:px-6">
+    <div className="desktop:pt-6 md:pt-10 flex px-24 mobilemd:px-6 ">
       <div className="w-full relative flex flex-col flex-grow-0">
         <div>
           <motion.div
