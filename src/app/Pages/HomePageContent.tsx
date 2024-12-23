@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 
 import NewFooter from "../Components/layout/NewFooter";
+import { footer } from "framer-motion/client";
 
 function HomePageContent() {
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
@@ -57,7 +58,7 @@ function HomePageContent() {
             aboutScrollProgress={aboutScrollProgress}
           />
           {/*  main used to have a h-[200vh] h-[200vh] and a z-[99999] */}
-          <motion.main>
+          <motion.main className=" relative z-50">
             <IntroSection opacity={opacity} />
             <AboutSection aboutSectionRef={aboutSectionRef} />
             <div ref={projectSectionRef}>
@@ -65,9 +66,8 @@ function HomePageContent() {
             </div>
           </motion.main>
           {/* <Footer /> */}
-          <motion.div ref={footerRef} id="footerRef">
-            <NewFooter />
-          </motion.div>
+
+          <NewFooter footerRef={footerRef} />
         </div>
       </div>
     </>

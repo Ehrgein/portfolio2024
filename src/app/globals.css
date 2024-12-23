@@ -110,3 +110,28 @@ img {
   width: 100%;
   height: auto;
 }
+
+.footerreveal {
+  background-color: var(--slide-background-color, #fff);
+  height: 100vh;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translateY(100%);
+  width: 100%;
+  z-index: 2;
+}
+
+.transformorigin {
+  transform-origin: top center;
+}
+
+.mainfooter {
+  background: #d9d9d9;
+  bottom: 0;
+  color: black;
+  height: calc(100vh + 2px);
+  position: sticky;
+  z-index: 1;
+}
