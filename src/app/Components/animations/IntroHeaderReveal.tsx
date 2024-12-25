@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { isBoldWord } from "@/app/helpers/isBoldWord";
-import { ppneuemontreal } from "../../helpers/fonts";
+import { ppneuemontreal, compacta } from "../../helpers/fonts";
 
 type TailwindTextSize =
   | "text-sm"
@@ -15,7 +15,12 @@ type TailwindLeading =
   | "leading-none"
   | "leading-tight"
   | "leading-normal"
-  | "leading-loose";
+  | "leading-loose"
+  | string;
+
+type FontWeight = "font-bold" | "font-medium";
+
+type alignment = "text-center" | "text-left" | "text-right";
 
 type IntroHeaderRevealProps = {
   textSize?: TailwindTextSize | number | string;
@@ -24,6 +29,9 @@ type IntroHeaderRevealProps = {
   textUnit?: string;
   leading?: TailwindLeading | number;
   leadingUnit?: number;
+  fontWeight?: string | FontWeight;
+  alignment?: string;
+  fontFamily?: "compacta" | "ppneummontreal";
 };
 
 function IntroHeaderReveal({
@@ -31,16 +39,28 @@ function IntroHeaderReveal({
   textSize,
   textColor,
   textUnit,
+  fontWeight,
+  leading,
+  alignment,
+  fontFamily,
 }: IntroHeaderRevealProps) {
   const textSizeClass =
     typeof textSize === "string" ? textSize : `text-[${textSize}${textUnit}]`;
 
+  const alignmentTemplate = alignment ? `w-full ${alignment}` : "";
+
+  const chosenFont =
+    fontFamily === "compacta" ? compacta.className : ppneuemontreal.className;
+
   return (
     <>
       <span className="sr-only">{textContent}</span>
-      <div>
+      <div className={`${alignment ? "w-full" : ""}`}>
         {textContent.split(" ").map((word, index) => (
-          <motion.span key={index} className="overflow-hidden inline-block">
+          <motion.span
+            key={index}
+            className={`overflow-hidden inline-block ${alignmentTemplate}`}
+          >
             <motion.span
               key={index}
               animate={{
@@ -54,9 +74,13 @@ function IntroHeaderReveal({
                 duration: 1.15,
                 ease: [0.25, 0.1, 0.25, 1],
               }}
-              className={`${ppneuemontreal.className} ${textColor} ${
+              className={`${chosenFont} ${textColor} ${
                 isBoldWord(word) ? "font-bold" : "font-normal"
-              } ${textSizeClass} tracking-normal  leading-[1.25] text-left mobilemd:text-center inline-block overflow-hidden`}
+              } ${textSizeClass} tracking-normal 
+              mobilesm: w-full mobilemd:w-fit
+              ${
+                leading ? leading : "leading-[1.25]"
+              } text-left mobilemd:text-center inline-block overflow-hidden`}
             >
               {word}&nbsp;
             </motion.span>

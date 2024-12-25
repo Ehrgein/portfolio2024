@@ -41,8 +41,6 @@ function HomePageContent() {
 
   return (
     <>
-      {/* mobile */}
-      {/*desktop */}
       <div className="block relative z-1">
         {/* <div> */}
         {/* <div className="fixed left-[10%] text-4xl top-[10%]">ALEXIS</div> */}
@@ -57,7 +55,7 @@ function HomePageContent() {
             aboutScrollProgress={aboutScrollProgress}
           />
           {/*  main used to have a h-[200vh] h-[200vh] and a z-[99999] */}
-          <motion.main className=" relative z-50">
+          <motion.main className="relative z-[100000]">
             <IntroSection opacity={opacity} />
             <AboutSection aboutSectionRef={aboutSectionRef} />
             <div ref={projectSectionRef}>

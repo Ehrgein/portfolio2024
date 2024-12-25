@@ -64,7 +64,7 @@ html.lenis body {
   opacity: 0.4;
   animation: noise 0.02s infinite;
   pointer-events: none;
-  z-index: 100;
+  z-index: 999999999999;
   transform: translateZ(0);
 }
 
@@ -134,4 +134,9 @@ img {
   height: calc(100vh + 2px);
   position: sticky;
   z-index: 1;
+}
+
+.canvascontainer canvas {
+  top: 40%;
+  color: purple !important;
 }

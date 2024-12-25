@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#EDE9DE",
       },
       fontFamily: {
         myFont: ["var(--font-ppneuemontreal)"],
