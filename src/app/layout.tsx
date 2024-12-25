@@ -12,10 +12,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  //previously bg was #fafafa
+  //#fafafa
+
   return (
     <html lang="en">
-      <body className={`${ppneuemontreal.className} antialiased bg-primary`}>
+      <body className={`${ppneuemontreal.className} antialiased bg-[#EDE9DE]`}>
         {children}
         <div className="noise-bg"></div>
       </body>

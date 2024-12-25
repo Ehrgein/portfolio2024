@@ -50,7 +50,7 @@ const WhiteNavbar = ({
 
   return (
     <>
-      <div className="w-full">
+      <div className="w-full md:h-0 mobilesm:h-[80px]">
         <motion.nav
           style={{ color: navBarColor }}
           className={` w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-[999999999999]`}
