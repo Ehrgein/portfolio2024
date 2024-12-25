@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, MotionValue } from "framer-motion";
 import PresentationParagraph from "../animations/PresentationParagraph";
+import Scene from "../scene/Scene";
 
 function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
   return (
@@ -11,6 +12,7 @@ function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
       >
         <section className="h-screen relative w-full flex flex-col px-4">
           <PresentationParagraph />
+          <Scene />
         </section>
       </motion.div>
     </>

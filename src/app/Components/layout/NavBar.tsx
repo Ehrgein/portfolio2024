@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <>
       <motion.nav
-        className={`w-full md:flex hidden justify-between px-10 pt-9 pb-4 text-lg  gap-5 text fixed top-0 right-0 z-30  `}
+        className={`w-full flex justify-between px-10 pt-9 pb-4 text-lg  gap-5 text fixed top-0 right-0 z-30  `}
       >
         <header
           className={`${compacta.className} text-3xl  tracking-[-0.04em] text-[#9CB0A3]`}

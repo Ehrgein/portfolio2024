@@ -20,32 +20,6 @@ function PresentationParagraph() {
           textContent="Frontend developer based in Buenos Aires who loves bringing ideas into visually appealing, intuitive to use interfaces that enhance user experience. Obsessed with ux/ui and 3D."
         />
       </div>
-      <div className="md:hidden block text-center">
-        <IntroHeaderReveal
-          textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
-          }
-          textColor="text-[#161616]"
-          leading={"leading-loose"}
-          textContent="FRONTEND DEVELOPER"
-        />
-        <IntroHeaderReveal
-          textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
-          }
-          textColor="text-[#161616]"
-          leading={"leading-loose"}
-          textContent="Buenos Aires based."
-        />
-        <IntroHeaderReveal
-          textSize={
-            "desktop:text-[4.8rem] 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[3rem] md:text-[2.5rem] mobilemd:text-[2.6rem] mobilesm:text-[2rem]"
-          }
-          textColor="text-[#161616]"
-          leading={"leading-loose"}
-          textContent="Obsessed with UX/UI and 3D."
-        />
-      </div>
     </section>
   );
 }

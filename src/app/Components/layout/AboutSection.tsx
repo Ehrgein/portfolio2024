@@ -9,9 +9,9 @@ function AboutSection({
   return (
     <section
       className="w-full bg-[#161616] xl:px-32 lg:px-14 md:px-16 mobilemd:pl-4
-     pt-20 md:pb-32 mobilemd:pb-12"
+     pt-20 md:pb-32 mobilemd:pb-12 relative z-[99]"
     >
-      <div>
+      <div className="">
         <div
           ref={aboutSectionRef}
           className="desktop:pb-40 pb-32 lg:pb-12 md:pb-6 mobilemd:pb-12 "
