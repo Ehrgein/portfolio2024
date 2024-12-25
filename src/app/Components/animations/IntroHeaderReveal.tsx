@@ -20,8 +20,6 @@ type TailwindLeading =
 
 type FontWeight = "font-bold" | "font-medium";
 
-type alignment = "text-center" | "text-left" | "text-right";
-
 type IntroHeaderRevealProps = {
   textSize?: TailwindTextSize | number | string;
   textColor?: string;
@@ -39,7 +37,6 @@ function IntroHeaderReveal({
   textSize,
   textColor,
   textUnit,
-  fontWeight,
   leading,
   alignment,
   fontFamily,

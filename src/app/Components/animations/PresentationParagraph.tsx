@@ -1,6 +1,5 @@
 import React from "react";
 import IntroHeaderReveal from "./IntroHeaderReveal";
-import Socials from "../ui/Socials";
 
 function PresentationParagraph() {
   return (

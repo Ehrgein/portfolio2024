@@ -13,7 +13,6 @@ function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
       >
         <section className="hidden md:flex flex-col h-screen w-full relative px-4">
           <PresentationParagraph />
-
           <Socials />
         </section>
         <section className="md:hidden w-full flex flex-col h-screen relative px-4">

@@ -1,8 +1,8 @@
 import React from "react";
 // import { fragment, vertex } from "./shader";
-import { ThreeEvent, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { Mesh } from "three";
-import { useTexture } from "@react-three/drei";
+// import { useTexture } from "@react-three/drei";
 import { ShaderMaterial } from "three";
 import { Vector2 } from "three";
 import { fragment, vertex } from "./sphereshader";
@@ -105,7 +105,7 @@ function Model() {
     <mesh
       ref={plane}
       scale={[2, 2, 1]}
-      position={[0, -0.6, 0]}
+      position={[0, -0.6, 0.8]}
       // onPointerMove={handleMouseMove}
       // onPointerLeave={handleMouseLeave}
       // onPointerEnter={handleMouseEnter}
