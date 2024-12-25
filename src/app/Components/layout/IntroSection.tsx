@@ -10,9 +10,13 @@ function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
         style={{ opacity }}
         className={`sticky top-0 justify-center w-full flex flex-col z-2`}
       >
-        <section className="h-screen relative w-full flex flex-col px-4">
+        <section className="md:h-screen mobilesm:h-[calc(100vh-80px)] relative w-full flex flex-col px-4">
           <PresentationParagraph />
           <Scene />
+          <p className="text-[2rem] pb-4 leading-[1.45]">
+            Frontend developer based in Buenos Aires. Obsessed with{" "}
+            <strong>ux/ui</strong> and <strong>3D.</strong>
+          </p>
         </section>
       </motion.div>
     </>

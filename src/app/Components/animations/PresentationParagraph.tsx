@@ -4,8 +4,8 @@ import IntroHeaderReveal from "./IntroHeaderReveal";
 function PresentationParagraph() {
   return (
     <section
-      className="
-    w-full h-full flex flex-col flex-grow items-center justify-center
+      className="md:flex hidden 
+    w-full h-full flex-col flex-grow items-center justify-center
     desktop:px-40 xl:px-32 lg:px-10 md:px-6 gap-1 
     desktop:pt-10 xl:pt-24 xl:pb-12 text-left
      text-pretty"

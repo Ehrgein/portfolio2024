@@ -1,15 +1,13 @@
-import { Canvas } from '@react-three/fiber'
-import React from 'react'
-import Model from './Model'
+import { Canvas } from "@react-three/fiber";
+import React from "react";
+import Model from "./Model";
 
 function Scene() {
-
   return (
-    
-    <Canvas >
+    <Canvas>
       <Model />
     </Canvas>
-  )
+  );
 }
 
-export default Scene
+export default Scene;
