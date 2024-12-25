@@ -53,7 +53,7 @@ const WhiteNavbar = ({
       <div className="w-full">
         <motion.nav
           style={{ color: navBarColor }}
-          className={` w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-[999]`}
+          className={` w-full flex justify-between pt-9 px-10 text-lg gap-6 fixed top-0 right-0 z-[999999999999]`}
         >
           <header
             className={`${compacta.className} font-normal md:text-3xl mobilemd:text-5xl tracking-[-0.04em] overflow-hidden`}

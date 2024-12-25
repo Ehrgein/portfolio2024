@@ -105,7 +105,7 @@ function Model() {
     <mesh
       ref={plane}
       scale={[2, 2, 1]}
-      position={[0, -0.6, 0.8]}
+      position={[0, -0.6, 0]}
       // onPointerMove={handleMouseMove}
       // onPointerLeave={handleMouseLeave}
       // onPointerEnter={handleMouseEnter}
