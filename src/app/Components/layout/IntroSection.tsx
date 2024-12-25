@@ -11,12 +11,11 @@ function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
         style={{ opacity }}
         className={`sticky top-0 justify-center w-full flex flex-col z-2`}
       >
-        <section className="md:h-screen mobilesm:h-[calc(100vh-80px)] relative w-full flex flex-col px-4">
+        <section className="hidden md:h-screen md:flex mobilesm:h-[calc(100vh-80px)] relative w-full flex-col px-4">
           <PresentationParagraph />
-
           <Socials />
         </section>
-        <section className="md:hidden w-full flex flex-col h-screen relative px-4">
+        <section className="md:hidden w-full flex flex-col mobilesm:h-[calc(100vh-80px)] relative px-4">
           <Scene />
           <p className="text-[2rem] pb-4 leading-[1.45]">
             Frontend developer based in Buenos Aires. Obsessed with{" "}
