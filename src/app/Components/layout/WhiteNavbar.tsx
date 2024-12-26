@@ -21,63 +21,58 @@ const WhiteNavbar = ({
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
   const [progress, setProgress] = React.useState<number>(0);
-  const [showNavbar, setshowNavbar] = React.useState(true);
 
   const { scrollYProgress: aboutScrollProgress } = useScroll({
     target: aboutSectionRef,
     offset: ["-12% 0%", "end start"],
   });
 
-  const { scrollY } = useScroll();
-
   const isFooterVisible = useInView(footerRef, { amount: 0.9 });
 
   React.useEffect(() => {
     // If the footer is visible, it means we reached the end of the document. So, we set it to black. We also set the progress to 1, as this is how we check IF the footer reached the end.
     // If the footer did not reach the end, and the progress is set to 1 (it means we passed the footer already once), then we set it back to white, as you can't 'jump' sections.
+    console.log(navBarColor);
     if (isFooterVisible) {
       navBarColor.set("#202020");
       setProgress(1);
     }
     // If the footer is NOT visible, but the progress is 1
     else if (!isFooterVisible && progress === 1) {
-      navBarColor.set("#DFD9D9");
+      navBarColor.set("#5ffbc6");
+    } else {
+      navBarColor.set("#202020");
     }
   }, [isFooterVisible]);
 
   useMotionValueEvent(aboutScrollProgress, "change", (latestValue) => {
-    if (latestValue > 0) {
+    console.log(latestValue, "latest value");
+    if (latestValue > 0.05) {
       navBarColor.set("#DFD9D9"); // Green for About/Projects
     } else {
       navBarColor.set("#202020"); // Black for other areas
     }
   });
 
-  useMotionValueEvent(scrollY, "change", (latestValue) => {
-    const previousValue = scrollY.getPrevious();
+  // useMotionValueEvent(scrollY, "change", (latestValue) => {
+  //   const previousValue = scrollY.getPrevious();
 
-    if (previousValue) {
-      if (latestValue > previousValue) {
-        setshowNavbar(false);
-        console.log(showNavbar, "hiding");
-      } else {
-        setshowNavbar(true);
-        console.log(showNavbar, "show");
-      }
-    }
-  });
+  //   if (previousValue) {
+  //     if (latestValue > previousValue) {
+  //       setshowNavbar(false);
+  //       console.log(showNavbar, "hiding");
+  //     } else {
+  //       setshowNavbar(true);
+  //       console.log(showNavbar, "show");
+  //     }
+  //   }
+  // });
 
   return (
     <>
       <div className="w-full md:h-0 mobilesm:h-[80px]">
         <div className="overflow-hidden w-full fixed z-[999999999999]">
           <motion.nav
-            variants={{
-              visible: { y: "0%" },
-              hidden: { y: "100%" },
-            }}
-            animate={showNavbar ? "visible" : "hidden"}
-            transition={{ ease: "easeInOut", duration: 0.6 }}
             style={{ color: navBarColor }}
             className={` w-full flex justify-between pt-9 md:px-10 mobilesm:px-4 text-lg gap-6 `}
           >
