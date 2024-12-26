@@ -1,7 +1,5 @@
 import React from "react";
-
 import ExitTransition from "../transitions/ExitTransition";
-
 import ProjectList from "./ProjectList";
 import pinkcurology from "../../Assets/pinkcrlg.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
