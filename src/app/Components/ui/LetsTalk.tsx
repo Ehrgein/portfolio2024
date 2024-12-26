@@ -8,14 +8,14 @@ function LetsTalk({ children }: { children: React.ReactNode }) {
 
     <div
       className="flex flex-col h-full justify-center items-center
-      desktop:pt-52 xl:pt-44 
+      desktop:pt-52 xl:pt-44 mobilexl:pt-20 mobilesm:pt-16
     lg:pt-48 md:pt-52  
     mobilemd:px-4 mobilesm:px-4 
     xl:space-y-7 lg:space-y-4 md:space-y-3 mobilemd:space-y-4 mobilesm:py-3"
     >
       <h3
         className="text-[#161616] font-medium text-center leading-none
-      desktop:text-[15rem] xl:text-[11rem] lg:text-[10rem] md:text-[9rem] mobilemd:text-[8rem] mobilesm:text-[6rem] ml-[-8px] 
+      desktop:text-[15rem] xl:text-[11rem] lg:text-[10rem] md:text-[9rem] mobilemd:text-[8rem] mobilesm:text-[6.5rem] ml-[-8px] 
       "
       >
         LET&apos;S TALK!
