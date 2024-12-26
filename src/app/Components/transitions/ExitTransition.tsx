@@ -13,7 +13,7 @@ function ExitTransition() {
           ease: [0.5, 0, 0.3, 1], // Faster start and more acceleration
           delay: 0.05,
         }}
-        className="fixed bottom-0 left-0 w-full h-full bg-[#121212] z-50"
+        className="fixed bottom-0 left-0 w-full h-full bg-[#121212] z-[99999999999999999999999]"
       />
     </AnimatePresence>
   );

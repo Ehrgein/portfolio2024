@@ -44,5 +44,4 @@ export const fragment = `
         color = mix(color, sphereColor, sphere2Mask);  // Add second orb
 
         gl_FragColor = vec4(color, 1.0);
-    }
-`;
+    }`;

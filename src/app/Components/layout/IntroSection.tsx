@@ -27,7 +27,7 @@ function IntroSection({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isLoading ? 0 : 1 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1 }}
             className="w-full h-full"
           >
             <Scene />
