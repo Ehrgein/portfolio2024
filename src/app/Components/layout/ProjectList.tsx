@@ -45,7 +45,7 @@ function ProjectList({
               md:text-[3.4rem] mobilemd:text-[3rem] mobilesm:text-3xl
               font-medium 
               md:leading-none xl:ml-[-4px] md:ml-[-2px]
-              desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-6 mobilemd:pb-3 mobilesm:pb-2"
+              desktop:pb-10 xl:pb-8 lg:pb-6 md:pb-6 mobilemd:pb-5 mobilesm:pb-3"
               >
                 {name}
               </h2>
