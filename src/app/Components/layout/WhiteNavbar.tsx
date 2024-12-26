@@ -1,52 +1,54 @@
 import React from "react";
-import { motion, MotionValue } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionValueEvent,
+  useInView,
+  useScroll,
+} from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
 
 const WhiteNavbar = ({
   navBarColor,
-  aboutScrollProgress,
-  isFooterInView,
-  progress,
-  setProgress,
+  aboutSectionRef,
+  footerRef,
 }: {
   navBarColor: MotionValue<string>;
-  progress: number;
-  setProgress: (value: number) => void;
-  aboutScrollProgress: MotionValue<number>;
-  isFooterInView: boolean;
+  aboutSectionRef: React.RefObject<HTMLDivElement>;
+  footerRef: React.RefObject<HTMLDivElement>;
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
+  const [progress, setProgress] = React.useState<number>(0);
+
+  const { scrollYProgress: aboutScrollProgress } = useScroll({
+    target: aboutSectionRef,
+    offset: ["-12% 0%", "end start"],
+  });
+
+  const isFooterVisible = useInView(footerRef, { amount: 0.9 });
 
   React.useEffect(() => {
-    if (isFooterInView) {
+    // If the footer is visible, it means we reached the end of the document. So, we set it to black. We also set the progress to 1, as this is how we check IF the footer reached the end.
+    // If the footer did not reach the end, and the progress is set to 1 (it means we passed the footer already once), then we set it back to white, as you can't 'jump' sections.
+    if (isFooterVisible) {
       navBarColor.set("#202020");
-      console.log("color has been changed to blak for the footer");
       setProgress(1);
-    } else if (!isFooterInView && progress === 1) {
-      navBarColor.set("#DFD9D9");
-      console.log("color has been reverted to white FROM the footer");
     }
-  }, [isFooterInView]);
+    // If the footer is NOT visible, but the progress is 1
+    else if (!isFooterVisible && progress === 1) {
+      navBarColor.set("#DFD9D9");
+    }
+  }, [isFooterVisible]);
 
-  React.useEffect(() => {
-    const unsubscribeScrollProg = aboutScrollProgress.on(
-      "change",
-      (progress) => {
-        console.log(progress);
-        if (progress > 0) {
-          console.log("changing color to green");
-          navBarColor.set("#DFD9D9"); // Green for About/Projects
-        } else {
-          console.log("changing color to black");
-          navBarColor.set("#202020"); // Black for other areas
-        }
-      }
-    );
-
-    return () => unsubscribeScrollProg();
-  }, [aboutScrollProgress, isFooterInView]);
+  useMotionValueEvent(aboutScrollProgress, "change", (latestValue) => {
+    if (latestValue > 0) {
+      navBarColor.set("#DFD9D9"); // Green for About/Projects
+    } else {
+      navBarColor.set("#202020"); // Black for other areas
+    }
+  });
 
   return (
     <>

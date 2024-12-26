@@ -11,8 +11,6 @@ function IntroSection({
   opacity: MotionValue<number>;
   isLoading: boolean;
 }) {
-  console.log(isLoading);
-
   return (
     <>
       <motion.div

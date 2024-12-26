@@ -19,36 +19,22 @@ function HomePageContent({ isLoading }: { isLoading: boolean }) {
   const aboutSectionRef = React.useRef<HTMLDivElement>(null);
   const navBarColor = useMotionValue("#202020"); // Default color
   const footerRef = React.useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = React.useState<number>(0);
 
   const { scrollYProgress: aboutScrollOpacity } = useScroll({
     target: aboutSectionRef,
     offset: ["start start", "start end"],
   });
 
-  const { scrollYProgress: aboutScrollProgress } = useScroll({
-    target: aboutSectionRef,
-    offset: ["-12% 0%", "end start"],
-  });
-
-  const isFooterInView = useInView(footerRef, { amount: 0.9 });
-
   const opacity = useTransform(aboutScrollOpacity, [1, 0.4], [1, 0]);
-
-  React.useEffect(() => {
-    console.log(isFooterInView, "hi!");
-  }, [isFooterInView]);
 
   return (
     <>
       <div className="block relative z-1">
         <div>
           <WhiteNavbar
-            isFooterInView={isFooterInView}
+            aboutSectionRef={aboutSectionRef}
+            footerRef={footerRef}
             navBarColor={navBarColor}
-            progress={progress}
-            setProgress={setProgress}
-            aboutScrollProgress={aboutScrollProgress}
           />
           {/*  main used to have a h-[200vh] h-[200vh] and a z-[99999] */}
           <motion.main className="relative z-[100000]">
