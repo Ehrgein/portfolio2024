@@ -34,6 +34,7 @@ const WhiteNavbar = ({
     // If the footer did not reach the end, and the progress is set to 1 (it means we passed the footer already once), then we set it back to white, as you can't 'jump' sections.
 
     if (isFooterVisible) {
+      window.alert("Footer is now visible!");
       navBarColor.set("#202020");
       setProgress(1);
     }
