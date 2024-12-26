@@ -1,10 +1,15 @@
 import React from "react";
+import FooterContact from "./FooterContact";
 
 function LetsTalk({ children }: { children: React.ReactNode }) {
   return (
+    // mobilesm:pt-48 div had this.
+    // mobilemd:pt-28 and this
+
     <div
       className="desktop:pt-52 xl:pt-44 
-    lg:pt-48 md:pt-52 mobilemd:pt-28 mobilemd:px-4 mobilesm:px-4 mobilesm:pt-48
+    lg:pt-48 md:pt-52  
+    mobilemd:px-4 mobilesm:px-4 
     xl:space-y-7 lg:space-y-4 md:space-y-3 mobilemd:space-y-4 mobilesm:py-3"
     >
       <h3
@@ -29,6 +34,14 @@ function LetsTalk({ children }: { children: React.ReactNode }) {
         Feel free to reach out if you have a project in mind, or simply want to
         say hi!
       </p>
+      <div className="flex px-24">
+        <div
+          className="w-full relative flex flex-col justify-center items-center flex-grow-0
+                  desktop:pt-10 xl:pt-3 md:pt-5"
+        >
+          <FooterContact>hello@alexisford.dev</FooterContact>
+        </div>
+      </div>
     </div>
   );
 }

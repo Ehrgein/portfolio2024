@@ -21,15 +21,15 @@ function NewFooter({
               I’m always happy to talk. Feel free to reach out if you have a
               project in mind, or simply want to say hi!
             </LetsTalk>
-            <div className="flex px-24">
+            {/* <div className="flex px-24">
               <div
                 className="w-full relative flex flex-col justify-center items-center flex-grow-0
             desktop:pt-10 xl:pt-3 md:pt-5"
               >
                 <FooterContact>hello@alexisford.dev</FooterContact>
               </div>
-            </div>
-            <div className="flex flex-grow items-end justify-end px-24 pb-6"></div>
+            </div> */}
+            {/* <div className="flex flex-grow items-end justify-end px-24 pb-6"></div> */}
             <Socials />
           </motion.div>
         </footer>
