@@ -71,7 +71,7 @@ function ProjectsLayout({
         <div
           className="desktop:text-[8rem] xl:text-[6rem] lg:text-[8vw] md:text-[4rem] mobilesm:text-6xl
         mobilemd:text-[4rem] mobilemd:leading-[1.1] mobilesm:leading-tight
-        mobilexl:px-1 mobilemd:px-3 mobilesm:px-3
+        mobilexl:px-3 mobilemd:px-3 mobilesm:px-3
         desktop:pb-24 xl:pb-24 lg:pb-12 md:pb-8 mobilemd:pb-10 mobilesm:pb-7"
         >
           <h3>SELECTED WORKS.</h3>
