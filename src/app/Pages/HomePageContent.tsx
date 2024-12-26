@@ -4,13 +4,7 @@ import WhiteNavbar from "../Components/layout/WhiteNavbar";
 import IntroSection from "../Components/layout/IntroSection";
 import ProjectsSection from "../Components/layout/ProjectsSection";
 import AboutSection from "../Components/layout/AboutSection";
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 
 import NewFooter from "../Components/layout/NewFooter";
 
