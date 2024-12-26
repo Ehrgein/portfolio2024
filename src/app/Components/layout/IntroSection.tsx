@@ -1,5 +1,5 @@
 import React from "react";
-import { animate, motion, MotionValue } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import PresentationParagraph from "../animations/PresentationParagraph";
 import Scene from "../scene/Scene";
 import Socials from "../ui/Socials";

@@ -1,11 +1,8 @@
 import React from "react";
 // import { fragment, vertex } from "./shader";
-import { useFrame } from "@react-three/fiber";
-import { MotionValue } from "framer-motion";
-import { motion } from "framer-motion-3d";
-import { MeshProps } from "@react-three/fiber";
-import { Mesh } from "three";
 // import { useTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { Mesh } from "three";
 import { ShaderMaterial } from "three";
 import { Vector2 } from "three";
 import { fragment, vertex } from "./sphereshader";
