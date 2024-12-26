@@ -32,7 +32,7 @@ const WhiteNavbar = ({
   React.useEffect(() => {
     // If the footer is visible, it means we reached the end of the document. So, we set it to black. We also set the progress to 1, as this is how we check IF the footer reached the end.
     // If the footer did not reach the end, and the progress is set to 1 (it means we passed the footer already once), then we set it back to white, as you can't 'jump' sections.
-    console.log(navBarColor);
+
     if (isFooterVisible) {
       navBarColor.set("#202020");
       setProgress(1);
@@ -40,14 +40,12 @@ const WhiteNavbar = ({
     // If the footer is NOT visible, but the progress is 1
     else if (!isFooterVisible && progress === 1) {
       navBarColor.set("#5ffbc6");
-    } else {
-      navBarColor.set("#202020");
     }
   }, [isFooterVisible]);
 
   useMotionValueEvent(aboutScrollProgress, "change", (latestValue) => {
     console.log(latestValue, "latest value");
-    if (latestValue > 0.05) {
+    if (latestValue > 0.2) {
       navBarColor.set("#DFD9D9"); // Green for About/Projects
     } else {
       navBarColor.set("#202020"); // Black for other areas
