@@ -52,6 +52,7 @@ function ProjectList({
               <p
                 className="w-full text-[#a09e9e] desktop:leading-[1.65] xl:leading-[1.6] 
               tracking-wide md:font-light mobilesm:font-normal
+              opacity-90
               desktop:text-xl xl:text-lg md:text-base mobilemd:text-lg mobilesm:text-[0.95rem] text-pretty"
               >
                 {description}
