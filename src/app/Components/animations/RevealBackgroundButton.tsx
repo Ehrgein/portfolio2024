@@ -45,7 +45,9 @@ function RevealBackgroundButton({
       transition={{ duration: 0.2 }}
       className="flex items-center justify-center relative 
       box-shadow rounded-full bg-[#161616] z-0 cursor-pointer
-      px-8 py-3"
+      px-8
+      mobilemd:px-7 mobilemd:py-3
+      mobilesm:px-5 mobilesm:py-3"
       {...delegated}
       style={{ overflow: "hidden" }}
     >
@@ -54,7 +56,7 @@ function RevealBackgroundButton({
         onClick={handleSetIsExiting}
         className="relative z-10 
         
-       desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm mobilesm:text-[.6rem]"
+       desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm mobilesm:text-[.7rem]"
         style={{ color: "inherit" }}
       >
         {children}
