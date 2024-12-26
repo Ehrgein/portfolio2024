@@ -70,7 +70,7 @@ const WhiteNavbar = ({
   return (
     <>
       <div className="w-full md:h-0 mobilesm:h-[80px]">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full fixed z-[999999999999]">
           <motion.nav
             variants={{
               visible: { y: "0%" },
@@ -79,7 +79,7 @@ const WhiteNavbar = ({
             animate={showNavbar ? "visible" : "hidden"}
             transition={{ ease: "easeInOut", duration: 0.6 }}
             style={{ color: navBarColor }}
-            className={` w-full flex justify-between pt-9 md:px-10 mobilesm:px-4 text-lg gap-6 fixed top-0 right-0 z-[999999999999]`}
+            className={` w-full flex justify-between pt-9 md:px-10 mobilesm:px-4 text-lg gap-6 `}
           >
             <header
               className={`${compacta.className} font-normal md:text-3xl mobilemd:text-5xl mobilesm:text-4xl tracking-[-0.04em] overflow-hidden`}
