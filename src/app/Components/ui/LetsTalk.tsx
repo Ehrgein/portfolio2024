@@ -7,7 +7,8 @@ function LetsTalk({ children }: { children: React.ReactNode }) {
     // mobilemd:pt-28 and this
 
     <div
-      className="desktop:pt-52 xl:pt-44 
+      className="flex flex-col h-full justify-center items-center
+      desktop:pt-52 xl:pt-44 
     lg:pt-48 md:pt-52  
     mobilemd:px-4 mobilesm:px-4 
     xl:space-y-7 lg:space-y-4 md:space-y-3 mobilemd:space-y-4 mobilesm:py-3"
