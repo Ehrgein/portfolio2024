@@ -1,8 +1,7 @@
 import React from "react";
-import { projectItem } from "@/app/Types/Types";
-import { TransitionLink } from "@/app/helpers/TransitionLink";
+
 import ExitTransition from "../transitions/ExitTransition";
-import RevealBackgroundButton from "../animations/RevealBackgroundButton";
+
 import ProjectList from "./ProjectList";
 import pinkcurology from "../../Assets/pinkcrlg.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
