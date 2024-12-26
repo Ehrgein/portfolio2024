@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, MotionValue } from "framer-motion";
+import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
@@ -22,31 +22,36 @@ const WhiteNavbar = ({
   React.useEffect(() => {
     if (isFooterInView) {
       navBarColor.set("#202020");
-      console.log("color has been changed to blak for the footer");
+
       setProgress(1);
     } else if (!isFooterInView && progress === 1) {
       navBarColor.set("#DFD9D9");
-      console.log("color has been reverted to white FROM the footer");
     }
   }, [isFooterInView]);
 
-  React.useEffect(() => {
-    const unsubscribeScrollProg = aboutScrollProgress.on(
-      "change",
-      (progress) => {
-        console.log(progress);
-        if (progress > 0) {
-          console.log("changing color to green");
-          navBarColor.set("#DFD9D9"); // Green for About/Projects
-        } else {
-          console.log("changing color to black");
-          navBarColor.set("#202020"); // Black for other areas
-        }
-      }
-    );
+  useMotionValueEvent(aboutScrollProgress, "change", (progress) => {
+    if (progress > 0) {
+      navBarColor.set("#DFD9D9"); // Green for About/Projects
+    } else {
+      navBarColor.set("#202020"); // Black for other areas
+    }
+  });
 
-    return () => unsubscribeScrollProg();
-  }, [aboutScrollProgress, isFooterInView]);
+  // React.useEffect(() => {
+  //   const unsubscribeScrollProg = aboutScrollProgress.on(
+  //     "change",
+  //     (progress) => {
+  //       console.log(progress);
+  //       if (progress > 0) {
+  //         navBarColor.set("#DFD9D9"); // Green for About/Projects
+  //       } else {
+  //         navBarColor.set("#202020"); // Black for other areas
+  //       }
+  //     }
+  //   );
+
+  //   return () => unsubscribeScrollProg();
+  // }, [aboutScrollProgress, isFooterInView]);
 
   return (
     <>
