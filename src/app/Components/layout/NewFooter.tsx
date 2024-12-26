@@ -1,7 +1,7 @@
 import React from "react";
 import Socials from "../ui/Socials";
 import { motion } from "framer-motion";
-import FooterContact from "../ui/FooterContact";
+// import FooterContact from "../ui/FooterContact";
 import LetsTalk from "../ui/LetsTalk";
 
 function NewFooter({
