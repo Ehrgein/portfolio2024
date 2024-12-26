@@ -1,10 +1,18 @@
 import React from "react";
-import { motion, MotionValue } from "framer-motion";
+import { animate, motion, MotionValue } from "framer-motion";
 import PresentationParagraph from "../animations/PresentationParagraph";
 import Scene from "../scene/Scene";
 import Socials from "../ui/Socials";
 
-function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
+function IntroSection({
+  opacity,
+  isLoading,
+}: {
+  opacity: MotionValue<number>;
+  isLoading: boolean;
+}) {
+  console.log(isLoading);
+
   return (
     <>
       <motion.div
@@ -16,7 +24,14 @@ function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
           <Socials />
         </section>
         <section className="md:hidden w-full flex flex-col mobilesm:h-[calc(100vh-80px)] relative px-4">
-          <Scene />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isLoading ? 0 : 1 }}
+            transition={{ duration: 2 }}
+            className="w-full h-full"
+          >
+            <Scene />
+          </motion.div>
           <p className="text-[2rem] pb-4 leading-[1.45]">
             Frontend developer based in Buenos Aires. Obsessed with{" "}
             <strong>ux/ui</strong> and <strong>3D.</strong>

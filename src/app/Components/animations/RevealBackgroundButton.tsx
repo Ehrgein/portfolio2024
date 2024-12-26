@@ -46,6 +46,7 @@ function RevealBackgroundButton({
       className="flex items-center justify-center relative 
       box-shadow rounded-full bg-[#161616] z-0 cursor-pointer
       px-8
+      mobilexl:px-8 mobilexl:py-3 
       mobilemd:px-7 mobilemd:py-3
       mobilesm:px-5 mobilesm:py-2"
       {...delegated}

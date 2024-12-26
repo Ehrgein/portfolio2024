@@ -14,7 +14,7 @@ import {
 
 import NewFooter from "../Components/layout/NewFooter";
 
-function HomePageContent() {
+function HomePageContent({ isLoading }: { isLoading: boolean }) {
   const projectSectionRef = React.useRef<HTMLDivElement>(null);
   const aboutSectionRef = React.useRef<HTMLDivElement>(null);
   const navBarColor = useMotionValue("#202020"); // Default color
@@ -56,7 +56,7 @@ function HomePageContent() {
           />
           {/*  main used to have a h-[200vh] h-[200vh] and a z-[99999] */}
           <motion.main className="relative z-[100000]">
-            <IntroSection opacity={opacity} />
+            <IntroSection opacity={opacity} isLoading={isLoading} />
             <AboutSection aboutSectionRef={aboutSectionRef} />
             <div ref={projectSectionRef}>
               <ProjectsSection />

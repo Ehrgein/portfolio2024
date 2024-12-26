@@ -27,7 +27,7 @@ export default function Home() {
         <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
       ) : (
         <>
-          <HomePageContent />
+          <HomePageContent isLoading={isLoading} />
         </>
       )}
     </>
