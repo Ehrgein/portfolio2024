@@ -78,7 +78,9 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
       ref={scope}
       className="bg-[#161616] flex flex-col items-center justify-center w-screen h-screen"
     >
-      <div className={` flex flex-col max-w-96 w-full gap-1`}>
+      <div
+        className={` flex flex-col max-w-96 mobilexl:px-0 mobilemd:px-2 mobilesm:px-4 w-full gap-1`}
+      >
         <div className="overflow-hidden flex flex-col gap-[2px]">
           <div className="overflow-hidden">
             <p
