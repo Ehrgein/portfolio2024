@@ -32,7 +32,12 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   };
 
   return (
-    <Link tabIndex={1} {...props} href={"1"} onClick={handleTransition}>
+    <Link
+      tabIndex={1}
+      onClick={handleTransition}
+      {...props}
+      href={{ pathname: "/1", query: { needstransition: false } }}
+    >
       <motion.span></motion.span>
       {children}
     </Link>

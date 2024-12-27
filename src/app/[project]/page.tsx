@@ -1,37 +1,28 @@
 "use client";
 import React from "react";
 import Lenis from "lenis";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import restaurant from "../Assets/restaurant.jpg";
-import EnterAnimation from "../Components/transitions/EnterAnimation";
 import { ppneuemontreal, compacta } from "../helpers/fonts";
-import red from "../Assets/redimage.jpg";
-import orange from "../Assets/orangebtl.jpg";
-import Technologies from "../Components/ui/Technologies";
-import { lato } from "../helpers/fonts";
-import Typography from "../Components/ui/Typography";
-import ColorPalette from "../Components/ui/ColorPalette";
-import ImageReveal from "../Components/animations/ImageReveal";
-import { fontData } from "../Types/Types";
-import Challenge from "../Components/ui/Challenge";
 
-const TypographyLato: fontData[] = [
-  {
-    weight: "",
-    fontName: "Lato Regular",
-  },
-  {
-    weight: "font-medium",
-    fontName: "Lato Medium",
-  },
-  {
-    weight: "font-bold",
-    fontName: "Lato Bold",
-  },
-];
+import FixedProject from "../Components/ui/FixedProject";
+
+// const TypographyLato: fontData[] = [
+//   {
+//     weight: "",
+//     fontName: "Lato Regular",
+//   },
+//   {
+//     weight: "font-medium",
+//     fontName: "Lato Medium",
+//   },
+//   {
+//     weight: "font-bold",
+//     fontName: "Lato Bold",
+//   },
+// ];
 
 function Project() {
+  const [isEntering, setIsEntering] = React.useState(false);
+
   const lenis = new Lenis();
 
   function raf(time: number) {
@@ -43,8 +34,8 @@ function Project() {
 
   return (
     <div className={`$${ppneuemontreal.className}`}>
-      <EnterAnimation />
-      <motion.div
+      {/* <EnterAnimation /> */}
+      {/* <motion.div
         className="w-full h-[100vh]" // Full height for initial mount
         animate={{ height: "80vh" }} // Move upwards by 100px
         transition={{
@@ -52,14 +43,15 @@ function Project() {
           duration: 1.2,
           ease: [0.23, 1, 0.32, 1], // Ease-in-out
         }}
-      >
+      > */}
+      {/* <motion.div className="w-full h-full">
         <Image
           alt="hello"
           src={restaurant}
           className="w-full h-full object-cover pointer-events-none"
         />
-      </motion.div>
-      <div className="w-full bg-[#f8f7f7]">
+      </motion.div> */}
+      {/* <div className="w-full">
         <div className="text-3xl pt-16 max-w-[1200px] relative mx-auto my-0 space-y-4 pb-40">
           <div>
             <h1
@@ -97,10 +89,9 @@ function Project() {
           />
           <ColorPalette />
         </div>
-      </div>
+      </div> */}
       {/* here goes the fixedd left */}
-      {/* <FixedProject /> */}
-      <div className="noise-bg"></div>
+      <FixedProject />
     </div>
   );
 }

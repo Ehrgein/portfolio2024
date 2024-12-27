@@ -29,6 +29,7 @@ type IntroHeaderRevealProps = {
   leadingUnit?: number;
   fontWeight?: string | FontWeight;
   alignment?: string;
+
   fontFamily?: "compacta" | "ppneummontreal";
 };
 
