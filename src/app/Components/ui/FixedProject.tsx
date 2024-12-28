@@ -35,7 +35,6 @@ function FixedProject() {
 
   const [isSwitchingProjects, setIsSwitchingProjects] =
     React.useState<boolean>(false);
-  const [comesFromProject, setComesFromProject] = React.useState(false);
 
   const images = [fixedImage, coccoil, atellier];
 
@@ -62,7 +61,6 @@ function FixedProject() {
   ];
 
   const handleNext = async () => {
-    setComesFromProject(true);
     setIsSwitchingProjects(true);
     setTimeout(() => {
       const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
