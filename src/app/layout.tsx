@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
 import { ppneuemontreal } from "../app/helpers/fonts";
 
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ppneuemontreal.className} antialiased bg-[#EDE9DE]`}>
-        {children}
+        <Suspense>{children}</Suspense>
         <div className="noise-bg"></div>
       </body>
     </html>
