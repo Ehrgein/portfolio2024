@@ -9,9 +9,11 @@ import fixedImage from "@/app/Assets/fixedcover.jpg";
 import { motion, useAnimate } from "framer-motion";
 import atellier from "@/app/Assets/atellier.jpg";
 import ProjectIntroduction from "./ProjectIntroduction";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useSearchParams, useRouter } from "next/navigation";
+
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
+import EnterAnimation from "../transitions/EnterAnimation";
 
 const TypographyLato: fontData[] = [
   {
@@ -29,19 +31,25 @@ const TypographyLato: fontData[] = [
 ];
 
 function FixedProject() {
-  const params = useParams();
+  const searchParams = useSearchParams();
+  const { project } = useParams();
   const [isSwitchingProjects, setIsSwitchingProjects] =
     React.useState<boolean>(false);
 
   const images = [fixedImage, coccoil, atellier];
 
+  const from = searchParams.get("from");
+
+  console.log(project);
+  console.log(from);
+
   const router = useRouter();
 
   const [scope, animate] = useAnimate(); // `scope` is used to control animations on the div
-  console.log(animate);
+
   // Get the active index from the route parameter, fallback to 0 if invalid
 
-  const projectNumber = Number(params.project);
+  const projectNumber = Number(project);
 
   const currentIndex =
     !isNaN(projectNumber) && projectNumber > 0
@@ -57,17 +65,6 @@ function FixedProject() {
   ];
 
   const handleNext = async () => {
-    // await animate(
-    //   "#project-content",
-    //   {
-    //     y: "-100%",
-    //   },
-    //   {
-    //     ease: "easeInOut",
-    //     duration: 0.6,
-    //   }
-    // );
-
     setIsSwitchingProjects(true);
     setTimeout(() => {
       const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
@@ -75,10 +72,9 @@ function FixedProject() {
     }, 1000);
   };
 
-  React.useEffect(() => {});
-
   return (
     <>
+      {from === "home" && <EnterAnimation />}
       {isSwitchingProjects && <SwitchProject />}
       <div>
         <motion.div ref={scope} className="w-full h-screen flex relative">

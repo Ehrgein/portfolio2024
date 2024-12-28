@@ -1,7 +1,7 @@
 import React from "react";
 import RevealBackgroundButton from "../animations/RevealBackgroundButton";
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 import { TransitionLink } from "@/app/helpers/TransitionLink";
 import { projectItem } from "@/app/Types/Types";
 
@@ -12,6 +12,8 @@ function ProjectList({
   projects: projectItem[];
   handleSetIsExiting: () => void;
 }) {
+  const pathname = usePathname();
+
   return (
     <>
       {projects.map(

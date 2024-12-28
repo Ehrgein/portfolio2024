@@ -86,10 +86,7 @@ const WhiteNavbar = ({
             onClick={() => setIsExiting(true)}
             className={`text-base mobilemd:text-5xl items-center ${navBarColor} flex gap-9 tracking-wide font-medium ${ppneuemontreal.className}`}
           >
-            <TransitionLink
-              href="/1
-          "
-            >
+            <TransitionLink href="/1">
               <svg
                 aria-label="Opens hamburger menu"
                 role="button"

@@ -2,6 +2,7 @@ import React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
@@ -18,17 +19,18 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   ...props
 }) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const handleTransition = async (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("from", "home");
 
     await sleep(1500);
 
-    console.log("log me!");
-
-    router.push(href);
+    router.push(`${href}?${params.toString()}`);
   };
 
   return (
@@ -36,7 +38,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
       tabIndex={1}
       onClick={handleTransition}
       {...props}
-      href={{ pathname: "/1", query: { needstransition: false } }}
+      href={{ pathname: "/1" }}
     >
       <motion.span></motion.span>
       {children}
