@@ -1,5 +1,4 @@
 import React from "react";
-import { compacta } from "@/app/helpers/fonts";
 import Image from "next/image";
 import coccoil from "../../Assets/cocooil.jpg";
 import Typography from "./Typography";
@@ -7,8 +6,7 @@ import ColorPalette from "./ColorPalette";
 import { fontData } from "@/app/Types/Types";
 import { lato } from "@/app/helpers/fonts";
 import fixedImage from "@/app/Assets/fixedcover.jpg";
-import ProjectMiniDetails from "./ProjectMiniDetails";
-import { motion, usePresence, useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import atellier from "@/app/Assets/atellier.jpg";
 import ProjectIntroduction from "./ProjectIntroduction";
 import { useParams, useRouter } from "next/navigation";
