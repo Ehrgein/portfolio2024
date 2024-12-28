@@ -1,8 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import fixedImage from "@/app/Assets/fixedcover.jpg";
-import { compacta } from "@/app/helpers/fonts";
-import ProjectMiniDetails from "./ProjectMiniDetails";
 
 function ProjectIntroduction({
   header,

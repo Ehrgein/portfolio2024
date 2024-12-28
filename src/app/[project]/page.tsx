@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Lenis from "lenis";
-import { ppneuemontreal, compacta } from "../helpers/fonts";
+import { ppneuemontreal } from "../helpers/fonts";
 
 import FixedProject from "../Components/ui/FixedProject";
 
@@ -21,8 +21,6 @@ import FixedProject from "../Components/ui/FixedProject";
 // ];
 
 function Project() {
-  const [isEntering, setIsEntering] = React.useState(false);
-
   const lenis = new Lenis();
 
   function raf(time: number) {

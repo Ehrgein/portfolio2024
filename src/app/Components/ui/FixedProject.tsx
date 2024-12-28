@@ -1,5 +1,4 @@
 import React from "react";
-import { compacta } from "@/app/helpers/fonts";
 import Image from "next/image";
 import coccoil from "../../Assets/cocooil.jpg";
 import Typography from "./Typography";
@@ -7,14 +6,8 @@ import ColorPalette from "./ColorPalette";
 import { fontData } from "@/app/Types/Types";
 import { lato } from "@/app/helpers/fonts";
 import fixedImage from "@/app/Assets/fixedcover.jpg";
-import ProjectMiniDetails from "./ProjectMiniDetails";
-import {
-  motion,
-  useAnimation,
-  AnimatePresence,
-  usePresence,
-  useAnimate,
-} from "framer-motion";
+
+import { motion, useAnimate } from "framer-motion";
 import atellier from "@/app/Assets/atellier.jpg";
 import ProjectIntroduction from "./ProjectIntroduction";
 import { useParams, useRouter } from "next/navigation";
@@ -39,7 +32,7 @@ const TypographyLato: fontData[] = [
 
 function FixedProject() {
   const params = useParams();
-  const [isPresent, safeToRemove] = usePresence();
+
   const [isSwitchingProjects, setIsSwitchingProjects] =
     React.useState<boolean>(false);
   const [comesFromProject, setComesFromProject] = React.useState(false);
@@ -68,17 +61,6 @@ function FixedProject() {
   ];
 
   const handleNext = async () => {
-    // await animate(
-    //   "#project-content",
-    //   {
-    //     y: "-100%",
-    //   },
-    //   {
-    //     ease: "easeInOut",
-    //     duration: 0.6,
-    //   }
-    // );
-
     setComesFromProject(true);
     setIsSwitchingProjects(true);
     setTimeout(() => {
