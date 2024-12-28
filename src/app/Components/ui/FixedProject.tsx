@@ -13,7 +13,7 @@ import ProjectIntroduction from "./ProjectIntroduction";
 import { useParams, useRouter } from "next/navigation";
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
-import EnterAnimation from "../transitions/EnterAnimation";
+// import EnterAnimation from "../transitions/EnterAnimation";
 
 const TypographyLato: fontData[] = [
   {
@@ -75,7 +75,6 @@ function FixedProject() {
   return (
     <>
       {isSwitchingProjects && <SwitchProject />}
-      {comesFromProject && <EnterAnimation />}
       <div>
         <motion.div ref={scope} className="w-full h-screen flex relative">
           <motion.div className="w-2/5  h-screen pr-12">
