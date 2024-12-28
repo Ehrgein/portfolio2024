@@ -36,6 +36,7 @@ function FixedProject() {
   const images = [fixedImage, coccoil, atellier];
 
   const router = useRouter();
+  console.log(router);
 
   const [scope, animate] = useAnimate(); // `scope` is used to control animations on the div
   console.log(animate);
@@ -69,10 +70,10 @@ function FixedProject() {
     // );
 
     setIsSwitchingProjects(true);
-    setTimeout(() => {
-      const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
-      router.push(`/${nextProject}`);
-    }, 1000);
+    // setTimeout(() => {
+    //   const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
+    //   router.push(`/${nextProject}`);
+    // }, 44444440);
   };
 
   React.useEffect(() => {});
