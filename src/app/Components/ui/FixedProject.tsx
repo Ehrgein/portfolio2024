@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense } from "react";
+import React from "react";
 import Image from "next/image";
 import coccoil from "../../Assets/cocooil.jpg";
 import Typography from "./Typography";
