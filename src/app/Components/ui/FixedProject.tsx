@@ -45,7 +45,7 @@ function FixedProject() {
 
   const router = useRouter();
 
-  const [scope, animate] = useAnimate(); // `scope` is used to control animations on the div
+  const [scope] = useAnimate(); // `scope` is used to control animations on the div
 
   // Get the active index from the route parameter, fallback to 0 if invalid
 

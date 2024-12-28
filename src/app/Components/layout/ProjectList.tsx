@@ -12,8 +12,6 @@ function ProjectList({
   projects: projectItem[];
   handleSetIsExiting: () => void;
 }) {
-  const pathname = usePathname();
-
   return (
     <>
       {projects.map(
