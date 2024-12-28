@@ -10,7 +10,6 @@ import { motion, useAnimate } from "framer-motion";
 import atellier from "@/app/Assets/atellier.jpg";
 import ProjectIntroduction from "./ProjectIntroduction";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
-
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
 import EnterAnimation from "../transitions/EnterAnimation";
