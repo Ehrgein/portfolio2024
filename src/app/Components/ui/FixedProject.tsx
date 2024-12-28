@@ -69,7 +69,7 @@ function FixedProject() {
     setTimeout(() => {
       const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
       router.push(`/${nextProject}`);
-    }, 1000);
+    }, 1100);
   };
 
   return (
