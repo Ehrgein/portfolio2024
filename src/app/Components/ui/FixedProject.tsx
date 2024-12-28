@@ -1,4 +1,5 @@
 import React from "react";
+import { compacta } from "@/app/helpers/fonts";
 import Image from "next/image";
 import coccoil from "../../Assets/cocooil.jpg";
 import Typography from "./Typography";
@@ -6,14 +7,13 @@ import ColorPalette from "./ColorPalette";
 import { fontData } from "@/app/Types/Types";
 import { lato } from "@/app/helpers/fonts";
 import fixedImage from "@/app/Assets/fixedcover.jpg";
-
-import { motion, useAnimate } from "framer-motion";
+import ProjectMiniDetails from "./ProjectMiniDetails";
+import { motion, usePresence, useAnimate } from "framer-motion";
 import atellier from "@/app/Assets/atellier.jpg";
 import ProjectIntroduction from "./ProjectIntroduction";
 import { useParams, useRouter } from "next/navigation";
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
-// import EnterAnimation from "../transitions/EnterAnimation";
 
 const TypographyLato: fontData[] = [
   {
@@ -32,7 +32,6 @@ const TypographyLato: fontData[] = [
 
 function FixedProject() {
   const params = useParams();
-
   const [isSwitchingProjects, setIsSwitchingProjects] =
     React.useState<boolean>(false);
 
@@ -42,7 +41,6 @@ function FixedProject() {
 
   const [scope, animate] = useAnimate(); // `scope` is used to control animations on the div
   console.log(animate);
-
   // Get the active index from the route parameter, fallback to 0 if invalid
 
   const projectNumber = Number(params.project);
@@ -61,6 +59,17 @@ function FixedProject() {
   ];
 
   const handleNext = async () => {
+    // await animate(
+    //   "#project-content",
+    //   {
+    //     y: "-100%",
+    //   },
+    //   {
+    //     ease: "easeInOut",
+    //     duration: 0.6,
+    //   }
+    // );
+
     setIsSwitchingProjects(true);
     setTimeout(() => {
       const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
@@ -82,11 +91,11 @@ function FixedProject() {
               }}
               animate={{ clipPath: "inset(0% 0% 0% 0%" }}
               transition={{
-                duration: 1.4,
-                ease: [0.6, 1, 0.129, 1],
+                duration: 2,
+                ease: [0.19, 1, 0.22, 1],
               }}
               id="project-content"
-              className="fixed top-0 left-0 h-full w-full pointer-events-none"
+              className="fixed top-0 left-0 h-full w-full  pointer-events-none"
             >
               {visibleImages.map(({ src, position }, index) => (
                 <Image
@@ -100,7 +109,21 @@ function FixedProject() {
               ))}
             </motion.div>
           </motion.div>
-          <motion.div className="flex flex-col w-3/5 pt-12 pl-16 pr-16 h-full text-6 overflow-hidden">
+          <motion.div className="flex flex-col w-3/5 pt-12 pl-16 pr-16 h-full text-6 ">
+            {/* <div className="w-full h-full">
+              <motion.h1
+                initial={{ y: "100%" }}
+                onClick={handleNext}
+                className={`${compacta.className} text-[#161616] opacity-95 text-6xl tracking-wide`}
+              >
+                KEEP MOVING
+              </motion.h1>
+            </div> */}
+            {/* <motion.p exit={{ scale: 1.5 }} className="text-[#484040] text-md">
+              Discover bold, urban high fashion with cutting-edge designs and
+              premium streetwear style.
+            </motion.p> */}
+            <button onClick={handleNext}>CLICK ME</button>
             <IntroHeaderReveal
               textSize={
                 "desktop:text-6xl 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[2.6rem] md:text-[2.5rem] mobilemd:text-[2.5rem]"
@@ -110,9 +133,6 @@ function FixedProject() {
               textContent="KEEP MOVING"
               fontFamily="compacta"
             />
-            <div className="w-fit pt-24">
-              <button onClick={handleNext}>click me</button>
-            </div>
 
             <div className="flex flex-col pt-16 w-full pr-10">
               <ProjectIntroduction
