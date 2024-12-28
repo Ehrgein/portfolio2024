@@ -40,9 +40,6 @@ function FixedProject() {
 
   const from = searchParams.get("from");
 
-  console.log(project);
-  console.log(from);
-
   const router = useRouter();
 
   const [scope] = useAnimate(); // `scope` is used to control animations on the div
@@ -87,6 +84,7 @@ function FixedProject() {
               transition={{
                 duration: 2,
                 ease: [0.19, 1, 0.22, 1],
+                delay: from === "home" ? 1.4 : 0,
               }}
               id="project-content"
               className="fixed top-0 left-0 h-full w-full  pointer-events-none"

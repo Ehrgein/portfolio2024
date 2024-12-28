@@ -21,14 +21,19 @@ import FixedProject from "../Components/ui/FixedProject";
 // ];
 
 function Project() {
-  const lenis = new Lenis();
+  React.useEffect(() => {
+    // Not rendering on the server
+    if (typeof window !== "undefined") {
+      const lenis = new Lenis();
 
-  function raf(time: number) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
 
-  requestAnimationFrame(raf);
+      requestAnimationFrame(raf);
+    }
+  }, []);
 
   return (
     <div className={`$${ppneuemontreal.className}`}>
