@@ -48,18 +48,7 @@ function FixedProject() {
 
   const projectNumber = Number(project);
 
-  const currentIndex =
-    !isNaN(projectNumber) && projectNumber > 0
-      ? (projectNumber - 1) % images.length // Wrap around using modulus
-      : 0;
-
-  const nextIndex = (currentIndex + 1) % images.length; // Determine the next image index
-
   // Only include the current and next images
-  const visibleImages = [
-    { src: images[currentIndex], position: "current" },
-    { src: images[nextIndex], position: "next" },
-  ];
 
   const handleNext = async () => {
     setIsSwitchingProjects(true);
@@ -89,16 +78,11 @@ function FixedProject() {
               id="project-content"
               className="fixed top-0 left-0 h-full w-full  pointer-events-none"
             >
-              {visibleImages.map(({ src, position }, index) => (
-                <Image
-                  key={index}
-                  src={src}
-                  alt={`Image ${index}`}
-                  className={`h-full w-[40%] object-cover ${
-                    position === "current" ? "z-10" : "z-0"
-                  }`}
-                />
-              ))}
+              <Image
+                src={images[projectNumber - 1]}
+                alt=""
+                className={`h-full w-[40%] object-cover`}
+              />
             </motion.div>
           </motion.div>
           <motion.div className="flex flex-col w-3/5 pt-12 pl-16 pr-16 h-full text-6 ">
