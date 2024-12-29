@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";
 import ExitTransition from "../transitions/ExitTransition";
+import { useScrollContext } from "../context/ScrollContext";
 
 const WhiteNavbar = ({
-  navBarColor,
   aboutScrollProgress,
-  isFooterInView,
   progress,
   setProgress,
 }: {
-  navBarColor: MotionValue<string>;
   progress: number;
   setProgress: (value: number) => void;
   aboutScrollProgress: MotionValue<number>;
-  isFooterInView: boolean;
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
+  const { isFooterInView, navBarColor } = useScrollContext();
 
   React.useEffect(() => {
     if (isFooterInView) {
       navBarColor.set("#202020");
-
       setProgress(1);
     } else if (!isFooterInView && progress === 1) {
       navBarColor.set("#DFD9D9");
@@ -36,22 +33,6 @@ const WhiteNavbar = ({
       navBarColor.set("#202020"); // Black for other areas
     }
   });
-
-  // React.useEffect(() => {
-  //   const unsubscribeScrollProg = aboutScrollProgress.on(
-  //     "change",
-  //     (progress) => {
-  //       console.log(progress);
-  //       if (progress > 0) {
-  //         navBarColor.set("#DFD9D9"); // Green for About/Projects
-  //       } else {
-  //         navBarColor.set("#202020"); // Black for other areas
-  //       }
-  //     }
-  //   );
-
-  //   return () => unsubscribeScrollProg();
-  // }, [aboutScrollProgress, isFooterInView]);
 
   return (
     <>

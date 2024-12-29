@@ -4,13 +4,7 @@ import PresentationParagraph from "../animations/PresentationParagraph";
 import Scene from "../scene/Scene";
 import Socials from "../ui/Socials";
 
-function IntroSection({
-  opacity,
-  isLoading,
-}: {
-  opacity: MotionValue<number>;
-  isLoading: boolean;
-}) {
+function IntroSection({ opacity }: { opacity: MotionValue<number> }) {
   return (
     <>
       <motion.div
@@ -24,7 +18,8 @@ function IntroSection({
         <section className="md:hidden w-full flex flex-col mobilesm:h-[calc(100vh-80px)] relative px-4">
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: isLoading ? 0 : 1 }}
+            // animate={{ opacity: isLoading ? 0 : 1 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             className="w-full h-full"
           >

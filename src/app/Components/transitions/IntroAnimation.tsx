@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion, useAnimate } from "framer-motion";
 
@@ -99,7 +100,7 @@ const IntroAnimation = ({ isLoading, setIsLoading }: loadingType) => {
           animate="fill"
           variants={transitionVariants}
           onAnimationComplete={() => setIsLoading(!isLoading)}
-          className="transition-panel fixed w-full h-screen bottom-0 left-0  bg-[#E1DFDF]"
+          className="transition-panel fixed w-full h-screen bottom-0 left-0  bg-[#EDE9DE]"
         ></motion.div>
       )}
     </div>

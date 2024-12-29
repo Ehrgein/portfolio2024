@@ -1,64 +1,20 @@
-"use client";
 import React from "react";
-import Lenis from "lenis";
-import IntroAnimation from "./Components/transitions/IntroAnimation";
+
 import HomePageContent from "./Pages/HomePageContent";
+import ServerSideIntro from "./Components/transitions/ServerSideIntro";
+import { ScrollProvider } from "./Components/context/ScrollContext";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    // Not rendering on the server
-    if (typeof window !== "undefined") {
-      const lenis = new Lenis();
-
-      const raf = (time: number) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-
-      requestAnimationFrame(raf);
-    }
-  }, []);
+  //ServerSideIntro does not execute, or own, anything related to ServerSideExample. What happens is that Home rendersServerSideExample as a server component
+  // , owns it and then slots it inside ServerSideIntro as a children prop.
 
   return (
     <>
-      {isLoading ? (
-        <IntroAnimation isLoading={isLoading} setIsLoading={setIsLoading} />
-      ) : (
-        <>
-          <HomePageContent isLoading={isLoading} />
-        </>
-      )}
+      <ScrollProvider>
+        <ServerSideIntro>
+          <HomePageContent />
+        </ServerSideIntro>
+      </ScrollProvider>
     </>
   );
-}
-
-//backup
-
-{
-  /* <motion.div
-                  style={{ opacity }}
-                  // ref={mainRef}
-                  className={`sticky top-0 justify-center w-full flex flex-col flex-grow`}
-                >
-                  <section className="h-screen w-full flex flex-col px-4">
-                    <PresentationParagraph />
-                  </section>
-                </motion.div> */
-}
-
-// old section one code
-
-// mobile
-{
-  /* <motion.div
-                    style={{ opacity }}
-                    // ref={mainRef}
-                    className={`sticky top-0 h-[100svh] items-end justify-center w-full flex flex-col flex-grow`}
-                  >
-                    <section className="w-full flex flex-col px-4">
-                      <PresentationParagraph />
-                    </section>
-                  </motion.div> */
 }

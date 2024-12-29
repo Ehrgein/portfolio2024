@@ -3,12 +3,25 @@ import Socials from "../ui/Socials";
 import { motion } from "framer-motion";
 // import FooterContact from "../ui/FooterContact";
 import LetsTalk from "../ui/LetsTalk";
+import { useScrollContext } from "../context/ScrollContext";
+import { useInView } from "framer-motion";
 
-function NewFooter({
-  footerRef,
-}: {
-  footerRef?: React.RefObject<HTMLDivElement>;
+function NewFooter({}: // footerRef,
+{
+  // footerRef?: React.RefObject<HTMLDivElement>;
 }) {
+  const { footerRef, setIsFooterInView } = useScrollContext();
+
+  const footerInView = useInView(footerRef, { amount: 0.9 });
+
+  React.useEffect(() => {
+    if (footerInView) {
+      setIsFooterInView(true);
+    } else {
+      setIsFooterInView(false);
+    }
+  }, [footerInView]);
+
   return (
     <>
       <motion.div ref={footerRef} id="footerRef">
@@ -25,24 +38,6 @@ function NewFooter({
           </motion.div>
         </footer>
       </motion.div>
-      {/* mobile footer */}
-
-      {/* <footer className="md:hidden sticky bottom-0 h-screen z-[-1]">
-        <div className="h-full flex flex-col">
-          <motion.div className="flex flex-col h-full pt-28">
-            <LetsTalk>
-              Feel free to reach out if you have a project in mind, or want tos
-              say hi!
-            </LetsTalk>
-            <div className="flex px-24">
-              <div className="w-full relative flex flex-col justify-center items-center">
-                <FooterContact>hello@alexisford.dev</FooterContact>
-              </div>
-            </div>
-            <Socials />
-          </motion.div>
-        </div>
-      </footer> */}
     </>
   );
 }

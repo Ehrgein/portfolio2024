@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import "./globals.css";
 import { ppneuemontreal } from "../app/helpers/fonts";
+import SmoothScrolling from "./helpers/SmoothScrolling";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${ppneuemontreal.className} antialiased bg-[#EDE9DE]`}>
-        <Suspense>{children}</Suspense>
-        <div className="noise-bg"></div>
+        <SmoothScrolling>
+          {children}
+          <div className="noise-bg"></div>
+        </SmoothScrolling>
       </body>
     </html>
   );
