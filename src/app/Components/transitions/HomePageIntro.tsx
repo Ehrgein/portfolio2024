@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import IntroAnimation from "./IntroAnimation";
-import ServerSideExample from "../ui/ServerSideExample";
 
-export default function ServerSideIntro({
+export default function HomePageIntro({
   children,
 }: {
   children: React.ReactNode;

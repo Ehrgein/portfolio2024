@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
 import { compacta, ppneuemontreal } from "../../helpers/fonts";
 import { TransitionLink } from "../../helpers/TransitionLink";

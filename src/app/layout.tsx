@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ppneuemontreal.className} antialiased bg-[#EDE9DE]`}>
         <SmoothScrolling>
-          {children}
+          <Suspense>{children}</Suspense>
           <div className="noise-bg"></div>
         </SmoothScrolling>
       </body>
