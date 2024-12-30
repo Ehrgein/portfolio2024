@@ -7,14 +7,11 @@ import { useScrollContext } from "../context/ScrollContext";
 
 const WhiteNavbar = ({
   aboutScrollProgress,
-  progress,
-  setProgress,
 }: {
-  progress: number;
-  setProgress: (value: number) => void;
   aboutScrollProgress: MotionValue<number>;
 }) => {
   const [isExiting, setIsExiting] = React.useState(false);
+  const [progress, setProgress] = React.useState<number>(0);
   const { isFooterInView, navBarColor } = useScrollContext();
 
   React.useEffect(() => {

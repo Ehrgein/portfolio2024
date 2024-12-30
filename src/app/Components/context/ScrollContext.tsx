@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useRef, useState } from "react";
-import { MotionValue, useMotionValue } from "framer-motion";
+import { MotionValue, useMotionValue, useScroll } from "framer-motion";
 
 type ScrollContextType = {
   isFooterInView: boolean;
@@ -15,12 +15,18 @@ const ScrollContext = React.createContext<ScrollContextType | undefined>(
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   const footerRef = useRef<HTMLDivElement>(null);
+
   const [isFooterInView, setIsFooterInView] = useState(false);
   const navBarColor = useMotionValue("#202020"); // Default color
 
   return (
     <ScrollContext.Provider
-      value={{ footerRef, isFooterInView, navBarColor, setIsFooterInView }}
+      value={{
+        footerRef,
+        isFooterInView,
+        navBarColor,
+        setIsFooterInView,
+      }}
     >
       {children}
     </ScrollContext.Provider>
