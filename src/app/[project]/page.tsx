@@ -10,11 +10,11 @@ import { compacta } from "../helpers/fonts";
 import { lato } from "../helpers/fonts";
 import Typography from "../Components/ui/Typography";
 import { fontData } from "../Types/Types";
-import { useSearchParams, useParams, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import coccoil from "@/app/Assets/cocooil.jpg";
 import fixedImage from "@/app/Assets/fixedcover.jpg";
 import atellier from "@/app/Assets/atellier.jpg";
-import SwitchProject from "../Components/transitions/SwitchProject";
+
 import image9 from "../Assets/image 9.png";
 
 import CustomTagTextReveal from "../Components/animations/CustomTagTextReveal";

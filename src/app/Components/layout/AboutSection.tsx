@@ -1,6 +1,5 @@
 import React from "react";
 import AboutMe from "./AboutMe";
-import { useScrollContext } from "../context/ScrollContext";
 
 function AboutSection({
   aboutSectionRef,

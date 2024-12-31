@@ -14,8 +14,6 @@ import { useParams, useSearchParams, useRouter } from "next/navigation";
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
 import EnterAnimation from "../transitions/EnterAnimation";
-import { compacta } from "@/app/helpers/fonts";
-import Socials from "./Socials";
 
 const TypographyLato: fontData[] = [
   {
@@ -92,24 +90,6 @@ function FixedProject() {
             </motion.div>
           </motion.div>
           <motion.div className="flex flex-col w-3/5 pt-12 pl-16 pr-16 h-full text-6 ">
-            {/* <div className="w-full h-full">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={{y: }}
-                onClick={handleNext}
-                className={`${compacta.className} text-[#161616] opacity-95 text-6xl tracking-wide`}
-              >
-                KEEP MOVING
-              </motion.h1>
-              <motion.p
-                exit={{ scale: 1.5 }}
-                className="text-[#484040] text-md"
-              >
-                Discover bold, urban high fashion with cutting-edge designs and
-                premium streetwear style.
-              </motion.p>
-            </div> */}
-
             <IntroHeaderReveal
               textSize={
                 "desktop:text-6xl 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[2.6rem] md:text-[2.5rem] mobilemd:text-[2.5rem]"

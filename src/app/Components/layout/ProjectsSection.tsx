@@ -1,11 +1,7 @@
 import React from "react";
 import ProjectsLayout from "./ProjectsLayout";
 
-function ProjectsSection({
-  projectSectionRef,
-}: {
-  projectSectionRef?: React.RefObject<HTMLDivElement>;
-}) {
+function ProjectsSection({}: {}) {
   const [isExiting, setIsExiting] = React.useState(false);
 
   return (
