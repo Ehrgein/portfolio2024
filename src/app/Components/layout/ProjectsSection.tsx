@@ -1,8 +1,10 @@
 import React from "react";
 import ProjectsLayout from "./ProjectsLayout";
 
-function ProjectsSection({}: {}) {
+function ProjectsSection() {
   const [isExiting, setIsExiting] = React.useState(false);
+
+  // removed the refs from this section, check if it doesn't work.
 
   return (
     <>

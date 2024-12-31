@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
-import dynamic from "next/dynamic";
-import fixed from "@/app/Assets/fixedcover.jpg";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 
 // const Scene = dynamic(() => import("@/app/Components/scene/Scene"), {
