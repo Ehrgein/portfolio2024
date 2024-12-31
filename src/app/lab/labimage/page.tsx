@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 // });
 
 function LabImage() {
+  //removed toolbar
   return (
     // <div className="h-screen">
     //   <Scene />
