@@ -7,6 +7,7 @@ type ScrollContextType = {
   setIsFooterInView: (value: boolean) => void;
   footerRef: React.RefObject<HTMLDivElement>;
   navBarColor: MotionValue<string>;
+  aboutScrollProgress: MotionValue<number>;
 };
 
 const ScrollContext = React.createContext<ScrollContextType | undefined>(
@@ -15,9 +16,14 @@ const ScrollContext = React.createContext<ScrollContextType | undefined>(
 
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   const footerRef = useRef<HTMLDivElement>(null);
-
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
   const [isFooterInView, setIsFooterInView] = useState(false);
   const navBarColor = useMotionValue("#202020"); // Default color
+
+  const { scrollYProgress: aboutScrollProgress } = useScroll({
+    target: aboutSectionRef,
+    offset: ["-12% 0%", "end start"],
+  });
 
   return (
     <ScrollContext.Provider
@@ -26,6 +32,7 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
         isFooterInView,
         navBarColor,
         setIsFooterInView,
+        aboutScrollProgress,
       }}
     >
       {children}

@@ -8,11 +8,13 @@ function CustomTagTextReveal({
   textSize,
   leading,
   delayIndex,
+  fontWeight,
 }: {
   textContent: string;
   textColor: string;
   textSize: string;
   leading: string;
+  fontWeight?: string;
   delayIndex: number;
 }) {
   const elementRef = React.useRef<HTMLHeadingElement>(null);
@@ -39,7 +41,9 @@ function CustomTagTextReveal({
                 ease: [0.25, 0.1, 0.25, 1],
               }}
               className={`${ppneuemontreal.className} ${textColor} "font-normal"
-              } ${textSize} tracking-normal ${leading} font-medium  inline-block overflow-hidden`}
+              } ${textSize} tracking-normal ${leading}  ${
+                fontWeight ? fontWeight : "font-medium"
+              }  inline-block overflow-hidden`}
             >
               {word}&nbsp;
             </motion.span>

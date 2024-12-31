@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import { ppneuemontreal } from "../app/helpers/fonts";
 import SmoothScrolling from "./helpers/SmoothScrolling";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,16 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          href="/_next/static/media/d6d1a7d2e448e5b5-s.p.otf"
+          fetchPriority="high"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </Head>
       <body className={`${ppneuemontreal.className} antialiased bg-[#EDE9DE]`}>
         <SmoothScrolling>
           <Suspense>{children}</Suspense>

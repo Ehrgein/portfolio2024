@@ -140,3 +140,7 @@ img {
   top: 40%;
   color: purple !important;
 }
+
+.imageffs {
+  background-image: url("https://cataas.com/cat");
+}

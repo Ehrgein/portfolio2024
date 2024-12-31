@@ -15,7 +15,7 @@ function ProjectsSection({
       desktop:px-44 xl:px-26 lg:px-28 md:px-20
       md:pt-12 lg:pb-32 md:pb-20 mobilesm:pt-0 relative z-[9999]"
       >
-        <div ref={projectSectionRef}>
+        <div>
           <div className="">
             <ProjectsLayout isExiting={isExiting} setIsExiting={setIsExiting} />
           </div>

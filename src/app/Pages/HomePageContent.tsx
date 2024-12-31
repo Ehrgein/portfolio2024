@@ -16,12 +16,12 @@ function HomePageContent() {
     offset: ["start start", "start end"],
   });
 
-  const opacity = useTransform(aboutScrollOpacity, [1, 0.4], [1, 0]);
-
   const { scrollYProgress: aboutScrollProgress } = useScroll({
     target: aboutSectionRef,
     offset: ["-12% 0%", "end start"],
   });
+
+  const opacity = useTransform(aboutScrollOpacity, [1, 0.4], [1, 0]);
 
   return (
     <>

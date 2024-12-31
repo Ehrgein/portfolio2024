@@ -14,6 +14,8 @@ import { useParams, useSearchParams, useRouter } from "next/navigation";
 import SwitchProject from "../transitions/SwitchProject";
 import IntroHeaderReveal from "../animations/IntroHeaderReveal";
 import EnterAnimation from "../transitions/EnterAnimation";
+import { compacta } from "@/app/helpers/fonts";
+import Socials from "./Socials";
 
 const TypographyLato: fontData[] = [
   {
@@ -55,7 +57,7 @@ function FixedProject() {
     setTimeout(() => {
       const nextProject = (projectNumber % images.length) + 1; // Cycle to the next project
       router.push(`/${nextProject}`);
-    }, 1100);
+    }, 2000);
   };
 
   return (
@@ -63,8 +65,12 @@ function FixedProject() {
       {from === "home" && <EnterAnimation />}
       {isSwitchingProjects && <SwitchProject />}
       <div>
-        <motion.div ref={scope} className="w-full h-screen flex relative">
-          <motion.div className="w-2/5  h-screen pr-12">
+        <motion.div
+          ref={scope}
+          className="w-full h-full
+         flex relative"
+        >
+          <motion.div className="w-2/5 sticky top-0 left-0 h-screen pr-12">
             <motion.div
               initial={{
                 clipPath: "inset(100% 0% 0% 0%)",
@@ -76,12 +82,12 @@ function FixedProject() {
                 delay: from === "home" ? 1.4 : 0,
               }}
               id="project-content"
-              className="fixed top-0 left-0 h-full w-full  pointer-events-none"
+              className="h-full w-full  pointer-events-none"
             >
               <Image
                 src={images[projectNumber - 1]}
                 alt=""
-                className={`h-full w-[40%] object-cover`}
+                className={`h-full w-[100%] object-cover`}
               />
             </motion.div>
           </motion.div>
@@ -89,17 +95,21 @@ function FixedProject() {
             {/* <div className="w-full h-full">
               <motion.h1
                 initial={{ y: "100%" }}
+                animate={{y: }}
                 onClick={handleNext}
                 className={`${compacta.className} text-[#161616] opacity-95 text-6xl tracking-wide`}
               >
                 KEEP MOVING
               </motion.h1>
+              <motion.p
+                exit={{ scale: 1.5 }}
+                className="text-[#484040] text-md"
+              >
+                Discover bold, urban high fashion with cutting-edge designs and
+                premium streetwear style.
+              </motion.p>
             </div> */}
-            {/* <motion.p exit={{ scale: 1.5 }} className="text-[#484040] text-md">
-              Discover bold, urban high fashion with cutting-edge designs and
-              premium streetwear style.
-            </motion.p> */}
-            <button onClick={handleNext}>CLICK ME</button>
+
             <IntroHeaderReveal
               textSize={
                 "desktop:text-6xl 2xl:text-[3.8rem] xl:text-[3.5rem] lg:text-[2.6rem] md:text-[2.5rem] mobilemd:text-[2.5rem]"
@@ -109,6 +119,12 @@ function FixedProject() {
               textContent="KEEP MOVING"
               fontFamily="compacta"
             />
+            <motion.p exit={{ scale: 1.5 }} className="text-[#484040] text-md">
+              Discover bold, urban high fashion with cutting-edge designs and
+              premium streetwear style.
+            </motion.p>
+
+            <button onClick={handleNext}>CLICK ME</button>
 
             <div className="flex flex-col pt-16 w-full pr-10">
               <ProjectIntroduction
@@ -152,8 +168,27 @@ function FixedProject() {
             />
             <ColorPalette />
             {/* <ProjectMiniDetails /> */}
+            <div className="pb-40"></div>
           </motion.div>
         </motion.div>
+        {/* <motion.div
+          initial={{ backgroundColor: "#DFD9D9" }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
+          whileInView={{ backgroundColor: "#121212" }}
+          className="h-[80vh] w-full flex flex-col items-center justify-center text-6xl"
+        >
+          <div className="text-[#ede9de] pt-20 pb-20 flex-col flex items-center">
+            <h3 className="text-xl uppercase tracking-widest pb-8">
+              Next project
+            </h3>
+            <h1
+              onClick={handleNext}
+              className={`text-[10rem] tracking-widest ${compacta.className} text-[#ede9de]`}
+            >
+              LOTUS
+            </h1>
+          </div>
+        </motion.div> */}
       </div>
     </>
   );
