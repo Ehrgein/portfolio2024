@@ -7,7 +7,7 @@ import { compacta } from "../helpers/fonts";
 import { lato } from "../helpers/fonts";
 import Typography from "../Components/ui/Typography";
 import { fontData } from "../Types/Types";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import image9 from "../Assets/image 9.png";
 import CustomTagTextReveal from "../Components/animations/CustomTagTextReveal";
 import ProductDescription from "../Components/ui/ProductDescription";
@@ -206,7 +206,6 @@ function Project() {
         firstword={firstWord}
         secondword={secondWord}
         nextProjectIndex={nextProjectIndex}
-        nextProject={nextProject}
       />
     </>
   );

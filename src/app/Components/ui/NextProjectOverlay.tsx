@@ -10,13 +10,11 @@ function NextProjectOverlay({
   imagesrc,
   firstword,
   secondword,
-  nextProject,
   nextProjectIndex,
 }: {
   imagesrc: StaticImageData;
   firstword: string;
   secondword?: string;
-  nextProject: any;
   nextProjectIndex: number;
 }) {
   const [isAnimated, setIsAnimated] = React.useState(false);
@@ -34,8 +32,6 @@ function NextProjectOverlay({
   };
 
   const router = useRouter();
-
-  console.log(nextProjectIndex);
 
   const handleNext = async () => {
     setIsAnimated(true);
