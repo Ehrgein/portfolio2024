@@ -1,6 +1,5 @@
 import React from "react";
 import CustomTagTextReveal from "../animations/CustomTagTextReveal";
-import { ProjectDescription } from "@/app/Types/Types";
 
 function ProblemSolution({
   title,
