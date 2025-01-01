@@ -29,3 +29,16 @@ export type projectItem = {
   deployLink: string;
   caseStudy: string;
 };
+
+export type ProjectStack = {
+  title: string;
+  value: string;
+};
+
+export type ProjectDescription = {
+  projectData: {
+    title: string;
+    description: string;
+    technologies: ProjectStack[];
+  };
+};

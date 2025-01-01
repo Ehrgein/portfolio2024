@@ -25,7 +25,7 @@ function HomePageContent() {
 
   return (
     <>
-      <div className="block relative z-1">
+      <div className="block relative z-1 bg-[#EDE9DE]">
         <div>
           <WhiteNavbar aboutScrollProgress={aboutScrollProgress} />
           {/*  main used to have a h-[200vh] h-[200vh] and a z-[99999] */}
