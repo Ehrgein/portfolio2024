@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { nextProjectOverlay } from "@/app/helpers/variants";
 import { compacta } from "@/app/helpers/fonts";
 import { StaticImageData } from "next/image";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 function NextProjectOverlay({

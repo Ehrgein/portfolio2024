@@ -1,5 +1,4 @@
 import keepmoving from "@/app/Assets/landscapebackground.jpg";
-import curology from "@/app/Assets/curology.jpg";
 import atellier from "@/app/Assets/atellier.jpg";
 
 export const projectData = [
