@@ -25,7 +25,6 @@ export default function RootLayout({
           <Suspense>{children}</Suspense>
           <div className="noise-bg"></div>
         </SmoothScrolling>
-        <p> I am loading! :D</p>
       </body>
     </html>
   );

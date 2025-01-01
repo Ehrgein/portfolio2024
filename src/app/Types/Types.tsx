@@ -37,8 +37,8 @@ export type ProjectStack = {
 
 export type ProjectDescription = {
   projectData: {
-    title: string;
-    description: string;
+    title: string | undefined;
+    description: string | undefined;
     technologies: ProjectStack[];
   };
 };

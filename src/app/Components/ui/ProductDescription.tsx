@@ -2,7 +2,6 @@ import React from "react";
 import { ProjectDescription, ProjectStack } from "@/app/Types/Types";
 
 function TechnologiesList({ technologies }: { technologies: ProjectStack[] }) {
-  console.log(technologies);
   return (
     <>
       {technologies.map(({ title, value }) => {
@@ -18,7 +17,7 @@ function TechnologiesList({ technologies }: { technologies: ProjectStack[] }) {
 }
 
 function ProductDescription({ projectData }: ProjectDescription) {
-  const { title, description, technologies } = projectData;
+  const { description, technologies } = projectData;
 
   return (
     <div className="pt-60 w-full relative mx-auto my-0 pb-40 grid grid-cols-8">

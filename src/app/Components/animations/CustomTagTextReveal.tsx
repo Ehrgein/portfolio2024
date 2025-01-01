@@ -10,7 +10,7 @@ function CustomTagTextReveal({
   delayIndex,
   fontWeight,
 }: {
-  textContent: string;
+  textContent: string | undefined;
   textColor: string;
   textSize: string;
   leading: string;
@@ -23,7 +23,7 @@ function CustomTagTextReveal({
     <>
       <span className="sr-only">{textContent}</span>
       <motion.div>
-        {textContent.split(" ").map((word, index) => (
+        {textContent?.split(" ").map((word, index) => (
           <motion.span
             key={index}
             className="overflow-hidden  inline-block align-bottom"

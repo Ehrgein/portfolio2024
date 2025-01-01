@@ -8,6 +8,18 @@ const scaleVariant = {
   },
 };
 
+// used in project page to animate image to fullscreen.
+const nextProjectOverlay = {
+  hidden: {
+    width: "40vw",
+    height: "65vh",
+  },
+  animate: {
+    width: "100vw",
+    height: "100vh",
+  },
+};
+
 const borderVariant = {
   enter: {
     x: "0%",
@@ -43,4 +55,10 @@ const slidingArrowVariant = {
   },
 };
 
-export { scaleVariant, arrowVariants, slidingArrowVariant, borderVariant };
+export {
+  scaleVariant,
+  arrowVariants,
+  slidingArrowVariant,
+  borderVariant,
+  nextProjectOverlay,
+};
