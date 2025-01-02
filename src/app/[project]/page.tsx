@@ -61,21 +61,19 @@ function Project() {
   return (
     <>
       <div className="relative bg-[#161616] pb-12">
-        <div
+        <motion.div
+          initial={{ height: "100vh" }}
+          animate={{ height: "80vh" }}
+          transition={{
+            delay: 0.3,
+            duration: 1.2,
+            ease: [0.23, 1, 0.32, 1],
+          }}
           ref={container}
-          className="relative flex items-center justify-center h-screen overflow-hidden"
+          className="relative flex items-start justify-center h-screen overflow-hidden"
           style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-          <motion.div
-            initial={{ y: "0vh" }}
-            // animate={{ y: "-20vh" }}
-            transition={{
-              delay: 0.3,
-              duration: 1.2,
-              ease: [0.23, 1, 0.32, 1],
-            }}
-            className="relative w-full h-full"
-          >
+          <motion.div className="relative w-full h-full">
             <Image
               src={projectDescription.imagesrc}
               fill
@@ -83,15 +81,25 @@ function Project() {
               style={{ objectFit: "cover" }}
             />
             {/* <div className="absolute inset-0 bg-black opacity-50 pointer-events-none"></div> */}
-            <div>
-              <h4
-                className={`${compacta.className} w-[6ch] uppercase absolute bottom-4 left-4 text-[10rem] leading-none text-white`}
+
+            <motion.div
+              className="w-[75vw] h-[80vh] absolute top-2/4 left-2/4
+            -translate-x-2/4 -translate-y-2/4 pointer-events-none flex flex-col"
+            >
+              <motion.h2
+                className={`text-white text-[10rem] ${compacta.className} back leading-none invisible`}
+              >
+                _
+              </motion.h2>
+              <motion.h4
+                transition={{ ease: "easeInOut", duration: 1 }}
+                className={`text-white text-[10rem] ${compacta.className} back leading-none uppercase`}
               >
                 {projectDescription.title}
-              </h4>
-            </div>
+              </motion.h4>
+            </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
         <div className="text-white w-full px-60 relative">
           <ProductDescription projectData={projectDescription} />
           <div className="w-full pb-16 h-[1000px]">

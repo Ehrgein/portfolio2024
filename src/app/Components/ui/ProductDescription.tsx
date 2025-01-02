@@ -20,7 +20,7 @@ function ProductDescription({ projectData }: ProjectDescription) {
   const { description, technologies } = projectData;
 
   return (
-    <div className="pt-60 w-full relative mx-auto my-0 pb-40 grid grid-cols-8">
+    <div className="pt-32 w-full relative mx-auto my-0 pb-40 grid grid-cols-8">
       <div className="w-full flex flex-col col-span-4">
         <h3 className="text-4xl">Product Description</h3>
         <p className="text-[1.3rem] text-[#B5B0B0] leading-loose pt-10 tracking-wide">
