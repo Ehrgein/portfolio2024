@@ -95,7 +95,13 @@ function Project() {
                 transition={{ ease: "easeInOut", duration: 1 }}
                 className={`text-white text-[10rem] ${compacta.className} back leading-none uppercase`}
               >
-                {projectDescription.title}
+                {projectDescription.firstword}
+              </motion.h4>
+              <motion.h4
+                transition={{ ease: "easeInOut", duration: 1 }}
+                className={`text-white text-[10rem] ${compacta.className} back leading-none uppercase self-end`}
+              >
+                {projectDescription.secondword}
               </motion.h4>
             </motion.div>
           </motion.div>

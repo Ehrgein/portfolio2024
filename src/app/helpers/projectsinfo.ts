@@ -1,5 +1,6 @@
 import keepmoving from "@/app/Assets/landscapebackground.jpg";
 import atellier from "@/app/Assets/atellier.jpg";
+import lotus from "@/app/Assets/lotus.webp";
 
 export const projectData = [
   {
@@ -52,5 +53,30 @@ export const projectData = [
     solution:
       "By implementing React for improved page speed and a robust database to manage real-time inventory updates, Keep Moving streamlined operations, eliminated order delays, and enhanced the overall shopping experience, leading to increased customer satisfaction and retention.",
     imagesrc: atellier,
+  },
+  {
+    title: "Lotus Medical",
+    firstword: "Lotus",
+    description: "Medical Brand ",
+    secondword: "Medical",
+    technologies: [
+      {
+        title: "Year",
+        value: "2025",
+      },
+      {
+        title: "Role",
+        value: "Design, Development",
+      },
+      {
+        title: "Techonologies",
+        value: "React, PostgresSQL, Tailwind, Node JS",
+      },
+    ],
+    problem:
+      "The Keep Moving ecommerce platform struggled with slow loading times and an outdated system that lacked an online inventory database. This resulted in frequent delays, overselling issues, and a frustrating user experience that drove potential customers away.",
+    solution:
+      "By implementing React for improved page speed and a robust database to manage real-time inventory updates, Keep Moving streamlined operations, eliminated order delays, and enhanced the overall shopping experience, leading to increased customer satisfaction and retention.",
+    imagesrc: lotus,
   },
 ];

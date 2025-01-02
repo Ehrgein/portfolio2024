@@ -81,13 +81,14 @@ function NextProjectOverlay({
           >
             {firstword}
           </motion.h2>
+
           <h2 className="leading-[.74]"></h2>
           {secondword && (
             <>
               <motion.h2
                 className={`text-white text-[10rem] leading-none ${compacta.className} back self-end`}
               >
-                MOVING
+                {secondword}
               </motion.h2>
             </>
           )}
@@ -138,7 +139,7 @@ function NextProjectOverlay({
                   transition={{ ease: "easeInOut", duration: 1 }}
                   className={`text-[#212F29] text-[10rem] ${compacta.className} back leading-none self-end`}
                 >
-                  MOVING
+                  {secondword}
                 </motion.h2>
               </>
             )}
