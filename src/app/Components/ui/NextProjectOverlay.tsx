@@ -5,7 +5,6 @@ import { compacta } from "@/app/helpers/fonts";
 import { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { overlay } from "three/tsl";
 
 function NextProjectOverlay({
   imagesrc,
