@@ -28,6 +28,7 @@ export type projectItem = {
   alt: string;
   deployLink: string;
   caseStudy: string;
+  status: string;
 };
 
 export type ProjectStack = {
