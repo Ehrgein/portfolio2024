@@ -1,6 +1,38 @@
+"use client";
 import React from "react";
 
 function Socials() {
+  const [currentTime, setCurrentTime] = React.useState("");
+
+  const now = new Date();
+
+  React.useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+
+      const formattedTime = now.toLocaleString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+        timeZoneName: "short",
+      });
+
+      setCurrentTime(formattedTime);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formattedTime = now.toLocaleString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZoneName: "short",
+  });
+
   return (
     <>
       <div
@@ -15,7 +47,7 @@ function Socials() {
           >
             <p className="md:text-lg mobilesm:text-sm">LOCAL TIME:</p>
             <span className="md:text-lg mobilesm:text-sm text-[#626060]">
-              11:48 PM - GMT(-3)
+              {formattedTime}
             </span>
           </div>
           <div

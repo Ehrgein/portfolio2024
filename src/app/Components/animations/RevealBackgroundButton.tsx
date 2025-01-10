@@ -53,7 +53,7 @@ function RevealBackgroundButton({
       style={{ overflow: "hidden" }}
     >
       {/* Button Content */}
-      <motion.span
+      <motion.button
         onClick={handleSetIsExiting}
         className="relative z-10 
         
@@ -61,7 +61,7 @@ function RevealBackgroundButton({
         style={{ color: "inherit" }}
       >
         {children}
-      </motion.span>
+      </motion.button>
       {/* Sliding Background */}
       <motion.div
         animate={controls}

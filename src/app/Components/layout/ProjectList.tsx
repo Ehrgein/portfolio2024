@@ -14,7 +14,15 @@ function ProjectList({
   return (
     <>
       {projects.map(
-        ({ name, projectImage, alt, description, deployLink, caseStudy }) => (
+        ({
+          name,
+          projectImage,
+          alt,
+          description,
+          deployLink,
+          caseStudy,
+          status,
+        }) => (
           <article
             key={name}
             className="flex xl:flex-nowrap mobilesm:flex-wrap 
@@ -63,20 +71,40 @@ function ProjectList({
               "
               ></div>
               <div className="flex items-center justify-between">
-                <div className="flex gap-12 mobilexl:gap-7 mobilemd:gap-6 mobilesm:gap-4 desktop:text-2xl xl:text-base lg:pt-4 lg:pb-8">
-                  <RevealBackgroundButton
-                    handleSetIsExiting={handleSetIsExiting}
+                {status === "development" ? (
+                  <div
+                    className="flex items-center justify-center relative 
+                    box-shadow rounded-full bg-[#161616] z-0 cursor-pointer
+                    px-8
+                    mobilexl:px-8 mobilexl:py-3 
+                    mobilemd:px-7 mobilemd:py-3
+                    mobilesm:px-5 mobilesm:py-2"
                   >
-                    <TransitionLink href={deployLink}>
-                      VIEW WEBSITE
-                    </TransitionLink>
-                  </RevealBackgroundButton>
-                  <RevealBackgroundButton
-                    handleSetIsExiting={handleSetIsExiting}
-                  >
-                    <TransitionLink href={caseStudy}>CASE STUDY</TransitionLink>
-                  </RevealBackgroundButton>
-                </div>
+                    <button
+                      disabled
+                      className="desktop:text-base xl:text-base lg:text-base md:text-sm mobilemd:text-sm mobilesm:text-[.7rem] "
+                    >
+                      In Development
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex gap-12 mobilexl:gap-7 mobilemd:gap-6 mobilesm:gap-4 desktop:text-2xl xl:text-base lg:pt-4 lg:pb-8">
+                    <RevealBackgroundButton
+                      handleSetIsExiting={handleSetIsExiting}
+                    >
+                      <TransitionLink href={deployLink}>
+                        VIEW WEBSITE
+                      </TransitionLink>
+                    </RevealBackgroundButton>
+                    <RevealBackgroundButton
+                      handleSetIsExiting={handleSetIsExiting}
+                    >
+                      <TransitionLink href={caseStudy}>
+                        CASE STUDY
+                      </TransitionLink>
+                    </RevealBackgroundButton>
+                  </div>
+                )}
               </div>
             </section>
           </article>

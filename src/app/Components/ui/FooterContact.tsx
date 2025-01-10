@@ -61,7 +61,7 @@ function FooterContact({ children }: { children: React.ReactNode }) {
               </p>
               <motion.div className="w-full h-[1px] absolute bottom-0 left-0" />
             </a>
-            <div
+            {/* <div
               onClick={handleCopyToClipboard}
               id="clipboard"
               className="relative pl-3 text-xl flex items-center cursor-pointer"
@@ -91,7 +91,7 @@ function FooterContact({ children }: { children: React.ReactNode }) {
               >
                 <path d="M5 12l5 5L20 7" />
               </svg>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>

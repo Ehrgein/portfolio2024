@@ -5,6 +5,8 @@ import pinkcurology from "../../Assets/pinkcrlg.jpg";
 import restaurant from "../../Assets/restaurant.jpg";
 import redimage from "../../Assets/redimage.jpg";
 import atellier from "../../Assets/atellier.jpg";
+import keepmoving from "@/app/Assets/fixedcover.jpg";
+import keepmoving2 from "@/app/Assets/landscapebackground.jpg";
 
 function ProjectsLayout({
   isExiting,
@@ -16,40 +18,46 @@ function ProjectsLayout({
   const projects = [
     {
       name: "Keep Moving",
-      projectImage: pinkcurology,
+      projectImage: keepmoving,
       description:
         "Urban-style e-commerce platform, showcasing modern fashion and lifestyle products with a seamless user experience. Made with React, Tailwind, MySQL .",
       deployLink: "https://keepmovingclothing.vercel.app/",
       caseStudy: "/1",
+      status: "deployed",
       alt: "Woman wearing sneakers representing urban fashion",
     },
+    // {
+    //   name: "Sansei",
+    //   projectImage: restaurant,
+    //   description:
+    //     "Landing page for local Japanese owned restaurant which includes a booking/reserve system. Made with React, Tailwind, MySQL .",
+    //   deployLink: "https://keepmovingclothing.vercel.app/",
+    //   caseStudy: "/1",
+    //   status: "deployed",
+    //   alt: "Woman wearing sneakers representing urban fashion",
+    // },
     {
-      name: "Sansei",
-      projectImage: restaurant,
-      description:
-        "Landing page for local Japanese owned restaurant which includes a booking/reserve system. Made with React, Tailwind, MySQL .",
-      deployLink: "https://keepmovingclothing.vercel.app/",
-      caseStudy: "/1",
-      alt: "Woman wearing sneakers representing urban fashion",
-    },
-    {
-      name: "Curology",
-      projectImage: redimage,
-      description:
-        "Beauty products with a clean and minimal UI, focused on seamless transitions. Made with React, Tailwind, MySQL .",
-      deployLink: "https://keepmovingclothing.vercel.app/",
-      caseStudy: "/2",
-      alt: "Woman wearing sneakers representing urban fashion",
-    },
-    {
-      name: "Lotus",
+      name: "Events App",
       projectImage: atellier,
       description:
-        "Medical dashboard created with the goal of helping low income communities manage their patients. Made with React, Tailwind, PostgreSQL .",
+        "Ticket selling application developed with the aim of reducing costs for a local band as service charges can get difficult for local artists. Made with Next, Nest, PostgreSQL, Supabase for Auth and Prisma for database management.",
       deployLink: "https://keepmovingclothing.vercel.app/",
       caseStudy: "/1",
+      status: "development",
       alt: "Woman wearing sneakers representing urban fashion",
     },
+    // {
+    //   name: "Curology",
+    //   projectImage: redimage,
+    //   status: "development",
+    //   description:
+    //     "Beauty products with a clean and minimal UI, focused on seamless transitions. Made with React, Tailwind, MySQL .",
+    //   deployLink: "https://keepmovingclothing.vercel.app/",
+    //   caseStudy: "/2",
+
+    //   alt: "Woman wearing sneakers representing urban fashion",
+    // },
+
     {
       name: "Lights Out",
       projectImage: pinkcurology,
@@ -57,6 +65,7 @@ function ProjectsLayout({
         "Project made with the purpose of tracking outages in the Buenos Aires area, scraping data from the national provider. Made with Next, Puppeteer, Tailwind, MongoDB .",
       deployLink: "https://keepmovingclothing.vercel.app/",
       caseStudy: "/1",
+      status: "development",
       alt: "Woman wearing sneakers representing urban fashion",
     },
   ];

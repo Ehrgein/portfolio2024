@@ -3,12 +3,12 @@ import { motion, useInView } from "framer-motion";
 import SmallTextReveal from "../animations/SmallAboutReveal";
 
 const projectList = [
-  {
-    title: "Curology",
-    tech: "Next - Framer Motion",
-    role: "Development/Design",
-    year: "2024",
-  },
+  // {
+  //   title: "Curology",
+  //   tech: "Next - Framer Motion",
+  //   role: "Development/Design",
+  //   year: "2024",
+  // },
   {
     title: "Dashboard",
     tech: "Next - Framer Motion - PostgreSQL",

@@ -38,7 +38,7 @@ function LetsTalk({ children }: { children: React.ReactNode }) {
       </p>
       <div className="flex px-24">
         <div className="w-full relative flex flex-col justify-center items-center flex-grow-0">
-          <FooterContact>hello@alexisford.dev</FooterContact>
+          <FooterContact>alekffbe@gmail.com</FooterContact>
         </div>
       </div>
     </div>
